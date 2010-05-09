@@ -2,7 +2,7 @@ class PostcardsController < ApplicationController
   # GET /postcards
   # GET /postcards.xml
   def index
-    @postcards = Postcard.all
+    @postcards = Postcard.find_all_paginated(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -82,4 +82,5 @@ class PostcardsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
 end
