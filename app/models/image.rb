@@ -1,7 +1,8 @@
 class Image < ActiveRecord::Base
 
-  cattr_reader :image_types
-  @@image_types = [:abverse, :reverse, :stamp, :other]
+  has_attached_file :image
+
+  IMAGE_TYPES = [:abverse, :reverse, :stamp, :other]
 
   belongs_to :postcard
 

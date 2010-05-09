@@ -9,5 +9,5 @@ Factory.define :image do |image|
   image.sequence(:file_size) { |n| n }
   image.sequence(:content_type) { |n| "content type #{n}" }
   image.association :postcard
-  image.image_type Image.image_types[rand(Image.image_types.size)]
+  image.image_type Image::IMAGE_TYPES[rand(Image::IMAGE_TYPES.size)]
 end
