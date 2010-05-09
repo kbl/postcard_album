@@ -1,0 +1,24 @@
+<h1>Listing postcards</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Photo date</th>
+  </tr>
+
+<% @postcards.each do |postcard| %>
+  <tr>
+    <td><%=h postcard.name %></td>
+    <td><%=h postcard.description %></td>
+    <td><%=h postcard.photo_date %></td>
+    <td><%= link_to 'Show', postcard %></td>
+    <td><%= link_to 'Edit', edit_postcard_path(postcard) %></td>
+    <td><%= link_to 'Destroy', postcard, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New postcard', new_postcard_path %>

@@ -1,0 +1,18 @@
+<p>
+  <b>Name:</b>
+  <%=h @postcard.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @postcard.description %>
+</p>
+
+<p>
+  <b>Photo date:</b>
+  <%=h @postcard.photo_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_postcard_path(@postcard) %> |
+<%= link_to 'Back', postcards_path %>
