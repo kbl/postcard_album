@@ -13,9 +13,12 @@ module Paperclip
     def make
       img = Magick::Image::read(File.expand_path(@file.path)).first
       img = img.resize(@options[:width], @options[:height])
-      destination = Tempfile.new([@basename, @extension].compact.join('.'))
+      destination = Tempfile.new([@basename, 'jpg'].compact.join('.'))
       destination.binmode
-      img.write(File.expand_path(destination.path))
+      img.write(File.expand_path(destination.path)) do
+        self.compression = Magick::JPEGCompression
+        self.quality = 50
+      end
       destination
     end
 
