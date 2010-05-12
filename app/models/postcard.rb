@@ -1,6 +1,6 @@
 class Postcard < ActiveRecord::Base
 
-  has_many :images
+  has_many :images, :dependent => :destroy
 
   validates_presence_of :description, 
                         :name,
@@ -9,6 +9,8 @@ class Postcard < ActiveRecord::Base
   
   cattr_reader :per_page
   @@per_page = 5
+
+  accepts_nested_attributes_for :images
 
   def self.find_all_paginated(page) 
     paginate(:page => page, :order => 'created_at DESC')

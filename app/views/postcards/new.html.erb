@@ -1,6 +1,6 @@
 <h1>New postcard</h1>
 
-<% form_for(@postcard) do |f| %>
+<% form_for(@postcard, :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -15,6 +15,12 @@
     <%= f.label :photo_date %><br />
     <%= f.date_select :photo_date %>
   </p>
+  <% f.fields_for :images do |builder| %>
+    <p>
+      <%= builder.select :type_of_image, Image::IMAGE_TYPES %>
+      <%= builder.file_field :image %>
+    </p>
+  <% end %>
   <p>
     <%= f.submit 'Create' %>
   </p>

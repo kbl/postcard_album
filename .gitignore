@@ -3,3 +3,4 @@ db/schema.rb
 *.swp
 RECYCLER
 log/*.log
+public/system/**
