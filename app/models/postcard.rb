@@ -5,6 +5,7 @@ class Postcard < ActiveRecord::Base
   validates_presence_of :description, 
                         :name,
                         :photo_date
+  validates_inclusion_of :is_horizontal, :in => [true, false]
   validates_size_of :name, :maximum => 255
   
   cattr_reader :per_page

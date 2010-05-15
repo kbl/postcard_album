@@ -7,7 +7,15 @@ class PostcardTest < ActiveSupport::TestCase
       Factory(:postcard)
     end
 
-    assert Postcard.find_all_paginated(page_number = 1).size == Postcard.per_page, "should return collection with size of page results" end 
+    assert Postcard.find_all_paginated(page_number = 1).size == Postcard.per_page, "should return collection with size of page results" 
+  end 
+
+  test "shouldn save without is_horizontal flag" do
+    postcard = Factory.build(:postcard, :is_horizontal => nil)
+
+    assert !postcard.valid?
+  end
+
 end
 
 

@@ -42,21 +42,35 @@ class ImageTest < ActiveSupport::TestCase
 
     assert !image.valid?
   end 
+
+  test "should find only abverse images" do
+    2.times { Factory(:image, :type_of_image => 'reverse') }
+    2.times { Factory(:image, :type_of_image => 'abverse') }
+
+    abverses = Image.abverse
+    assert_not_nil abverses
+    assert abverses.size >= 2
+    assert abverses.select { |a| a.type_of_image != 'abverse' }.empty?
+  end
   
 end
+
+
 
 
 # == Schema Information
 #
 # Table name: images
 #
-#  id           :integer         not null, primary key
-#  image_type   :string(255)
-#  file_name    :string(255)
-#  content_type :string(255)
-#  file_size    :integer
-#  postcard_id  :integer
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id                 :integer         not null, primary key
+#  type_of_image      :string(255)
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  postcard_id        :integer
+#  created_at         :datetime
+#  updated_at         :datetime
+#  image_updated_at   :datetime
+#  is_horizontal      :boolean
 #
 

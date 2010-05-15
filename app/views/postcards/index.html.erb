@@ -12,6 +12,11 @@
     <td><%=h postcard.name %></td>
     <td><%=h postcard.description %></td>
     <td><%=h postcard.photo_date %></td>
+    <td>
+      <% postcard.images.each do |photo| %>
+        <%= image_tag photo.image.url(:thumbnail) %>
+      <% end %>
+    </td>
     <td><%= link_to 'Show', postcard %></td>
     <td><%= link_to 'Edit', edit_postcard_path(postcard) %></td>
     <td><%= link_to 'Destroy', postcard, :confirm => 'Are you sure?', :method => :delete %></td>

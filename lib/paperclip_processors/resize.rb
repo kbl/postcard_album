@@ -12,7 +12,14 @@ module Paperclip
     
     def make
       img = Magick::Image::read(File.expand_path(@file.path)).first
-      img = img.resize(@options[:width], @options[:height])
+
+      if rand(2) == 1
+        width, height = @options[:width], @options[:height]
+      else
+        width, height = @options[:height], @options[:width]
+      end
+
+      img = img.resize(width, height)
       destination = Tempfile.new([@basename, 'jpg'].compact.join('.'))
       destination.binmode
       img.write(File.expand_path(destination.path)) do

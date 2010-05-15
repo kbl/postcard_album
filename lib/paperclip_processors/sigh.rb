@@ -11,6 +11,9 @@ module Paperclip
     end
 
     def make
+      #skip signing if there is no signature
+      return @file unless @options[:signature]
+
       img = Magick::Image::read(File.expand_path(@file.path)).first
       text = Magick::Draw.new
       text.annotate(img, 0, 0, 0, img.rows - 20, @options[:signature]) do

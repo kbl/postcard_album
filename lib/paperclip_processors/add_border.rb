@@ -12,7 +12,8 @@ module Paperclip
     
     def make
       img = Magick::Image::read(File.expand_path(@file.path)).first
-      img = img.border(3, 3, 'white').border(15, 15, 'black')
+      img = img.border(@options[:border_inner], @options[:border_inner], 'white')
+      img = img.border(@options[:border_outer], @options[:border_outer], 'black')
       destination = Tempfile.new([@basename, @extension].compact.join('.'))
       destination.binmode
       img.write(File.expand_path(destination.path))
