@@ -8,7 +8,6 @@ class Image < ActiveRecord::Base
                             :height => 300,
                             :border_inner => 3,
                             :border_outer => 15,
-                            :is_horizontal => Proc.new { |instance| instance.is_horizontal? },
                             :signature => '    marcin.pietraszek.pl '
                         }, 
                         :thumbnail => {
@@ -16,11 +15,12 @@ class Image < ActiveRecord::Base
                             :height => 60,
                             :border_inner => 1,
                             :border_outer => 5,
-                            :is_horizontal => Proc.new { |instance| instance.is_horizontal? }
                         }
                     },
                     :path => ':rails_root/public/img/postcards/:id/:style.:extension',
                     :url => '/img/postcards/:id/:style.:extension'
+
+  dynamic_attachment_styles :image
 
 
   IMAGE_TYPES = %w[abverse reverse stamp other]
@@ -39,14 +39,7 @@ class Image < ActiveRecord::Base
 
   named_scope :abverse, :conditions => { :type_of_image => 'abverse' }
 
-  def is_horizontal?
-    postcard.is_horizontal?
-  end
-
 end
-
-
-
 
 # == Schema Information
 #

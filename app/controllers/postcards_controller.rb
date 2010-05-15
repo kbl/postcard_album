@@ -28,6 +28,11 @@ class PostcardsController < ApplicationController
   # POST /postcards.xml
   def create
     @postcard = Postcard.new(params[:postcard])
+    @postcard.images.each do |i| 
+      i.style :normal, :is_horizontal => @postcard.is_horizontal
+      i.style :thumbnail, :is_horizontal => @postcard.is_horizontal
+    end
+
 
     if @postcard.save
       flash[:notice] = 'Postcard was successfully created.'

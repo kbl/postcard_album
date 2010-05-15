@@ -13,7 +13,7 @@ module Paperclip
     def make
       img = Magick::Image::read(File.expand_path(@file.path)).first
 
-      if rand(2) == 1
+      if @options[:is_horizontal]
         width, height = @options[:width], @options[:height]
       else
         width, height = @options[:height], @options[:width]

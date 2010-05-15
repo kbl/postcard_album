@@ -4,3 +4,4 @@ db/schema.rb
 RECYCLER
 log/*.log
 public/system/**
+public/img/postcards/**
