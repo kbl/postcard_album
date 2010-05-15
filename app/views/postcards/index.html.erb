@@ -14,7 +14,7 @@
     <td><%=h postcard.photo_date %></td>
     <td>
       <% postcard.images.each do |photo| %>
-        <%= image_tag photo.image.url(:thumbnail) %>
+        <%= image_tag photo.image.url(photo.thumbnail_style) %>
       <% end %>
     </td>
     <td><%= link_to 'Show', postcard %></td>

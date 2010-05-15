@@ -11,10 +11,15 @@ class Postcard < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 5
 
-  accepts_nested_attributes_for :images
-
+  accepts_nested_attributes_for :images, :allow_destroy => true
+  
   def self.find_all_paginated(page) 
     paginate(:page => page, :order => 'created_at DESC')
+  end
+
+  def orientation
+    return :horizontal if is_horizontal?
+    :vertical
   end
 
 end

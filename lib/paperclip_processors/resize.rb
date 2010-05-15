@@ -13,13 +13,7 @@ module Paperclip
     def make
       img = Magick::Image::read(File.expand_path(@file.path)).first
 
-      if @options[:is_horizontal]
-        width, height = @options[:width], @options[:height]
-      else
-        width, height = @options[:height], @options[:width]
-      end
-
-      img = img.resize(width, height)
+      img = img.resize(@options[:width], @options[:height])
       destination = Tempfile.new([@basename, 'jpg'].compact.join('.'))
       destination.binmode
       img.write(File.expand_path(destination.path)) do
