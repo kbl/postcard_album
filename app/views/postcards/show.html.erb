@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'default', 'jquery.lightbox-0.5' %>
+  <%= javascript_include_tag 'jquery.lightbox-0.5.min', :cache => true %>
+<% end %>
 <p>
   <b>Name:</b>
   <%=h @postcard.name %>
@@ -5,7 +9,7 @@
 
 <p>
   <b>Description:</b>
-  <%=h @postcard.description %>
+  <%= @postcard.description %>
 </p>
 
 <p>

@@ -6,7 +6,8 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <%= stylesheet_link_tag 'default', 'jquery.lightbox-0.5' %>
-  <%= javascript_include_tag 'jquery-1.4.2.min', 'application', 'jquery.lightbox-0.5.min', :cache => true %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'application', :cache => true %>
+  <%= yield :head %>
 </head>
 <body>
 

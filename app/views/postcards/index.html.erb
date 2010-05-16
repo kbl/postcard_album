@@ -5,15 +5,14 @@
               <h2 class="title"><%= link_to h(postcard.name), postcard %></h2>
               <p class="byline">
                 <%=h postcard.photo_date %>
-                <%= link_to 'View more', postcard %>
-                <%= link_to 'Edit', edit_postcard_path(postcard) %>
-                <%= link_to 'Destroy', postcard, :method => :delete, :confirm => 'Are you sure?' %>
+                <%= link_to 'Edytuj', edit_postcard_path(postcard) %>
+                <%= link_to 'Usuń', postcard, :method => :delete, :confirm => 'Czy rzeczywiście chcesz to usunąć?' %>
               </p>
                 <div class="entry">
                   <p>
                       <!-- TODO: remove double select -->
                       <%= image_tag postcard.abverse_image.image.url(postcard.abverse_image.thumbnail_style), :class => 'entry_image' %>
-                    <%=h postcard.description[0..300] << '...' %>
+                    <%= postcard.description[0..300] << '...' %>
                   </p>
                 </div>
           </div>
