@@ -11,10 +11,10 @@ Released for free under a Creative Commons Attribution 2.5 License
 }
 
 body {
-	background: #FFFFFF url(../images/img01.jpg) repeat-x left top;
+	background: #FFFFFF url(../images/layout/img01.jpg) repeat-x left top;
 	text-align: justify;
 	font-family: Tahoma, Geneva, sans-serif;
-	font-size: 11px;
+	font-size: 13px;
 	color: #757E82;
 }
 
@@ -145,7 +145,7 @@ a:hover {
 }
 
 #menu a:hover, #menu .active a {
-	background: #F40C42 url(../images/img02.jpg) repeat-x left bottom;
+	background: #F40C42 url(../images/layout/img02.jpg) repeat-x left bottom;
 	color: #FFFFFF;
 }
 
@@ -202,15 +202,15 @@ a:hover {
 }
 
 .post {
-	background: url(../images/img05.jpg) repeat-y left top;
+	background: url(../images/layout/img05.jpg) repeat-y left top;
 }
 
 .post-bgtop {
-	background: url(../images/img04.jpg) no-repeat left top;
+	background: url(../images/layout/img04.jpg) no-repeat left top;
 }
 
 .post-bgbtm {
-	background: url(../images/img06.jpg) no-repeat left bottom;
+	background: url(../images/layout/img06.jpg) no-repeat left bottom;
 	padding: 50px 40px 30px 40px;
 }
 
@@ -246,7 +246,7 @@ a:hover {
 	width: 115px;
 	height: 32px;
 	padding: 8px 0px 0px 0px;
-	background: url(../images/img12.jpg) no-repeat left top;
+	background: url(../images/layout/img12.jpg) no-repeat left top;
 	text-align: center;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -266,16 +266,16 @@ a:hover {
 #sidebar {
 	float: right;
 	width: 260px;
-	background: url(../images/img08.jpg) repeat-y left top;
+	background: url(../images/layout/img08.jpg) repeat-y left top;
 	font-size: 11px;
 }
 
 #sidebar-bgtop {
-	background: url(../images/img07.jpg) no-repeat left top;
+	background: url(../images/layout/img07.jpg) no-repeat left top;
 }
 
 #sidebar-bgbtm {
-	background: url(../images/img09.jpg) no-repeat left bottom;
+	background: url(../images/layout/img09.jpg) no-repeat left bottom;
 	padding: 40px 40px 20px 40px;
 }
 
@@ -299,12 +299,12 @@ a:hover {
 	margin: 0;
 	padding: 7px 0px;
 	border: none;
-	background: url(../images/img10.jpg) repeat-x left bottom;
+	background: url(../images/layout/img10.jpg) repeat-x left bottom;
 	font-family: Tahoma, Geneva, sans-serif;
 }
 
 #sidebar li li a {
-	background: url(../images/img11.jpg) no-repeat left 3px;
+	background: url(../images/layout/img11.jpg) no-repeat left 3px;
 	padding-left: 20px;
 }
 
@@ -357,7 +357,7 @@ a:hover {
 /* Footer */
 
 #footer-wrapper {
-	background: #F7F7F7 url(../images/img03.jpg) repeat-x left top;
+	background: #F7F7F7 url(../images/layout/img03.jpg) repeat-x left top;
 	padding: 20px 0px;
 }
 
@@ -380,5 +380,10 @@ a:hover {
 
 #footer a:hover {
 	text-decoration: none;
-	color: #F90542;
+    color: #F90542;
+}
+
+.entry_image {
+    float: left; 
+    margin: -10px 10px -15px 0px; 
 }

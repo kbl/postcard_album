@@ -5,8 +5,8 @@
   <title>Postcards: <%= controller.action_name %></title>
   <meta name="keywords" content="" />
   <meta name="description" content="" />
-  <%= stylesheet_link_tag 'scaffold', 'gallery', 'default' %>
-  <%= javascript_include_tag 'jquery-1.4.2.min', 'application', :cache => true %>
+  <%= stylesheet_link_tag 'default', 'jquery.lightbox-0.5' %>
+  <%= javascript_include_tag 'jquery-1.4.2.min', 'application', 'jquery.lightbox-0.5.min', :cache => true %>
 </head>
 <body>
 
@@ -46,6 +46,22 @@
 				<div id="sidebar-bgtop">
 					<div id="sidebar-bgbtm">
                       <ul>
+                        <li>
+                          <h2>Login</h2>
+                          <form>
+                              <input type="text" value="login" /><br />
+                              <input type="password" value="password" /><br />
+                              <input type="submit" value="Login" />
+                          </form>
+                          <br />
+                        </li>
+                        <li>
+                          <h2>Admin area</h2>
+                          <ul>
+                            <li><%= link_to 'New postcard', new_postcard_path %></li>
+                            <li><a href="#">Edit profile</a></li>
+                          </ul>
+                        </li>
                           <li>
                               <h2>Tagi</h2>
                               <ul>

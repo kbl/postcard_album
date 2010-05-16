@@ -9,27 +9,18 @@
                 <%= link_to 'Edit', edit_postcard_path(postcard) %>
                 <%= link_to 'Destroy', postcard, :method => :delete, :confirm => 'Are you sure?' %>
               </p>
-              <div class="entry">
-                <p>
-                  <%=h postcard.description %>
-                  <table>
-                    <tr>      
-                    <% postcard.images.each do |photo| %>
-                      <td><%= image_tag photo.image.url(photo.thumbnail_style) %></td>
-                    <% end %>
-                    </tr>
-                  </table>
-                </p>
-              </div>
-              <div class="meta">
-                <p>
-                </p>
-              </div>
+                <div class="entry">
+                  <p>
+                      <!-- TODO: remove double select -->
+                      <%= image_tag postcard.abverse_image.image.url(postcard.abverse_image.thumbnail_style), :class => 'entry_image' %>
+                    <%=h postcard.description[0..300] << '...' %>
+                  </p>
+                </div>
           </div>
       </div>
   </div>
 <% end %>
-
-<%= link_to 'New postcard', new_postcard_path %>
-
-<%= will_paginate @postcards %>
+<div>
+  <%= will_paginate @postcards, :next_label => 'Następna >>', :previous_label => '<< Poprzednia' %>
+  <br />
+</div>

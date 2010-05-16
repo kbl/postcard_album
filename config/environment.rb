@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem 'will_paginate'
   config.gem 'paperclip'
   config.gem 'annotate'
+  config.gem 'acts-as-taggable-on'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

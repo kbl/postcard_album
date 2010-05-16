@@ -9,10 +9,12 @@ class Postcard < ActiveRecord::Base
   validates_size_of :name, :maximum => 255
   
   cattr_reader :per_page
-  @@per_page = 5
+  @@per_page = 3
 
   accepts_nested_attributes_for :images, :allow_destroy => true
-  
+
+  acts_as_taggable
+
   def self.find_all_paginated(page) 
     paginate(:page => page, :order => 'created_at DESC')
   end
@@ -20,6 +22,10 @@ class Postcard < ActiveRecord::Base
   def orientation
     return :horizontal if is_horizontal?
     :vertical
+  end
+
+  def abverse_image
+    Image.find_by_postcard_id_and_type_of_image(id, 'abverse')
   end
 
 end

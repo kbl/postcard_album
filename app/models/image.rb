@@ -30,8 +30,8 @@ class Image < ActiveRecord::Base
                             :border_outer => 5
                         }
                     },
-                    :path => ':rails_root/public/img/postcards/:id/:style.:extension',
-                    :url => '/img/postcards/:id/:style.:extension'
+                    :path => ':rails_root/public/images/postcards/:id/:style.:extension',
+                    :url => '/images/postcards/:id/:style.:extension'
 
 
   IMAGE_TYPES = %w[abverse reverse stamp other]
