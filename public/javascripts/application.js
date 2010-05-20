@@ -8,3 +8,12 @@ function add_image_fields(link, content) {
   var regexp = new RegExp("new_image", "g");
   $(link).parent().before(content.replace(regexp, new_id)); 
 }
+
+// function used with google maps
+function createMarker(point, html) {
+  var marker = new GMarker(point);
+  GEvent.addListener(marker, "click", function() {
+    marker.openInfoWindowHtml(html);
+  });
+  return marker;
+}

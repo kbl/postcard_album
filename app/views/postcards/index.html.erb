@@ -1,23 +1,18 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'typo', :cache => true %>
+<% end %>
 <% @postcards.each do |postcard| %>
-  <div class="post">
-      <div class="post-bgtop">
-          <div class="post-bgbtm">
-              <h2 class="title"><%= link_to h(postcard.name), postcard %></h2>
-              <p class="byline">
-                <%=h postcard.photo_date %>
-                <%= link_to 'Edytuj', edit_postcard_path(postcard) %>
-                <%= link_to 'Usuń', postcard, :method => :delete, :confirm => 'Czy rzeczywiście chcesz to usunąć?' %>
-              </p>
-                <div class="entry">
-                  <p>
-                      <!-- TODO: remove double select -->
-                      <%= image_tag postcard.abverse_image.image.url(postcard.abverse_image.thumbnail_style), :class => 'entry_image' %>
-                    <%= postcard.description[0..300] << '...' %>
-                  </p>
-                </div>
-          </div>
-      </div>
-  </div>
+  <h2><%= link_to h(postcard.name), postcard %></h2>
+  <p>
+    <%=h postcard.created_at %>
+    <%= link_to 'Edytuj', edit_postcard_path(postcard) %>
+    <%= link_to 'Usuń', postcard, :method => :delete, :confirm => 'Czy rzeczywiście chcesz to usunąć?' %>
+  </p>
+  <p>
+      <!-- TODO: remove double select -->
+    <%= postcard_image_tag postcard, :thumbnail, :class => 'entry_image' %>
+    <%= postcard.description[0..300] << '...' %>
+  </p>
 <% end %>
 <div>
   <%= will_paginate @postcards, :next_label => 'Następna >>', :previous_label => '<< Poprzednia' %>

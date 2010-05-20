@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Postcards: <%= controller.action_name %></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <%= stylesheet_link_tag 'layout/core', 'layout/typo' %>
+    <%= javascript_include_tag 'jquery-1.4.2.min', 'easySlider1.7', 'application', :cache => true %>
+    <%= yield :head %>
+    <script>
+      $(document).ready(function() {
+        $('#slider').easySlider({
+          auto: true,
+          continuous: true,
+          controlsShow: false,
+          speed: 800,
+          pause: 2400
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+
+      <div id="sitename" class="clear">
+        <h1><%= link_to 'Widokówki Mirka Pietraszka', '/' %></h1>
+      </div>
+
+      <div id="navbar">	
+        <div class="clear">
+          <ul class="sf-menu clear">
+            <li class="selected"><% link_to '/' do %><span>strona główna</span><% end %></li>
+            <li><% link_to postcards_url do %><span>widokówki</span><% end %></li>
+            <li><% link_to postcards_url do %><span>odnośniki</span><% end %></li>
+            <li><% link_to postcards_url do %><span>kontakt</span><% end %></li>
+            <li><% link_to postcards_url do %><span>admin</span><% end %></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="header" class="clear">
+        <div class="header-text">
+          <h2>Oleśnica z dawnych lat</h2>
+          <p>[...] w sensie idealnym, nigdy nie mamy do czynienia z historią rzeczywistą ale zawsze z opowiedzianą, z przedstawioną, z taką, jaka - jak ktoś utrzymuje była; taką, w jaką ktoś wierzy</p>
+
+          <p class="header-buttons">
+            <%= link_to 'Kontakt', 'todo_mapi', :class => 'button pngfix' %>
+            <%= link_to 'Widokówki', postcards_url, :class => 'button color-button pngfix' %>
+          </p>
+        </div>
+        <div class="header-images">
+          <div id="slider">
+            <%= yield :slider %>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-bottom"></div>
+
+      <div id="body-wrapper">
+
+        <div class="bcnav">
+
+          <div class="bcnav-left">
+            <div class="bcnav-right clear">
+              <h3>you are here:</h3>
+              <ul class="bcnavlist">
+                <li><a href="#">jakiś</a></li>
+                <li>/</li>
+                <li><a href="#">plugin</a></li>
+                <li>/</li>
+                <li>railsa</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <div id="body" class="clear">
+
+          <div class="clear">
+            <div class="column column-650 column-left">
+              <h2>Słowem wstępu</h2>
+              <p>Witam na stronie poświęconej przedwojennym widokówkom dotyczącym Oleśnicy (<em>Oels</em>) oraz Dobrzenia (<em>Gutwohne</em>). Od jakiegoś czasu zajmuję się kolekcjonowaniem przedwojennych widokówek dotyczących tychże miejscowości, na tej stronie postaram się zaprezentować moje zbiory.</p>
+              <h2>Ostatnio dodana widokówka</h2>
+              <p>
+                <%= yield %>
+              </p>
+            </div>
+            <div id="sidebar" class="column column-240 column-right">
+              <ul>	
+                <li>
+                  <h4>Tagi</h4>
+                  <p>
+                    <small>dobrzeń</small> <big>oleśnica</big> place <small>pałace</small> <big>pomniki</big> <big>budynki</big> <big>wojsko</big> 
+                  </p>
+                </li>
+              </ul> 
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="footer">
+        <p>&copy; 2010. Design by <%= link_to 'Marcin Pietraszek', 'http://marcin.pietraszek.pl' %> &nbsp; | &nbsp; &copy; 2009. Layout by <a href="http://www.spyka.net">Free CSS Templates</a> &amp; <a href="http://www.justfreetemplates.com">Free Web Templates</a></p>
+      </div>
+
+    </div>
+  </body>
+</html>

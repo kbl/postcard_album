@@ -19,15 +19,19 @@ class PostcardTest < ActiveSupport::TestCase
 end
 
 
+
 # == Schema Information
 #
 # Table name: postcards
 #
-#  id          :integer         not null, primary key
-#  name        :string(255)
-#  description :text
-#  photo_date  :date
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  description   :text
+#  photo_date    :date
+#  created_at    :datetime
+#  updated_at    :datetime
+#  is_horizontal :boolean
+#  latitude      :string(255)
+#  longitude     :string(255)
 #
 

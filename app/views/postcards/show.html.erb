@@ -3,20 +3,20 @@
   <%= javascript_include_tag 'jquery.lightbox-0.5.min', :cache => true %>
 <% end %>
 <p>
-  <b>Name:</b>
+  <b>name:</b>
   <%=h @postcard.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>description:</b>
   <%= @postcard.description %>
 </p>
 
 <p>
-  <b>Photo date:</b>
+  <b>photo date:</b>
   <%=h @postcard.photo_date %>
 </p>
 
 
-<%= link_to 'Edit', edit_postcard_path(@postcard) %> |
+<%= link_to 'edit', edit_postcard_path(@postcard) %> |
 <%= link_to 'Back', postcards_path %>

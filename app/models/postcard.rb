@@ -13,6 +13,9 @@ class Postcard < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, :allow_destroy => true
 
+  named_scope :limited, lambda { |lim| { :limit => lim } }
+  named_scope :horizontal, :conditions => {:is_horizontal => true}
+
   acts_as_taggable
 
   def self.find_all_paginated(page) 
@@ -31,15 +34,19 @@ class Postcard < ActiveRecord::Base
 end
 
 
+
 # == Schema Information
 #
 # Table name: postcards
 #
-#  id          :integer         not null, primary key
-#  name        :string(255)
-#  description :text
-#  photo_date  :date
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id            :integer         not null, primary key
+#  name          :string(255)
+#  description   :text
+#  photo_date    :date
+#  created_at    :datetime
+#  updated_at    :datetime
+#  is_horizontal :boolean
+#  latitude      :string(255)
+#  longitude     :string(255)
 #
 

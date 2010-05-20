@@ -1,5 +1,6 @@
 <% content_for :head do %>
   <%= javascript_include_tag 'tiny_mce/tiny_mce', :cache => true %>
+  <%= javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl' %>
   <script type="text/javascript">
     tinyMCE.init({
       mode: 'textareas',
@@ -35,6 +36,46 @@
         <% end %>
         <p>
           <%= link_to_add_image_fields "add image", f %>
+        </p>
+        <p>
+          <div id="map"></div>
+
+          <script type="text/javascript">
+            //<![CDATA[
+            var lastMarker;
+            if (GBrowserIsCompatible()) { 
+
+              function createMarker(point, html) {
+                var marker = new GMarker(point);
+                GEvent.addListener(marker, "click", function() {
+                  marker.openInfoWindowHtml(html);
+                });
+                return marker;
+              }
+
+              var map = new GMap2(document.getElementById("map"));
+              //map.addControl(new GLargeMapControl());
+              //map.addControl(new GMapTypeControl());
+              map.setCenter(new GLatLng(51.209645, 17.379599), 16);
+              map.enableScrollWheelZoom(); 
+
+              GEvent.addListener(map, "click", function(overlay, latlng, overlaylatlng) {
+                if(lastMarker != null) {
+                  map.removeOverlay(lastMarker);
+                }
+                lastMarker = new GMarker(latlng);
+                map.addOverlay(lastMarker);
+                $("#latitude").val(latlng.lat());
+                $("#longitude").val(latlng.lng());
+              });
+            }
+            else {
+              alert("Sory batory, nowsza przeglądarka się kłania!");
+            }
+            //]]>
+          </script>
+          <%= f.text_field :latitude, :hidden => true, :id => 'latitude' %> 
+          <%= f.text_field :longitude, :hidden => true, :id => 'longitude' %> 
         </p>
         <p>
           <%= f.submit 'Create' %>

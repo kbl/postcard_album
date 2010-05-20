@@ -62,6 +62,7 @@ class Image < ActiveRecord::Base
 
 end
 
+
 # == Schema Information
 #
 # Table name: images
@@ -75,6 +76,5 @@ end
 #  created_at         :datetime
 #  updated_at         :datetime
 #  image_updated_at   :datetime
-#  is_horizontal      :boolean
 #
 
