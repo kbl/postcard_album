@@ -31,6 +31,9 @@ th {
 	border-top:3px solid #00254A;
 	background-color:#1E4B78;
 }
+th.important {
+  background-color: red;
+}
 td {
 	background:#fff;
 	border-bottom:1px solid #d0d0d0;

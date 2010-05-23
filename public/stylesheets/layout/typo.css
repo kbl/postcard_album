@@ -9,5 +9,15 @@ ul.slider {
 
 div#map {
   width: 550px;
-  height: 450px;
+  height: 450px
+}
+
+.toggle-link {
+  color: #245289;
+  text-decoration: underline;
+  cursor: hand
+}
+
+.postcard-heading {
+  font-family: Georgia;  
 }
