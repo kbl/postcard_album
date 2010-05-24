@@ -268,7 +268,7 @@ p.header-buttons {
 	margin-top:15px;
 }
 
-p.header-buttons a.button {
+a.button {
 	background:transparent url('/images/layout/button-bg.png') no-repeat scroll top left;
 	color:#2865A2;
 	display:block;
@@ -281,10 +281,10 @@ p.header-buttons a.button {
 	height:31px;
 	padding-top:1px;
 }
-p.header-buttons a.button:hover {
+a.button:hover {
 	background-position:bottom left;
 }
-p.header-buttons a.color-button {
+a.color-button {
 	background:transparent url('/images/layout/button-color-bg.png') no-repeat scroll top left;
 	color:#fff;
 }

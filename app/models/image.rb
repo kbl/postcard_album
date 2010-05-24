@@ -34,7 +34,7 @@ class Image < ActiveRecord::Base
                     :url => '/images/postcards/:id/:style.:extension'
 
 
-  IMAGE_TYPES = %w[abverse reverse stamp other]
+  IMAGE_TYPES = %w[awers rewers stempel inna]
 
   belongs_to :postcard
 

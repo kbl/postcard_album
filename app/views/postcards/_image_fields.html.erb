@@ -1,6 +1,7 @@
 <p class="image_fields">
+  <%= f.label :type_of_image, 'Zdjęcie widokówki' %>
   <%= f.select :type_of_image, Image::IMAGE_TYPES %>
   <%= f.file_field :image %>
   <%= f.hidden_field :_destroy %>
-  <%= link_to_function "remove", "remove_image(this)" %>
+  <%= link_to_function 'usuń', 'removeImage(this)' %>
 </p>

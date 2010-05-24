@@ -1,9 +1,9 @@
-function remove_image(link) {
+function removeImage(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".image_fields").hide();
 }
 
-function add_image_fields(link, content) {
+function addImageFields(link, content) {
   var new_id = new Date().getTime();
   var regexp = new RegExp("new_image", "g");
   $(link).parent().before(content.replace(regexp, new_id)); 
@@ -19,14 +19,38 @@ function createMarker(point, html) {
 }
 
 function drawGoogleMap(latitude, longitude) {
+  drawGoogleMap(latitude, longitude, false);
+}
+
+function drawGoogleMap(latitude, longitude, enableClicking) {
+  var lastMarker;
   if (GBrowserIsCompatible()) { 
     var map = new GMap2(document.getElementById("map"));
     map.addControl(new GLargeMapControl());
     map.addControl(new GMapTypeControl());
-    latLng = new GLatLng(latitude, longitude)
-    map.setCenter(latLng, 16);
     map.enableScrollWheelZoom(); 
-    map.addOverlay(new GMarker(latLng));
+    if(latitude == -1) {
+      // townhall in olesnica
+      latLng = new GLatLng(51.209645, 17.379599);
+    }
+    else {
+      latLng = new GLatLng(latitude, longitude);
+      lastMarker = new GMarker(latLng);
+      map.addOverlay(lastMarker);
+    }
+    map.setCenter(latLng, 16);
+    
+    if(enableClicking) {
+      GEvent.addListener(map, "click", function(overlay, latlng, overlaylatlng) {
+        if(lastMarker != null) {
+          map.removeOverlay(lastMarker);
+        }
+        lastMarker = new GMarker(latlng);
+        map.addOverlay(lastMarker);
+        $("#latitude").val(latlng.lat());
+        $("#longitude").val(latlng.lng());
+      });
+    }
   }
 }
 

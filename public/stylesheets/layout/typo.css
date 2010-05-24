@@ -1,7 +1,3 @@
-.entry_image {
-  float: left
-}
-
 ul.slider {
   list-style-type: none;
   margin: 0px
@@ -20,4 +16,12 @@ div#map {
 
 .postcard-heading {
   font-family: Georgia;  
+}
+
+.right-align {
+  text-align: right
+}
+
+.error {
+  font-color: red;
 }

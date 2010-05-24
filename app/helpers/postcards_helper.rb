@@ -5,7 +5,7 @@ module PostcardsHelper
     fields = f.fields_for(:images, image, :child_index => "new_image") do |builder|
       render("image_fields", :f => builder)
     end
-    link_to_function(name, h("add_image_fields(this, \"#{escape_javascript(fields)}\")"))
+    link_to_function(name, h("addImageFields(this, \"#{escape_javascript(fields)}\")"))
   end
 
 end

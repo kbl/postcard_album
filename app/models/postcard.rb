@@ -9,7 +9,7 @@ class Postcard < ActiveRecord::Base
   validates_size_of :name, :maximum => 255
   
   cattr_reader :per_page
-  @@per_page = 3
+  @@per_page = 5
 
   accepts_nested_attributes_for :images, :allow_destroy => true
 
