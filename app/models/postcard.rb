@@ -28,7 +28,7 @@ class Postcard < ActiveRecord::Base
   end
 
   def abverse_image
-    Image.find_by_postcard_id_and_type_of_image(id, 'abverse')
+    Image.find_by_postcard_id_and_type_of_image(id, Image::IMAGE_TYPES[0])
   end
 
 end

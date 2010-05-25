@@ -3,7 +3,7 @@
   <%= javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl' %>
   <script type="text/javascript">
     $(document).ready(function() {
-      drawGoogleMap(-1, -1, true);
+      drawGoogleMap(-1, 0, true);
 
       tinyMCE.init({
         mode: 'textareas',
@@ -15,8 +15,6 @@
 
 <fieldset>
   <% form_for(@postcard, :html => { :multipart => true }) do |f| %>
-    <%= f.error_messages %>
-
     <p>
       <%= f.label :name, 'Nazwa' %>
       <%= f.text_field :name %>
@@ -34,7 +32,7 @@
       <%= f.date_select :photo_date %>
     </p>
     <% f.fields_for :images do |builder| %>
-      <%= render 'image_fields', :f => builder %>
+      <%= render 'image_fields', :f => builder, :edit_mode => true %>
     <% end %>
     <p>
       <%= link_to_add_image_fields "dodaj zdjęcie", f %>
