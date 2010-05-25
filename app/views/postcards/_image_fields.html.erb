@@ -1,6 +1,6 @@
 <p class="image_fields">
   <%= f.label :type_of_image, 'Zdjęcie widokówki' %>
-  <% if true %>
+  <% if editable %>
     <%= image_tag(f.object.image.url(f.object.thumbnail_style)) %>
   <% else %>
     <%= f.select :type_of_image, Image::IMAGE_TYPES %>

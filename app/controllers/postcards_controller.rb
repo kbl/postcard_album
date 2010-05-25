@@ -43,7 +43,7 @@ class PostcardsController < ApplicationController
     @postcard = Postcard.find(params[:id])
 
     if @postcard.update_attributes(params[:postcard])
-      flash[:notice] = 'Postcard was successfully updated.'
+      flash[:notice] = ' was successfully updated.'
       redirect_to(@postcard)
     else
       render :action => "edit"

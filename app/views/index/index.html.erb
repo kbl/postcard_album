@@ -5,4 +5,4 @@
     <% end %>
   </ul>
 <% end %>
-<%= render '/postcards/postcard', :p => @postcard %>
+<%= render '/postcards/postcard', :p => @postcard if @postcard %>

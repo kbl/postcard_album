@@ -32,10 +32,10 @@
       <%= f.date_select :photo_date %>
     </p>
     <% f.fields_for :images do |builder| %>
-      <%= render 'image_fields', :f => builder, :edit_mode => true %>
+      <%= render :partial => 'image_fields', :locals => { :f => builder, :editable => false } %>
     <% end %>
     <p>
-      <%= link_to_add_image_fields "dodaj zdjęcie", f %>
+      <%= link_to_add_image_fields "dodaj zdjęcie", f, false %>
     </p>
     <p>
       <%= f.label :longitude, 'Mapa' %>
