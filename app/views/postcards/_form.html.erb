@@ -3,12 +3,18 @@
   <%= javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl' %>
   <script type="text/javascript">
     $(document).ready(function() {
-      drawGoogleMap(-1, 0, true);
+      <%= draw_google_map @postcard, true %>
 
       tinyMCE.init({
         mode: 'textareas',
         language: 'pl'
       });
+
+      jQuery('#checkbox-map').change(function() {
+        jQuery('#map').toggle('slow');
+      });
+
+      jQuery('#map').hide();
     });
   </script>
 <% end %>
@@ -21,7 +27,7 @@
     </p>
     <p>
       <%= f.label :description, 'Opis' %>
-      <%= f.text_area :description, :cols => 66, :rows => 20 %>
+      <%= f.text_area :description, :cols => 64, :rows => 20 %>
     </p>
     <p>
       <%= f.label :is_horizontal, 'Czy pozioma' %>
@@ -39,6 +45,7 @@
     </p>
     <p>
       <%= f.label :longitude, 'Mapa' %>
+      <input type="checkbox" id="checkbox-map"> pokaż mapę</input>
       <div id="map"></div>
       <%= f.hidden_field :latitude, :id => 'latitude' %> 
       <%= f.hidden_field :longitude, :id => 'longitude' %> 

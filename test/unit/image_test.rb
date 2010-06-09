@@ -33,7 +33,7 @@ class ImageTest < ActiveSupport::TestCase
   end
 
   test "image type should contain certain set of symbols" do
-    valid_image_types = %w[abverse reverse stamp other]
+    valid_image_types = %w[awers rewers stempel inna]
     assert Image::IMAGE_TYPES & valid_image_types == valid_image_types
   end
 
@@ -44,13 +44,13 @@ class ImageTest < ActiveSupport::TestCase
   end 
 
   test "should find only abverse images" do
-    2.times { Factory(:image, :type_of_image => 'reverse') }
-    2.times { Factory(:image, :type_of_image => 'abverse') }
+    2.times { Factory(:image, :type_of_image => 'rewers') }
+    2.times { Factory(:image, :type_of_image => 'awers') }
 
     abverses = Image.abverse
     assert_not_nil abverses
-    assert abverses.size >= 2
-    assert abverses.select { |a| a.type_of_image != 'abverse' }.empty?
+    assert abverses.size >= 2, 'should find at least two images'
+    assert abverses.select { |a| a.type_of_image != 'awers' }.empty?, 'should find only abverse image'
   end
   
 end
