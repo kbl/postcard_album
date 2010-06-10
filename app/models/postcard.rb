@@ -36,6 +36,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: postcards
@@ -43,11 +44,11 @@ end
 #  id            :integer         not null, primary key
 #  name          :string(255)
 #  description   :text
-#  photo_date    :date
 #  created_at    :datetime
 #  updated_at    :datetime
 #  is_horizontal :boolean
 #  latitude      :string(255)
 #  longitude     :string(255)
+#  year          :integer
 #
 

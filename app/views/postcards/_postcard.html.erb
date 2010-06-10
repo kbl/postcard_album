@@ -5,8 +5,8 @@
   <script type="text/javascript">
     $(document).ready(function() { 
         setUpShadowbox(); 
-        <% if p.longitude %>
-        drawGoogleMap(<%= p.latitude %>, <%= p.longitude %>);
+        <% unless p.longitude.blank? %>
+          <%= draw_google_map p, false %>
         <% end %>
         $('#toggleMap').click(function () {
           $('#map').toggle('slow')
@@ -25,7 +25,7 @@
     </tr>
     <tr>
       <td>Data widokówki</td>
-      <td><%=h p.photo_date %></td>
+      <td><%=h p.year %></td>
     </tr>
     <tr>
       <td>Zdjęcia widokówki</td>
@@ -39,7 +39,7 @@
         </div>
       </td>
     </tr>
-    <% if p.longitude %>
+    <% unless p.longitude.blank? %>
       <tr>
         <td>Położenie</td>
         <td><span class="toggle-link" id="toggleMap">Pokaż\ukryj mapę</span><div id="map"></div>

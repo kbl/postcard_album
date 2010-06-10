@@ -11,5 +11,10 @@ class PostcardsHelperTest < ActionView::TestCase
     postcard = Factory(:postcard, :longitude => 12, :latitude => 65.53)
     assert 'drawGoogleMap(65.53, 12, false);' == draw_google_map(postcard, false)
   end
+  
+  test "should return map for empty longitude string" do
+    postcard = Factory(:postcard, :longitude => "", :latitude => "")
+    assert 'drawGoogleMap(-1, -1, true);' == draw_google_map(postcard, true)
+  end
 
 end

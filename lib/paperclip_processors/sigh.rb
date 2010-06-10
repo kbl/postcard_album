@@ -18,10 +18,9 @@ module Paperclip
       text = Magick::Draw.new
       text.annotate(img, 0, 0, 0, img.rows - 20, @options[:signature]) do
         self.align = Magick::LeftAlign
-        self.pointsize = 18
-        self.stroke_width = 0
-        self.fill = 'white'
-        self.undercolor = 'gray'
+        self.pointsize = 30
+        self.stroke_width = 2
+        self.fill = 'red'
       end
       destination = Tempfile.new([@basename, @extension].compact.join('.'))
       destination.binmode

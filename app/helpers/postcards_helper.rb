@@ -12,6 +12,10 @@ module PostcardsHelper
     latitude = postcard.latitude || -1
     longitude = postcard.longitude || -1
     
+    # TODO get rid of double assignment
+    latitude = -1 if latitude.blank?
+    longitude = -1 if longitude.blank?
+    
     "drawGoogleMap(#{latitude}, #{longitude}, #{map_clicable});"
   end
 
