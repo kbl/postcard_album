@@ -26,13 +26,7 @@
 
       <div id="navbar">	
         <div class="clear">
-          <ul class="sf-menu clear">
-            <li class="selected"><% link_to '/' do %><span>strona główna</span><% end %></li>
-            <li><% link_to postcards_url do %><span>widokówki</span><% end %></li>
-            <li><% link_to postcards_url do %><span>odnośniki</span><% end %></li>
-            <li><% link_to postcards_url do %><span>kontakt</span><% end %></li>
-            <li><% link_to postcards_url do %><span>admin</span><% end %></li>
-          </ul>
+          <%= render_navigation %>
         </div>
       </div>
 
