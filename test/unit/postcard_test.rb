@@ -16,6 +16,23 @@ class PostcardTest < ActiveSupport::TestCase
     assert !postcard.valid?
   end
 
+  test "should not save poscard with year before 1800" do
+    postcard = Factory.build(:postcard, :year => 1799)
+    
+    assert !postcard.valid?
+  end
+  
+  test "should not save postcard with year after 2000" do
+    postcard =  Factory.build(:postcard, :year => 2010)
+
+    assert !postcard.valid?
+  end
+
+  test "should save postcard made by factory" do
+    postcard = Factory(:postcard)
+    assert postcard.valid?
+  end
+
 end
 
 

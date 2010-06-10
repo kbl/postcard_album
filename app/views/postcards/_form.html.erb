@@ -34,8 +34,8 @@
       <%= f.check_box :is_horizontal %>
     </p>
     <p>
-      <%= f.label :photo_date, 'Data zdjęcia' %>
-      <%= f.date_select :photo_date %>
+      <%= f.label :year, 'Rok zdjęcia' %>
+      <%= f.text_field :year %>
     </p>
     <% f.fields_for :images do |builder| %>
       <%= render :partial => 'image_fields', :locals => { :f => builder, :editable => false } %>

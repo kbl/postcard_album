@@ -4,9 +4,10 @@ class Postcard < ActiveRecord::Base
 
   validates_presence_of :description, 
                         :name,
-                        :photo_date
+                        :year
   validates_inclusion_of :is_horizontal, :in => [true, false]
   validates_size_of :name, :maximum => 255
+  validates_numericality_of :year, :only_integer => true, :greater_than => 1800, :less_than => 2000
   
   cattr_reader :per_page
   @@per_page = 5
