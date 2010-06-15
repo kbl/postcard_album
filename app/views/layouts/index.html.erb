@@ -27,8 +27,8 @@
 
       <div id="header" class="clear">
         <div class="header-text">
-          <h2>Oleśnica z dawnych lat</h2>
-          <p>[...] w sensie idealnym, nigdy nie mamy do czynienia z historią rzeczywistą ale zawsze z opowiedzianą, z przedstawioną, z taką, jaka - jak ktoś utrzymuje była; taką, w jaką ktoś wierzy</p>
+          <h2><%= t :v_index_main_title %></h2>
+          <p><%= t :v_index_famous_quotation %></p>
 
           <p class="header-buttons">
             <%= link_to 'Kontakt', 'todo_mapi', :class => 'button pngfix' %>
@@ -49,9 +49,9 @@
 
           <div class="clear">
             <div class="column column-650 column-left">
-              <h2>Słowem wstępu</h2>
-              <p>Witam na stronie poświęconej przedwojennym widokówkom dotyczącym Oleśnicy (<em>Oels</em>) oraz Dobrzenia (<em>Gutwohne</em>). Od jakiegoś czasu zajmuję się kolekcjonowaniem przedwojennych widokówek dotyczących tychże miejscowości, na tej stronie postaram się zaprezentować moje zbiory.</p>
-              <h2>Ostatnio dodana widokówka</h2>
+              <h2><%= t :v_index_subtitle %></h2>
+              <p><%= t :v_index_description %></p>
+              <h2><%= t :v_index_last_added_postcard %></h2>
               <p>
                 <%= yield %>
               </p>
