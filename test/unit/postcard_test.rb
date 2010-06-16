@@ -10,12 +10,6 @@ class PostcardTest < ActiveSupport::TestCase
     assert Postcard.find_all_paginated(page_number = 1).size == Postcard.per_page, "should return collection with size of page results" 
   end 
 
-  test "shouldn save without is_horizontal flag" do
-    postcard = Factory.build(:postcard, :is_horizontal => nil)
-
-    assert !postcard.valid?
-  end
-
   test "should not save poscard with year before 1800" do
     postcard = Factory.build(:postcard, :year => 1799)
     
@@ -31,6 +25,19 @@ class PostcardTest < ActiveSupport::TestCase
   test "should save postcard made by factory" do
     postcard = Factory(:postcard)
     assert postcard.valid?
+  end
+
+  test "shuould be horizontal by default" do
+    p = Postcard.new
+    assert p.is_horizontal
+    assert p.is_horizontal?
+  end
+
+  test "should cound is_horizontal assigment" do
+    p = Postcard.new
+    p.is_horizontal = false
+    assert !p.is_horizontal
+    assert !p.is_horizontal?
   end
 
 end

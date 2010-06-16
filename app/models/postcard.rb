@@ -18,6 +18,15 @@ class Postcard < ActiveRecord::Base
   named_scope :horizontal, :conditions => {:is_horizontal => true}
 
   acts_as_taggable
+  
+  def is_horizontal
+    return true if self[:is_horizontal].nil?
+    self[:is_horizontal]
+  end
+
+  def is_horizontal?
+    is_horizontal
+  end
 
   def self.find_all_paginated(page) 
     paginate(:page => page, :order => 'created_at DESC')
