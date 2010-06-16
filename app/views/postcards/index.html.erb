@@ -19,7 +19,7 @@
     <% end %>
     <tr>
       <td colspan="2" class="right-align">
-        <%= will_paginate @postcards, :next_label => 'Następna >>', :previous_label => '<< Poprzednia' %>
+        <%= will_paginate @postcards, :next_label => t(:v_next), :previous_label => t(:v_previous) %>
       </td>
     </tr>
   </tbody>

@@ -1,0 +1,5 @@
+pl:
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'rekord nie jest prawidłowy!'

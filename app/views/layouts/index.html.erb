@@ -16,7 +16,7 @@
     <div id="wrapper">
 
       <div id="sitename" class="clear">
-        <h1><%= link_to 'Widokówki Mirka Pietraszka', '/' %></h1>
+        <h1><%= link_to t(:v_page_title), '/' %></h1>
       </div>
 
       <div id="navbar">	
@@ -31,8 +31,8 @@
           <p><%= t :v_index_famous_quotation %></p>
 
           <p class="header-buttons">
-            <%= link_to 'Kontakt', 'todo_mapi', :class => 'button pngfix' %>
-            <%= link_to 'Widokówki', postcards_url, :class => 'button color-button pngfix' %>
+            <%= link_to t(:nav_contact), 'todo_mapi', :class => 'button pngfix' %>
+            <%= link_to t(:nav_postcards), postcards_url, :class => 'button color-button pngfix' %>
           </p>
         </div>
         <div class="header-images">
@@ -59,7 +59,7 @@
             <div id="sidebar" class="column column-240 column-right">
               <ul>	
                 <li>
-                  <h4>Tagi</h4>
+                  <h4><%= t :v_index_tags %></h4>
                   <p>
                     <small>dobrzeń</small> <big>oleśnica</big> place <small>pałace</small> <big>pomniki</big> <big>budynki</big> <big>wojsko</big> 
                   </p>

@@ -1,5 +1,5 @@
 <p class="image_fields">
-  <%= f.label :type_of_image, 'Zdjęcie widokówki' %>
+  <%= f.label :type_of_image, t(:v_postcards_photo) %>
   <% if editable %>
     <%= image_tag(f.object.image.url(f.object.thumbnail_style)) %>
   <% else %>
@@ -7,5 +7,5 @@
     <%= f.file_field :image %>
   <% end %>
   <%= f.hidden_field :_destroy %>
-  <%= link_to_function 'usuń', 'removeImage(this)' %>
+  <%= link_to_function t(:v_delete), 'removeImage(this)' %>
 </p>

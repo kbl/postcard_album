@@ -20,15 +20,15 @@
 <table>
   <tbody>
     <tr>
-      <td style="width: 20%">Opis</td>
+      <td style="width: 20%"><%= t :v_postcards_description %></td>
       <td><%= p.description %></td>
     </tr>
     <tr>
-      <td>Data widokówki</td>
+      <td><%= t :v_postcards_year %></td>
       <td><%=h p.year %></td>
     </tr>
     <tr>
-      <td>Zdjęcia widokówki</td>
+      <td><%= t :v_postcards_photos %></td>
       <td>
         <div>
           <% p.images.each do |i| %>
@@ -41,16 +41,16 @@
     </tr>
     <% unless p.longitude.blank? %>
       <tr>
-        <td>Położenie</td>
-        <td><span class="toggle-link" id="toggleMap">Pokaż\ukryj mapę</span><div id="map"></div>
+        <td><%= t :v_postcards_localization %></td>
+        <td><span class="toggle-link" id="toggleMap"><%= t :v_postcards_show_map %></span><div id="map"></div>
         </td>
       </tr>
     <% end %>
     <tr>
-      <th class="important">Akcja</th> 
+      <th class="important" /> 
       <td>
-        <%= link_to 'Edytuj', edit_postcard_path(@postcard) %>
-        <%= link_to 'Usuń', @postcard, :method => :delete, :confirm => 'Czy rzeczywiście chcesz to usunąć?' %>
+        <%= link_to t(:v_edit), edit_postcard_path(@postcard) %>
+        <%= link_to t(:v_delete), @postcard, :method => :delete, :confirm => t(:v_delete_confirmation) %>
     </tr>
   </tbody>
 </table>
