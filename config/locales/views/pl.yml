@@ -2,6 +2,7 @@ pl:
   v_add: 'Dodaj'
   v_edit: 'Edytuj'
   v_delete: 'Usuń'
+  v_show: 'Pokaż'
   v_delete_confirmation: 'Czy rzeczywiście chcesz usunąć ten element?'
   v_page_title: 'Widokowki Mirka Pietraszka'
   v_back: 'Wstecz'

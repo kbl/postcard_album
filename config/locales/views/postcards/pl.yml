@@ -1,5 +1,6 @@
 pl:
   v_postcards_new: 'Dodaj nową widokówkę'
+  v_postcards_edit: 'Edytuj widokówkę'
   v_postcards_name: 'Nazwa' 
   v_postcards_description: 'Opis'
   v_postcards_orientation: 'Czy pozioma?'
@@ -10,3 +11,4 @@ pl:
   v_postcards_photo: 'Zdjęcie widokówki'
   v_postcards_photos: 'Zdjęcia widokówki'
   v_postcards_localization: 'Położenie'
+  v_postcards_was_added: 'dodano'
