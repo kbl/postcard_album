@@ -1,5 +1,11 @@
 class Image < ActiveRecord::Base
 
+
+  SIGNATURE = 'widokowki.pietraszek.pl'
+
+  IMAGE_TYPES = %w[abverse reverse stamp other]
+  
+
   has_attached_file :image,
                     :processors => [:resize, :sign, :add_border],
                     :styles => { 
@@ -8,14 +14,14 @@ class Image < ActiveRecord::Base
                             :height => 300,
                             :border_inner => 3,
                             :border_outer => 15,
-                            :signature => '    marcin.pietraszek.pl '
+                            :signature => SIGNATURE
                         }, 
                         :normal_vertical => { 
                             :width => 300,
                             :height => 450,
                             :border_inner => 3,
                             :border_outer => 15,
-                            :signature => '    marcin.pietraszek.pl '
+                            :signature => SIGNATURE
                         }, 
                         :thumbnail_horizontal => {
                             :width => 90,
@@ -33,9 +39,6 @@ class Image < ActiveRecord::Base
                     :path => ':rails_root/public/images/postcards/:id/:style.:extension',
                     :url => '/images/postcards/:id/:style.:extension'
 
-
-  IMAGE_TYPES = %w[awers rewers stempel inna]
-
   belongs_to :postcard
 
   validates_presence_of :type_of_image,
@@ -48,7 +51,7 @@ class Image < ActiveRecord::Base
   validates_attachment_presence :image
   #validates_attachment_size :image, :less_than => 50.kilobytes
 
-  named_scope :abverse, :conditions => { :type_of_image => 'awers' }
+  named_scope :abverse, :conditions => { :type_of_image => 'abverse' }
 
 
 
@@ -60,10 +63,11 @@ class Image < ActiveRecord::Base
     style :normal
   end
 
+  
   private
 
   def style(type)
-    if type_of_image == 'rewers'
+    if type_of_image == 'reverse'
       "#{type}_horizontal".to_sym
     else
       "#{type}_#{postcard.orientation}".to_sym

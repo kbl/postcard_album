@@ -33,7 +33,7 @@ class ImageTest < ActiveSupport::TestCase
   end
 
   test "image type should contain certain set of symbols" do
-    valid_image_types = %w[awers rewers stempel inna]
+    valid_image_types = %w[abverse reverse stamp other]
     assert Image::IMAGE_TYPES & valid_image_types == valid_image_types
   end
 
@@ -44,35 +44,35 @@ class ImageTest < ActiveSupport::TestCase
   end 
 
   test "should find only abverse images" do
-    2.times { Factory(:image, :type_of_image => 'rewers') }
-    2.times { Factory(:image, :type_of_image => 'awers') }
+    2.times { Factory(:image, :type_of_image => 'reverse') }
+    2.times { Factory(:image, :type_of_image => 'abverse') }
 
     abverses = Image.abverse
     assert_not_nil abverses
     assert abverses.size >= 2, 'should find at least two images'
-    assert abverses.select { |a| a.type_of_image != 'awers' }.empty?, 'should find only abverse image'
+    assert abverses.select { |a| a.type_of_image != 'abverse' }.empty?, 'should find only abverse image'
   end
 
   test "should return normal horizontal style for abverse" do
-    image = Factory(:image, :type_of_image => 'awers')
+    image = Factory(:image, :type_of_image => 'abverse')
     assert image.normal_style == :normal_horizontal
   end
   
   test "should return normal horizontal style for reverse" do
-    image = Factory(:image, :type_of_image => 'rewers')
+    image = Factory(:image, :type_of_image => 'reverse')
     assert image.normal_style == :normal_horizontal
   end
   
   test "should return normal vertical style for abverse" do
     postcard = Factory(:postcard, :is_horizontal => false)
-    image = Factory(:image, :postcard => postcard, :type_of_image => 'awers')
+    image = Factory(:image, :postcard => postcard, :type_of_image => 'abverse')
 
     assert image.normal_style == :normal_vertical
   end
 
   test "should return normal vertical style for reverse" do
     postcard = Factory(:postcard, :is_horizontal => false)
-    image = Factory(:image, :postcard => postcard, :type_of_image => 'rewers')
+    image = Factory(:image, :postcard => postcard, :type_of_image => 'reverse')
 
     assert image.normal_style == :normal_horizontal
   end
