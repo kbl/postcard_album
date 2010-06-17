@@ -1,7 +1,7 @@
 <% content_for :slider do %>
   <ul class="slider">
     <% @newest_postcards.each do |p| %>
-      <li><%= postcard_image_tag p, :normal, :width => 300, :height => 207, :style => 'border: 0px'%></li>
+      <li><%= postcard_abverse_image_tag p, :normal, :width => 300, :height => 207, :style => 'border: 0px'%></li>
     <% end %>
   </ul>
 <% end %>

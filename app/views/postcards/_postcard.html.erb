@@ -31,11 +31,7 @@
       <td><%= t :v_postcards_photos %></td>
       <td>
         <div>
-          <% p.images.each do |i| %>
-            <% link_to i.image.url(i.normal_style), :class => 'lightbox', :rel => 'shadowbox' do %>
-              <%= image_tag i.image.url(i.thumbnail_style) %>
-            <% end %>
-          <% end %>
+          <% postcard_images_lightbox(p.images, :class => 'lightbox', :rel => 'shadowbox') %>
         </div>
       </td>
     </tr>

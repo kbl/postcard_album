@@ -52,6 +52,30 @@ class ImageTest < ActiveSupport::TestCase
     assert abverses.size >= 2, 'should find at least two images'
     assert abverses.select { |a| a.type_of_image != 'awers' }.empty?, 'should find only abverse image'
   end
+
+  test "should return normal horizontal style for abverse" do
+    image = Factory(:image, :type_of_image => 'awers')
+    assert image.normal_style == :normal_horizontal
+  end
+  
+  test "should return normal horizontal style for reverse" do
+    image = Factory(:image, :type_of_image => 'rewers')
+    assert image.normal_style == :normal_horizontal
+  end
+  
+  test "should return normal vertical style for abverse" do
+    postcard = Factory(:postcard, :is_horizontal => false)
+    image = Factory(:image, :postcard => postcard, :type_of_image => 'awers')
+
+    assert image.normal_style == :normal_vertical
+  end
+
+  test "should return normal vertical style for reverse" do
+    postcard = Factory(:postcard, :is_horizontal => false)
+    image = Factory(:image, :postcard => postcard, :type_of_image => 'rewers')
+
+    assert image.normal_style == :normal_horizontal
+  end
   
 end
 

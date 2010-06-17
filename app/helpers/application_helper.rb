@@ -1,7 +1,6 @@
-# Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   
-  def postcard_image_tag(postcard, type, options = {})
+  def postcard_abverse_image_tag(postcard, type, options = {})
     # todo normal way.. without if
     unless abverse = postcard.abverse_image 
       return
@@ -11,6 +10,14 @@ module ApplicationHelper
       image_tag(abverse.image.url(abverse.thumbnail_style), options)
     else
       image_tag(abverse.image.url(abverse.normal_style), options)
+    end
+  end
+
+  def postcard_images_lightbox(images, options)
+    images.each do |i|
+      link_to i.image.url(i.normal_style), options do
+        image_tag i.image.url(i.thumbnail_style)
+      end
     end
   end
 

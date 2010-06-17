@@ -53,11 +53,21 @@ class Image < ActiveRecord::Base
 
 
   def thumbnail_style
-    "thumbnail_#{postcard.orientation}".to_sym
+    style :thumbnail
   end
   
   def normal_style
-    "normal_#{postcard.orientation}".to_sym
+    style :normal
+  end
+
+  private
+
+  def style(type)
+    if type_of_image == 'rewers'
+      "#{type}_horizontal".to_sym
+    else
+      "#{type}_#{postcard.orientation}".to_sym
+    end
   end
 
 end

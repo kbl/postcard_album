@@ -7,7 +7,7 @@
     <% @postcards.each do |postcard| %>
       <tr>
         <td>
-          <%= postcard_image_tag postcard, :thumbnail, :class => 'image' %>
+          <%= postcard_abverse_image_tag postcard, :thumbnail, :class => 'image' %>
         </td>
         <td>
           <h3><%= link_to h(postcard.name), postcard %></h3>

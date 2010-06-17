@@ -40,6 +40,16 @@ class PostcardTest < ActiveSupport::TestCase
     assert !p.is_horizontal?
   end
 
+  test "should return horizontal orientation" do
+    p = Factory(:postcard, :is_horizontal => true)
+    assert :horizontal == p.orientation
+  end
+
+  test "should return vertical orientation" do
+    p = Factory(:postcard, :is_horizontal => false)
+    assert :vertical == p.orientation
+  end
+
 end
 
 
