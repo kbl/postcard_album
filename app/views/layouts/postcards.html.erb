@@ -54,7 +54,7 @@
                 <li>
                   <h4><%= t :v_index_tags %></h4>
                   <p>
-                    <small>dobrzeń</small> <big>oleśnica</big> place <small>pałace</small> <big>pomniki</big> <big>budynki</big> <big>wojsko</big> 
+                    <%= render :partial => 'index/tag_cloud', :locals => {:tags => @tags} %>
                   </p>
                 </li>
               </ul> 

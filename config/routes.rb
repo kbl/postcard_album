@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :postcards
   map.resources :index
+  map.resources :tags
 
   # The priority is based upon order of creation: first created -> highest priority.
 

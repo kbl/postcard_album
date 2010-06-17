@@ -13,7 +13,7 @@
           <h3><%= link_to h(postcard.name), postcard %></h3>
           <%= t :v_postcards_was_added %> <%= postcard.created_at %>
           <%= link_to t(:v_edit), edit_postcard_path(postcard) %>
-          <%= link_to t(:v_detelte), postcard, :method => :delete, :confirm => t(:v_delete_confirmateion) %>
+          <%= link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmateion) %>
         </td>
       </tr>
     <% end %>

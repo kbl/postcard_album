@@ -62,7 +62,7 @@ function setUpShadowbox() {
       Shadowbox.setup(
         'a.lightbox', 
         { gallery: 'postcards',
-          continuous: true})
+          continuous: true});
   });
 }
 

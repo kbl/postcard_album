@@ -25,3 +25,20 @@ div#map {
 .error {
   font-color: red;
 }
+
+a.cloud-tiny {
+  font-size: 0.8em
+}
+
+a.cloud-small {
+  font-size: 1em
+}
+
+a.cloud-normal {
+  font-size: 1.2em
+}
+
+a.cloud-big {
+  font-size: 1.4em
+}
+

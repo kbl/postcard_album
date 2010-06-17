@@ -1,4 +1,6 @@
 module ApplicationHelper
+
+  include ActsAsTaggableOn::TagsHelper
   
   def postcard_abverse_image_tag(postcard, type, options = {})
     # todo normal way.. without if

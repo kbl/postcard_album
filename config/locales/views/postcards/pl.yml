@@ -4,6 +4,7 @@ pl:
   v_postcards_name: 'Nazwa' 
   v_postcards_description: 'Opis'
   v_postcards_orientation: 'Czy pozioma?'
+  v_postcards_tags: 'Tagi'
   v_postcards_year: 'Rok widokówki'
   v_postcards_add_image: 'dodaj zdjęcie'
   v_postcards_map: 'Mapa'

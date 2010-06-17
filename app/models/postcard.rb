@@ -28,10 +28,6 @@ class Postcard < ActiveRecord::Base
     is_horizontal
   end
 
-  def self.find_all_paginated(page) 
-    paginate(:page => page, :order => 'created_at DESC')
-  end
-
   def orientation
     return :horizontal if is_horizontal?
     :vertical

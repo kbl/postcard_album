@@ -44,6 +44,10 @@
       <%= link_to_add_image_fields t(:v_postcards_add_image), f, false %>
     </p>
     <p>
+      <%= f.label :tag_list, t(:v_postcards_tags) %>
+      <%= f.text_field :tag_list %>
+    </p>
+    <p>
       <%= f.label :longitude, t(:v_postcards_map) %>
       <input type="checkbox" id="checkbox-map"><%= t :v_postcards_show_map %></input>
       <div id="map"></div>

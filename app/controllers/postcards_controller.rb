@@ -1,9 +1,12 @@
 class PostcardsController < ApplicationController
 
+  before_filter :set_navigation
+
+
   # GET /postcards
   # GET /postcards.xml
   def index
-    @postcards = Postcard.find_all_paginated(params[:page])
+    @postcards = Postcard.paginate(:page => params[:page], :order => 'created_at DESC')
   end
 
   # GET /postcards/1
@@ -57,6 +60,12 @@ class PostcardsController < ApplicationController
     @postcard.destroy
 
     redirect_to(postcards_url)
+  end
+  
+  private
+
+  def set_navigation
+    current_navigation :postcards    
   end
 
 end
