@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
 
-  def show
+  def index
     @postcards = Postcard.tagged_with(params[:id]).paginate(:page => params[:page], :order => 'created_at DESC')
 
     current_navigation :postcards
