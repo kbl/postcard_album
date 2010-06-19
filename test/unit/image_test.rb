@@ -14,22 +14,16 @@ class ImageTest < ActiveSupport::TestCase
     assert !image.valid?
   end
   
-  test "shouldnt write without content type" do
+  test "should write without content type" do
     image = Factory.build(:image, :image_content_type => nil)
 
-    assert !image.valid?
+    assert image.valid?
   end
 
-  test "shouldnt write without file size" do
+  test "should write without file size" do
     image = Factory.build(:image, :image_file_size => nil)
 
-    assert !image.valid?
-  end
-
-  test "shouldnt write without updated ad" do
-    image = Factory.build(:image, :image_updated_at => nil)
-
-    assert !image.valid?
+    assert image.valid?
   end
 
   test "image type should contain certain set of symbols" do
