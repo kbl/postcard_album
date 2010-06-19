@@ -33,7 +33,7 @@ class PostcardsController < ApplicationController
     @postcard = Postcard.new(params[:postcard])
 
     if @postcard.save
-      flash[:notice] = 'Postcard was successfully created.'
+      flash[:notice] = t :postcard_was_created
       redirect_to(@postcard)
     else
       render :action => "new"
@@ -46,7 +46,7 @@ class PostcardsController < ApplicationController
     @postcard = Postcard.find(params[:id])
 
     if @postcard.update_attributes(params[:postcard])
-      flash[:notice] = ' was successfully updated.'
+      flash[:notice] = t :postcard_was_updated
       redirect_to(@postcard)
     else
       render :action => "edit"

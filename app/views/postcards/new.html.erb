@@ -1,5 +1,5 @@
 <h2><%= t :v_postcards_new %></h2>
 
-<%= render :partial => 'form', :locals => { :button_label => t(:v_add) } %>
+<%= render :partial => 'form', :locals => { :button_label => t(:v_add), :editable => false } %>
 
 <%= link_to t(:v_back), postcards_path %>

@@ -41,10 +41,10 @@
       <%= f.text_field :year %>
     </p>
     <% f.fields_for :images do |builder| %>
-      <%= render :partial => 'image_fields', :locals => { :f => builder, :editable => false } %>
+      <%= render :partial => 'image_fields', :locals => { :f => builder, :editable => editable } %>
     <% end %>
     <p>
-      <%= link_to_add_image_fields t(:v_postcards_add_image), f, false %>
+      <%= link_to_add_image_fields  f, { :name => t(:v_postcards_add_image), :editable => false } %>
     </p>
     <p>
       <%= f.label :tag_list, t(:v_postcards_tags) %>
