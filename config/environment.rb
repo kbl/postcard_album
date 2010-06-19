@@ -48,4 +48,7 @@ Rails::Initializer.run do |config|
   config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
   config.i18n.default_locale = :pl
 
+  # Different tag around error fields
+  ActionView::Base.field_error_proc = Proc.new { |html_tag, instance| "<span class='field-with-errors'>#{html_tag}</span>" }
+
 end

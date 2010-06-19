@@ -1,0 +1,5 @@
+pl:
+  activerecord:
+    attributes:
+      image:
+        image_file_name: 'Obrazek z widokówką'

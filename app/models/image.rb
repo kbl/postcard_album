@@ -41,11 +41,7 @@ class Image < ActiveRecord::Base
 
   belongs_to :postcard
 
-  validates_presence_of :type_of_image,
-                        :image_file_name,
-                        :image_content_type,
-                        :image_file_size,
-                        :image_updated_at
+  validates_presence_of :image_file_name
   validates_associated :postcard
   validates_inclusion_of :type_of_image, :in => Image::IMAGE_TYPES
   validates_attachment_presence :image

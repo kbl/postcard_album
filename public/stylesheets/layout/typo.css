@@ -42,3 +42,8 @@ a.cloud-big {
   font-size: 1.4em
 }
 
+.field-with-errors {
+  font-weight: bold;
+  color: red;
+  background-color: red
+}

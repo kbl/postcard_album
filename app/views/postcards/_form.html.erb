@@ -21,6 +21,9 @@
 
 <fieldset>
   <% form_for(@postcard, :html => { :multipart => true }) do |f| %>
+    <% unless f.error_messages.empty? %>
+      <%= f.error_messages %>
+    <% end %>
     <p>
       <%= f.label :name, t(:v_postcards_name) %>
       <%= f.text_field :name %>

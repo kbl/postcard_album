@@ -1,5 +1,26 @@
 pl:
   activerecord:
     errors:
+      template:
+        header: ''
+        body: ''
       messages:
-        record_invalid: 'rekord nie jest prawidłowy!'
+        inclusion: 'nie jest zawarte w liście'
+        exclusion: 'jest zarezerwowane'
+        invalid: 'jest błędne'
+        confirmation: 'nie pasują do siebie'
+        accepted: 'musi być zaakceptowany'
+        empty: 'nie może być pusty'
+        blank: 'nie może być pusty'
+        too_long: 'jest za długie (maksimum to {{count}} znaków)'
+        too_short: 'jest za krótkie (minimum to {{count}} znaków)'
+        wrong_length: 'ma złą długość (powino mieć {{count}} znaków)'
+        taken: 'jest już zajęty'
+        not_a_number: 'nie jest liczbą'
+        greater_than: 'musi być większe niż {{count}}'
+        greater_than_or_equal_to: 'musi być większe bądź równe {{count}}'
+        equal_to: 'musi być równe {{count}}'
+        less_than: 'musi być mniejsze niż {{count}}'
+        less_than_or_equal_to: 'musi być mniejsze bądź równe {{count}}'
+        odd: 'musi być nieparzyste'
+        even: 'musi być parzyste'
