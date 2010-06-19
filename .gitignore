@@ -6,3 +6,4 @@ RECYCLER
 log/*.log
 public/system/**
 public/images/postcards/**
+postcards/**
