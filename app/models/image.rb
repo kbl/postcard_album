@@ -5,10 +5,15 @@ class Image < ActiveRecord::Base
 
   IMAGE_TYPES = %w[abverse reverse stamp other]
   
-
+  # TODO get rid of 4 styles..
   has_attached_file :image,
                     :processors => [:resize, :sign, :add_border],
                     :styles => { 
+                        # protection from stealing original images, only signed will be available for everone
+                        :original => {
+                          :width => 1,
+                          :height => 1
+                        },
                         :normal_horizontal => { 
                             :width => 450,
                             :height => 300,
