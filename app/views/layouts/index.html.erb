@@ -59,10 +59,10 @@
             <div id="sidebar" class="column column-240 column-right">
               <ul>	
                 <li>
-                  <h4><%= t :v_index_tags %></h4>
-                  <p>
-                    <%= render :partial => 'tag_cloud', :locals => { :tags => @tags } %>
-                  </p>
+                  <%= render :partial => 'tag_cloud', :locals => { :tags => @tags } %>
+                </li>
+                <li>
+                  <%= render :partial => 'actions' %>
                 </li>
               </ul> 
             </div>

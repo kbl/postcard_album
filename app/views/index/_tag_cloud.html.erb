@@ -1,3 +1,6 @@
-<% tag_cloud(tags, %w[cloud-tiny cloud-small cloud-normal cloud-big]) do |tag, css_class| %>
-  <%= link_to tag.name, { :controller => :tags, :action => :index, :id => tag.name}, :class => css_class %>
-<% end %>
+<h4><%= t :v_index_tags %></h4>
+<p>
+  <% tag_cloud(tags, %w[cloud-tiny cloud-small cloud-normal cloud-big]) do |tag, css_class| %>
+    <%= link_to tag.name, { :controller => :tags, :action => :index, :id => tag.name}, :class => css_class %>
+  <% end %>
+</p>

@@ -2,8 +2,8 @@ pl:
   activerecord:
     errors:
       template:
-        header: ''
-        body: ''
+        header: ""
+        body: ""
       messages:
         inclusion: 'nie jest zawarte w liście'
         exclusion: 'jest zarezerwowane'
