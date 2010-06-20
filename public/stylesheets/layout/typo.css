@@ -47,3 +47,8 @@ a.cloud-big {
   color: red;
   background-color: red
 }
+
+div#sidebar ul li h4.important, .important {
+  background: red;
+  color: white;
+}

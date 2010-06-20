@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :publishers
+
   map.resources :postcards
   map.resources :index
   map.resources :tags

@@ -8,3 +8,4 @@ pl:
   v_back: 'Wstecz'
   v_next: 'Następna >>'
   v_previous: '<< Poprzednia'
+  v_was_added_at: 'dodano'

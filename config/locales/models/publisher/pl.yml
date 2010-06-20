@@ -1,0 +1,14 @@
+pl:
+  publisher_was_created: 'Wydawca został utworzony'
+  publisher_was_updated: 'Wydawca został zmieniony'
+  activerecord:
+    attributes:
+      publisher:
+        name: 'Nazwa'
+        description: 'Opis'
+    errors:
+      models:
+        postcard:
+          attributes: 
+            name:
+              blank: 'nie może być pusta'

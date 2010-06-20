@@ -8,14 +8,6 @@
     <%= stylesheet_link_tag 'layout/core', 'layout/typo' %>
     <%= javascript_include_tag 'jquery-1.4.2.min', 'easySlider1.7', 'application', :cache => true %>
     <%= yield :head %>
-    <script>
-      $(document).ready(function() {
-        $('#slider').easySlider({
-          auto: true,
-          continous: true
-        });
-      });
-    </script>
   </head>
   <body>
     <div id="wrapper">

@@ -1,6 +1,7 @@
 class Postcard < ActiveRecord::Base
 
   has_many :images, :dependent => :destroy
+  belongs_to :publisher
 
   validates_presence_of :description, 
                         :name,
@@ -42,6 +43,7 @@ end
 
 
 
+
 # == Schema Information
 #
 # Table name: postcards
@@ -55,5 +57,6 @@ end
 #  latitude      :string(255)
 #  longitude     :string(255)
 #  year          :integer
+#  publisher_id  :integer
 #
 

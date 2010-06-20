@@ -1,0 +1,29 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'tiny_mce/tiny_mce', :cache => true %>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      tinyMCE.init({
+        mode: 'textareas',
+        language: '<%= I18n.locale %>'
+      });
+    });
+  </script>
+<% end %>
+
+<fieldset>
+  <% form_for(@publisher) do |f| %>
+    <%= f.error_messages %>
+
+    <p>
+      <%= f.label :name, t(:v_publishers_name) %><br />
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :description, t(:v_publishers_description) %><br />
+      <%= f.text_area :description %>
+    </p>
+    <p>
+      <%= f.submit button_label, :class => 'formbutton' %>
+    </p>
+  <% end %>
+</fieldset>

@@ -1,7 +1,3 @@
-<% content_for :head do %>
-  <%= stylesheet_link_tag 'layout/typo', :cache => true %>
-<% end %>
-
 <table>
   <tbody>
     <% @postcards.each do |postcard| %>
@@ -11,9 +7,9 @@
         </td>
         <td>
           <h3><%= link_to h(postcard.name), postcard %></h3>
-          <%= t :v_postcards_was_added %> <%= postcard.created_at %>
-          <%= link_to t(:v_edit), edit_postcard_path(postcard) %>
-          <%= link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation) %>
+          <%= t :v_was_added_at %> <%= postcard.created_at %>
+          <%= link_to t(:v_edit), edit_postcard_path(postcard), :class => :important %>
+          <%= link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important %>
         </td>
       </tr>
     <% end %>
@@ -24,5 +20,3 @@
     </tr>
   </tbody>
 </table>
-<div>
-</div>

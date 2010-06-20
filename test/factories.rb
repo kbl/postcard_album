@@ -13,3 +13,8 @@ Factory.define :image do |image|
   image.association :postcard
   image.type_of_image Image::IMAGE_TYPES[rand(Image::IMAGE_TYPES.size)]
 end
+
+Factory.define :publisher do |publisher|
+  publisher.sequence(:name) { |n| "publisher name #{n}" }
+  publisher.sequence(:description) { |n| "publisher description #{n}" }
+end

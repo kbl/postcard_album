@@ -7,7 +7,7 @@
 
       tinyMCE.init({
         mode: 'textareas',
-        language: 'pl'
+        language: '<%= I18n.locale %>'
       });
 
       jQuery('#checkbox-map').change(function() {
@@ -21,9 +21,7 @@
 
 <fieldset>
   <% form_for(@postcard, :html => { :multipart => true }) do |f| %>
-    <% unless f.error_messages.empty? %>
-      <%= f.error_messages %>
-    <% end %>
+    <%= f.error_messages %>
     <p>
       <%= f.label :name, t(:v_postcards_name) %>
       <%= f.text_field :name %>
@@ -39,6 +37,10 @@
     <p>
       <%= f.label :year, t(:v_postcards_year) %>
       <%= f.text_field :year %>
+    </p>
+    <p>
+      <%= f.label :publisher_id, t(:v_postcards_publisher) %>
+      <%= f.select :publisher_id, @publishers, :include_blank => true %>
     </p>
     <% f.fields_for :images do |builder| %>
       <%= render :partial => 'image_fields', :locals => { :f => builder, :editable => editable } %>
