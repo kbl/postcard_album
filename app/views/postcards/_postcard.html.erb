@@ -28,6 +28,10 @@
       <td><%=h p.year %></td>
     </tr>
     <tr>
+      <td><%= t :v_postcards_tags %></td>
+      <td><%=h p.tags.join(', ') %></td>
+    </tr>
+    <tr>
       <td><%= t :v_postcards_photos %></td>
       <td>
         <div>
