@@ -1,0 +1,10 @@
+pl:
+  user_was_updated: Dane użytkownika zostały zmienione
+  activerecord:
+    attributes:
+      user:
+        username: Nazwa użytkownika
+        password: Hasło
+        password_confirmation: Potwierdzenie hasła
+          
+          

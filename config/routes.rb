@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :index
   map.resources :tags
   map.connect '/postcards/images/:id/:style.:format', :controller => 'images', :action => 'show'
-  map.root :controller => :index
+  map.root :controller => :index, :action => :index
 
   # The priority is based upon order of creation: first created -> highest priority.
 

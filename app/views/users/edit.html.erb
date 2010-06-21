@@ -1,24 +1,23 @@
-<h1>Editing user</h1>
+<fieldset>
+  <% form_for(@user) do |f| %>
+    <%= f.error_messages %>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
+    <p>
+      <%= f.label :username, t('activerecord.attributes.user.username') %><br />
+      <%= f.text_field :username %>
+    </p>
+    <p>
+    <p>
+      <%= f.label :password, t('activerecord.attributes.user.password') %><br />
+      <%= f.password_field :password %>
+    </p>
+      <%= f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation') %><br />
+      <%= f.password_field :password_confirmation %>
+    </p>
+    <p>
+      <%= f.submit t(:v_edit), :class => 'formbutton' %>
+    </p>
+  <% end %>
+</fieldset>
 
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<%= link_to t(:v_back), root_path %>

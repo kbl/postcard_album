@@ -27,13 +27,18 @@
 
       <div id="header" class="clear">
         <div class="header-text">
-          <h2><%= t :v_index_main_title %></h2>
-          <p><%= t :v_index_famous_quotation %></p>
+          <% if flash[:notice] or flash[:error] %>
+            <%= content_tag(:h2, flash[:notice]) if flash[:notice] %>
+            <%= content_tag(:h2, flash[:error], :class => 'error') if flash[:error] %>
+          <% else %>
+            <h2><%= t :v_index_main_title %></h2>
+            <p><%= t :v_index_famous_quotation %></p>
 
-          <p class="header-buttons">
-            <%= link_to t(:nav_contact), 'todo_mapi', :class => 'button pngfix' %>
-            <%= link_to t(:nav_postcards), postcards_url, :class => 'button color-button pngfix' %>
-          </p>
+            <p class="header-buttons">
+              <%= link_to t(:nav_contact), 'todo_mapi', :class => 'button pngfix' %>
+              <%= link_to t(:nav_postcards), postcards_url, :class => 'button color-button pngfix' %>
+            </p>
+          <% end %>
         </div>
         <div class="header-images">
           <div id="slider">

@@ -1,0 +1,18 @@
+pl:
+  successfully_login: Użytkownik został pomyślnie zalogowany
+  successfully_logout: Poprawienie wylogowano użytkownika
+  authlogic:
+    error_messages:
+      login_blank: nie może być pusty
+      login_not_found: nie jest prawidłowy
+      login_invalid: może składać się tylko z liter, cyfr, spacji i znaków .-_@
+      password_blank: nie może być puste
+      password_invalid: nie jest prawidłowe
+      no_authentication_details: Proszę uzupełnić login i hasło.
+    models:
+      user_session: Sesja użytkownika
+    attributes:
+      user_session: 
+        username: Login
+        password: Hasło
+
