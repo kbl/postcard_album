@@ -8,8 +8,10 @@
         <td>
           <h3><%= link_to h(postcard.name), postcard %></h3>
           <%= t :v_was_added_at %> <%= postcard.created_at %>
-          <%= link_to t(:v_edit), edit_postcard_path(postcard), :class => :important %>
-          <%= link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important %>
+          <% if current_user %>
+            <%= link_to t(:v_edit), edit_postcard_path(postcard), :class => :important %>
+            <%= link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important %>
+          <% end %>
         </td>
       </tr>
     <% end %>

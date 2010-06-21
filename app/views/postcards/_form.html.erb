@@ -23,23 +23,23 @@
   <% form_for(@postcard, :html => { :multipart => true }) do |f| %>
     <%= f.error_messages %>
     <p>
-      <%= f.label :name, t(:v_postcards_name) %>
+      <%= f.label :name, t('activerecord.attributes.postcard.name') %>
       <%= f.text_field :name %>
     </p>
     <p>
-      <%= f.label :description, t(:v_postcards_description) %>
+      <%= f.label :description, t('activerecord.attributes.postcard.description') %>
       <%= f.text_area :description, :cols => 64, :rows => 20 %>
     </p>
     <p>
-      <%= f.label :is_horizontal, t(:v_postcards_orientation) %>
+      <%= f.label :is_horizontal, t('activerecord.attributes.postcard.is_horizontal') %>
       <%= f.check_box :is_horizontal %>
     </p>
     <p>
-      <%= f.label :year, t(:v_postcards_year) %>
+      <%= f.label :year, t('activerecord.attributes.postcard.year') %>
       <%= f.text_field :year %>
     </p>
     <p>
-      <%= f.label :publisher_id, t(:v_postcards_publisher) %>
+      <%= f.label :publisher_id, t('activerecord.attributes.postcard.publisher_id') %>
       <%= f.select :publisher_id, @publishers, :include_blank => true %>
     </p>
     <% f.fields_for :images do |builder| %>

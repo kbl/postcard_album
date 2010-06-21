@@ -7,10 +7,6 @@
         <% unless p.longitude.blank? %>
           <%= draw_google_map p, false %>
         <% end %>
-        $('#toggleMap').click(function () {
-          $('#map').toggle('slow')
-        });
-        $('#map').hide();
     });
   </script>
 <% end %>
@@ -19,11 +15,11 @@
 <table>
   <tbody>
     <tr>
-      <td style="width: 20%"><%= t :v_postcards_description %></td>
+      <td style="width: 20%"><%= t 'activerecord.attributes.postcard.description' %></td>
       <td><%= p.description %></td>
     </tr>
     <tr>
-      <td><%= t :v_postcards_year %></td>
+      <td><%= t 'activerecord.attributes.postcard.year' %></td>
       <td><%=h p.year %></td>
     </tr>
     <tr>
@@ -31,7 +27,7 @@
       <td><%=h p.tags.join(', ') %></td>
     </tr>
     <tr>
-      <td><%= t :v_postcards_publisher %></td>
+      <td><%= t 'activerecord.attributes.postcard.publisher_id' %></td>
       <td><%=h p.publisher.name if p.publisher %></td>
     </tr>
     <tr>
@@ -44,17 +40,22 @@
     </tr>
     <% unless p.longitude.blank? %>
       <tr>
-        <td><%= t :v_postcards_localization %></td>
-        <td><span class="toggle-link" id="toggleMap"><%= t :v_postcards_show_map %></span><div id="map"></div>
+        <td colspan="2"><%= t :v_postcards_localization %></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div id="map"></div>
         </td>
       </tr>
     <% end %>
-    <tr>
-      <th class="important" /> 
-      <td>
-        <%= link_to t(:v_edit), edit_postcard_path(@postcard) %>
-        <%= link_to t(:v_delete), @postcard, :method => :delete, :confirm => t(:v_delete_confirmation) %>
-    </tr>
+    <% if current_user %>
+      <tr>
+        <th class="important" /> 
+        <td>
+          <%= link_to t(:v_edit), edit_postcard_path(@postcard) %>
+          <%= link_to t(:v_delete), @postcard, :method => :delete, :confirm => t(:v_delete_confirmation) %>
+      </tr>
+    <% end %>
   </tbody>
 </table>
 

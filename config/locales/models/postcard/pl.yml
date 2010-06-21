@@ -7,6 +7,8 @@ pl:
         year: 'Rok'
         name: 'Nazwa'
         description: 'Opis'
+        is_horizontal: 'Czy pozioma?'
+        publisher_id: 'Wydawca'
     errors:
       models:
         postcard:

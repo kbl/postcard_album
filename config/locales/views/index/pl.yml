@@ -7,3 +7,7 @@ pl:
   v_index_tags: 'Tagi'
   v_index_actions: 'Akcje'
   v_index_page_title: 'Oleśnica z dawnych lat'
+  v_index_login: 'Logowanie'
+  v_index_login_action: 'Zaloguj'
+  v_index_logout_action: 'Wyloguj'
+  v_index_edit_profile: 'Edytuj profil'

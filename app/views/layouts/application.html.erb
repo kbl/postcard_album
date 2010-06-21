@@ -42,13 +42,7 @@
               <%= yield %>
             </div>
             <div id="sidebar" class="column column-240 column-right">
-              <ul>	
-                <li>
-                  <%= render :partial => 'index/tag_cloud', :locals => {:tags => @tags} %>
-                </li>
-                <li>
-                  <%= render :partial => 'index/actions' %>
-              </ul> 
+              <%= render :partial => 'index/sidebar' %>
             </div>
           </div>
 

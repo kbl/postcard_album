@@ -1,0 +1,17 @@
+<% form_for(@user_session) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :username, t(:v_user_sessions_username) %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label :password, t(:v_user_session_password) %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.submit t(:v_index_login_action) %>
+  </p>
+<% end %>
+
+<%= link_to t(:v_back), root_path %>

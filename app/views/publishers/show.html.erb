@@ -2,7 +2,9 @@
 <p>
   <%= @publisher.description %>
 </p>
-<%= link_to t(:v_edit), edit_postcard_path(@publisher), :class => 'important' %>
-<%= link_to t(:v_delete), @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important' %>
+<% if current_user %>
+  <%= link_to t(:v_edit), edit_postcard_path(@publisher), :class => 'important' %>
+  <%= link_to t(:v_delete), @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important' %>
+<% end %>
 
 <%= link_to t(:v_back), publishers_path %>
