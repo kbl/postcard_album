@@ -1,5 +1,5 @@
 <p class="image_fields">
-  <%= f.label :type_of_image, t('activerecord.attributes.image.image_file_name') %>
+  <%= f.label :type_of_image, t('activerecord.attributes.postcard.images') %>
   <% if editable %>
     <%= image_tag(f.object.image.url(f.object.thumbnail_style)) %>
   <% else %>

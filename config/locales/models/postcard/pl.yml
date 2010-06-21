@@ -9,6 +9,8 @@ pl:
         description: 'Opis'
         is_horizontal: 'Czy pozioma?'
         publisher_id: 'Wydawca'
+        tags: 'Tagi'
+        images: 'Zdjęcia widokówki'
     errors:
       models:
         postcard:

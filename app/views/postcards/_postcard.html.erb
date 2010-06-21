@@ -23,15 +23,17 @@
       <td><%=h p.year %></td>
     </tr>
     <tr>
-      <td><%= t :v_postcards_tags %></td>
+      <td><%= t 'activerecord.attributes.postcard.tags' %></td>
       <td><%=h p.tags.join(', ') %></td>
     </tr>
+    <% if p.publisher %>
+      <tr>
+        <td><%= t 'activerecord.attributes.postcard.publisher_id' %></td>
+        <td><%=h p.publisher.name %></td>
+      </tr>
+    <% end %>
     <tr>
-      <td><%= t 'activerecord.attributes.postcard.publisher_id' %></td>
-      <td><%=h p.publisher.name if p.publisher %></td>
-    </tr>
-    <tr>
-      <td><%= t :v_postcards_photos %></td>
+      <td><%= t 'activerecord.attributes.postcard.images' %></td>
       <td>
         <div>
           <% postcard_images_lightbox(p.images, :class => 'lightbox', :rel => 'shadowbox') %>
@@ -40,7 +42,7 @@
     </tr>
     <% unless p.longitude.blank? %>
       <tr>
-        <td colspan="2"><%= t :v_postcards_localization %></td>
+        <td colspan="2"><%= t :v_postcards_map %></td>
       </tr>
       <tr>
         <td colspan="2">
