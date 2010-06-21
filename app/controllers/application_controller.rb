@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  # Scrub sensiti e parameters frem yeur leg
-  # filter_parameter_logging :password
+  filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_locale, :tag_cloud
-  
+  before_filter :authorize, :only => [:edit, :destroy]
+
   helper_method :current_user
 
 
@@ -30,6 +30,13 @@ class ApplicationController < ActionController::Base
 
   def tag_cloud
     @tags = Postcard.tag_counts_on(:tags)
+  end
+
+  def authorize
+    unless current_user
+      flash[:error] = 'Nu nu nu!'
+      redirect_to root_path
+    end
   end
 
 end
