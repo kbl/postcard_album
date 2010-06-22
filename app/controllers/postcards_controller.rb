@@ -4,7 +4,8 @@ class PostcardsController < ApplicationController
 
 
   def index
-    @postcards = Postcard.paginate(:page => params[:page], :order => 'created_at DESC')
+    @postcards = Postcard.search(params)
+    @publishers = Publisher.find_all_combobox || []
   end
 
   def show
@@ -14,12 +15,12 @@ class PostcardsController < ApplicationController
   def new
     @postcard = Postcard.new
     @postcard.images.build
-    @publishers = Publisher.all.collect { |p| [p.name, p.id] }
+    @publishers = Publisher.find_all_combobox
   end
 
   def edit
     @postcard = Postcard.find(params[:id])
-    @publishers = Publisher.all.collect { |p| [p.name, p.id] }
+    @publishers = Publisher.find_all_combobox
   end
 
   def create

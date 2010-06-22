@@ -12,6 +12,17 @@ class PublisherTest < ActiveSupport::TestCase
     assert !publisher.valid?
   end
 
+  test "should retur array [name, id] of publishers" do
+    3.times { Factory(:publisher) }
+    publisher_list = Publisher.find_all_combobox
+
+    result = publisher_list.inject(true) do |result, current|
+      result and current.size == 2 and current.last.integer?
+    end
+    assert publisher_list.size >= 3
+    assert result
+  end
+
 end
 
 # == Schema Information

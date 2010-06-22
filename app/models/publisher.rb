@@ -9,6 +9,11 @@ class Publisher < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 5
 
+
+  def self.find_all_combobox
+    all.collect { |p| [p.name, p.id] }
+  end
+
 end
 
 # == Schema Information

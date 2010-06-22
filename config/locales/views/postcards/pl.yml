@@ -4,3 +4,6 @@ pl:
   v_postcards_add_image: 'dodaj zdjęcie'
   v_postcards_map: 'Mapa'
   v_postcards_show_map: 'Pokaż\ukryj mapę'
+  v_postcards_show_search: 'Pokaż\ukryj wyszukiwarkę'
+  v_postcards_date_from: 'Data od'
+  v_postcards_date_to: 'Data do'

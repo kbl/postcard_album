@@ -1,3 +1,34 @@
+<% content_for :head do %>
+  <script type="text/javascript" language="javascript" charset="utf-8">
+    jQuery(document).ready(function() {
+        jQuery('#show-search').click(function() {
+          jQuery('#search').toggle('slow');
+        });
+      //jQuery('#search').hide('slow');
+    });
+  </script>
+<% end %>
+
+<span id='show-search'><%= t :v_postcards_show_search %></span>
+<fieldset id='search'>
+  <% form_tag postcards_path, :method => :get do %>
+    <p>
+      <%= t :v_postcards_date_from %>
+      <%= text_field_tag :date_from, params[:date_from] %>
+    </p>
+    <p>
+      <%= t :v_postcards_date_to %>
+      <%= text_field_tag :date_to, params[:date_to] %>
+    </p>
+    <p>
+      <%= t('activerecord.attributes.postcard.publisher_id') %>
+      <%= select_tag 'publisher_id', options_for_select([nil] + @publishers, :selected => params[:publisher_id].to_i) %>
+    </p>
+    <p>
+      <%= submit_tag t(:v_search), :class => 'formbutton', :name => nil %>
+    </p>
+  <% end %>
+</fieldset>
 <table>
   <tbody>
     <% @postcards.each do |postcard| %>

@@ -38,6 +38,44 @@ class Postcard < ActiveRecord::Base
     Image.find_by_postcard_id_and_type_of_image(id, Image::IMAGE_TYPES[0])
   end
 
+  def self.search(params)
+    Postcard.paginate(:page => params[:page], :conditions => conditions(params), :order => 'created_at DESC')
+  end
+
+
+  private
+
+  def self.date_from_condition(params)
+    ['year >= ?', params[:date_from]] unless params[:date_from].blank?
+  end
+
+  def self.date_to_condition(params)
+    ['year <= ?', params[:date_to]] unless params[:date_to].blank? 
+  end
+
+  def self.publisher_id_condition(params)
+    ['publisher_id = ?', params[:publisher_id]] unless params[:publisher_id].blank?
+  end
+
+  def self.conditions(params)
+    [condition_clauses(params).join(' AND '), *condition_options(params)]
+  end
+
+  def self.condition_options(params)
+    condition_parts(params).inject([]) { |result, element| result << element.last }  
+  end
+
+  def self.condition_clauses(params)
+    condition_parts(params).inject([]) { |result, element| result << element.first }  
+  end
+
+
+  def self.condition_parts(params)
+    methods.grep(/_condition$/).map do |method|
+      send(method, params)
+    end.compact
+  end
+
 end
 
 
