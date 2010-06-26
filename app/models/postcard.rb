@@ -1,6 +1,6 @@
 class Postcard < ActiveRecord::Base
 
-  has_many :images, :dependent => :destroy
+  has_many :images, :dependent => :destroy, :order => 'type_of_image'
   belongs_to :publisher
 
   validates_presence_of :description, 
