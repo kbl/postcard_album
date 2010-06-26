@@ -1,7 +1,9 @@
 <p class="image_fields">
   <%= f.label :type_of_image, t('activerecord.attributes.postcard.images') %>
-  <% if editable %>
-    <%= image_tag(f.object.image.url(f.object.thumbnail_style)) %>
+  <% unless editable %>
+    <% link_to f.object.image.url(f.object.normal_style), :class => 'lightbox', :rel => 'shadowbox[postcards]' do %>
+      <%= image_tag(f.object.image.url(f.object.thumbnail_style)) %>
+    <% end %>
   <% else %>
     <%= f.select :type_of_image, Image::IMAGE_TYPES %>
     <%= f.file_field :image %>
