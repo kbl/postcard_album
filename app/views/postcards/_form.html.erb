@@ -9,12 +9,6 @@
         mode: 'textareas',
         language: '<%= I18n.locale %>'
       });
-
-      jQuery('#checkbox-map').change(function() {
-        jQuery('#map').toggle('slow');
-      });
-
-      jQuery('#map').hide();
     });
   </script>
 <% end %>
@@ -54,7 +48,6 @@
     </p>
     <p>
       <%= f.label :longitude, t(:v_postcards_map) %>
-      <input type="checkbox" id="checkbox-map"><%= t :v_postcards_show_map %></input>
       <div id="map"></div>
       <%= f.hidden_field :latitude, :id => 'latitude' %> 
       <%= f.hidden_field :longitude, :id => 'longitude' %> 
