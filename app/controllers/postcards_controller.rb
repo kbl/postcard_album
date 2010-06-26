@@ -1,11 +1,11 @@
 class PostcardsController < ApplicationController
 
   before_filter :set_navigation
+  before_filter :seed_publishers, :only => [:index, :new, :edit]
 
 
   def index
     @postcards = Postcard.search(params)
-    @publishers = Publisher.find_all_combobox || []
   end
 
   def show
@@ -15,12 +15,10 @@ class PostcardsController < ApplicationController
   def new
     @postcard = Postcard.new
     @postcard.images.build
-    @publishers = Publisher.find_all_combobox
   end
 
   def edit
     @postcard = Postcard.find(params[:id])
-    @publishers = Publisher.find_all_combobox
   end
 
   def create
@@ -30,6 +28,7 @@ class PostcardsController < ApplicationController
       flash[:notice] = t :postcard_was_created
       redirect_to(@postcard)
     else
+      seed_publishers
       render :action => "new"
     end
   end
@@ -41,6 +40,7 @@ class PostcardsController < ApplicationController
       flash[:notice] = t :postcard_was_updated
       redirect_to(@postcard)
     else
+      seed_publishers
       render :action => "edit"
     end
   end
@@ -57,6 +57,10 @@ class PostcardsController < ApplicationController
 
   def set_navigation
     current_navigation :postcards    
+  end
+
+  def seed_publishers
+    @publishers = Publisher.find_all_combobox || []
   end
 
 end
