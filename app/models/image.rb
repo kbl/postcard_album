@@ -10,17 +10,17 @@ class Image < ActiveRecord::Base
                     :processors => [:resize, :sign, :add_border],
                     :styles => { 
                         :normal_horizontal => { 
-                            :width => 450,
-                            :height => 300,
-                            :border_inner => 3,
-                            :border_outer => 15,
+                            :width => 720,
+                            :height => 480,
+                            :border_inner => 4,
+                            :border_outer => 20,
                             :signature => SIGNATURE
                         }, 
                         :normal_vertical => { 
-                            :width => 300,
-                            :height => 450,
-                            :border_inner => 3,
-                            :border_outer => 15,
+                            :width => 480,
+                            :height => 720,
+                            :border_inner => 4,
+                            :border_outer => 20,
                             :signature => SIGNATURE
                         }, 
                         :thumbnail_horizontal => {
@@ -45,7 +45,7 @@ class Image < ActiveRecord::Base
   validates_associated :postcard
   validates_inclusion_of :type_of_image, :in => Image::IMAGE_TYPES
   validates_attachment_presence :image
-  #validates_attachment_size :image, :less_than => 50.kilobytes
+  validates_attachment_size :image, :less_than => 500.kilobytes
 
   named_scope :abverse, :conditions => { :type_of_image => 'abverse' }
 

@@ -28,7 +28,6 @@ function drawGoogleMap(latitude, longitude, enableClicking) {
     var map = new GMap2(document.getElementById("map"));
     map.addControl(new GLargeMapControl());
     map.addControl(new GMapTypeControl());
-    map.enableScrollWheelZoom(); 
     if(latitude == -1) {
       // townhall in olesnica
       latLng = new GLatLng(51.209645, 17.379599);
@@ -52,18 +51,6 @@ function drawGoogleMap(latitude, longitude, enableClicking) {
       });
     }
   }
-}
-
-// function used to set up a shadowbox in _postcard template
-function setUpShadowbox() {
-  Shadowbox.init(
-    { skipSetup: true}, 
-    function() {
-      Shadowbox.setup(
-        'a.lightbox', 
-        { gallery: 'postcards',
-          continuous: true});
-  });
 }
 
 // function usetd on main page with slider

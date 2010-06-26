@@ -2,8 +2,7 @@ class Publisher < ActiveRecord::Base
 
   has_many :postcards
 
-  validates_presence_of :name,
-                        :description
+  validates_presence_of :name
   validates_length_of :name, :maximum => 255
 
   cattr_reader :per_page

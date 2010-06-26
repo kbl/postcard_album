@@ -7,11 +7,6 @@ class PublisherTest < ActiveSupport::TestCase
     assert !publisher.valid?
   end
 
-  test "shouldnt save without description" do
-    publisher = Factory.build(:publisher, :description => nil)
-    assert !publisher.valid?
-  end
-
   test "should retur array [name, id] of publishers" do
     3.times { Factory(:publisher) }
     publisher_list = Publisher.find_all_combobox

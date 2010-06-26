@@ -18,7 +18,7 @@ module Paperclip
       destination.binmode
       img.write(File.expand_path(destination.path)) do
         self.compression = Magick::JPEGCompression
-        self.quality = 50
+        self.quality = 80
       end
       destination
     end

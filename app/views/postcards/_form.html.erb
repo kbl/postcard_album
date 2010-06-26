@@ -1,20 +1,17 @@
 <% content_for :head do %>
+  <%= stylesheet_link_tag 'shadowbox', :cache => true %>
+  <%= javascript_include_tag 'shadowbox', :cache => true %>
   <%= javascript_include_tag 'tiny_mce/tiny_mce', :cache => true %>
   <%= javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl' %>
   <script type="text/javascript">
     $(document).ready(function() {
+      Shadowbox.init();
       <%= draw_google_map @postcard, true %>
 
       tinyMCE.init({
         mode: 'textareas',
         language: '<%= I18n.locale %>'
       });
-
-      jQuery('#checkbox-map').change(function() {
-        jQuery('#map').toggle('slow');
-      });
-
-      jQuery('#map').hide();
     });
   </script>
 <% end %>
@@ -46,7 +43,7 @@
       <%= render :partial => 'image_fields', :locals => { :f => builder, :editable => editable } %>
     <% end %>
     <p>
-      <%= link_to_add_image_fields  f, { :name => t(:v_postcards_add_image), :editable => false } %>
+      <%= link_to_add_image_fields  f, { :name => t(:v_postcards_add_image), :editable => true } %>
     </p>
     <p>
       <%= f.label :tag_list, t('activerecord.attributes.postcard.tags') %>
@@ -54,7 +51,6 @@
     </p>
     <p>
       <%= f.label :longitude, t(:v_postcards_map) %>
-      <input type="checkbox" id="checkbox-map"><%= t :v_postcards_show_map %></input>
       <div id="map"></div>
       <%= f.hidden_field :latitude, :id => 'latitude' %> 
       <%= f.hidden_field :longitude, :id => 'longitude' %> 
