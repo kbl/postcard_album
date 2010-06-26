@@ -53,18 +53,6 @@ function drawGoogleMap(latitude, longitude, enableClicking) {
   }
 }
 
-// function used to set up a shadowbox in _postcard template
-function setUpShadowbox() {
-  Shadowbox.init(
-    { skipSetup: true}, 
-    function() {
-      Shadowbox.setup(
-        'a.lightbox', 
-        { gallery: 'postcards',
-          continuous: true});
-  });
-}
-
 // function usetd on main page with slider
 function setUpSlider() {
   $('#slider').easySlider({
