@@ -10,15 +10,15 @@ class Image < ActiveRecord::Base
                     :processors => [:resize, :sign, :add_border],
                     :styles => { 
                         :normal_horizontal => { 
-                            :width => 450,
-                            :height => 300,
+                            :width => 660,
+                            :height => 440,
                             :border_inner => 3,
                             :border_outer => 15,
                             :signature => SIGNATURE
                         }, 
                         :normal_vertical => { 
-                            :width => 300,
-                            :height => 450,
+                            :width => 440,
+                            :height => 660,
                             :border_inner => 3,
                             :border_outer => 15,
                             :signature => SIGNATURE
