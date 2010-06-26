@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_locale, :tag_cloud
-  before_filter :authorize, :only => [:edit, :destroy]
+  before_filter :authorize, :except => [:index, :show]
 
   helper_method :current_user
 
