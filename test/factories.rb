@@ -16,5 +16,4 @@ end
 
 Factory.define :publisher do |publisher|
   publisher.sequence(:name) { |n| "publisher name #{n}" }
-  publisher.sequence(:description) { |n| "publisher description #{n}" }
 end
