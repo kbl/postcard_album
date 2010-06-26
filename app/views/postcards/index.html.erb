@@ -1,10 +1,12 @@
 <% content_for :head do %>
+  <%= stylesheet_link_tag 'shadowbox' %>
+  <%= javascript_include_tag 'shadowbox' %>
   <script type="text/javascript" language="javascript" charset="utf-8">
     jQuery(document).ready(function() {
-        jQuery('#show-search').click(function() {
-          jQuery('#search').toggle('slow');
-        });
-      //jQuery('#search').hide('slow');
+      Shadowbox.init();
+      jQuery('#show-search').click(function() {
+        jQuery('#search').toggle('slow');
+      });
     });
   </script>
 <% end %>
@@ -34,7 +36,7 @@
     <% @postcards.each do |postcard| %>
       <tr>
         <td>
-          <%= postcard_abverse_image_tag postcard, :thumbnail, :class => 'image' %>
+          <%= link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox') %>
         </td>
         <td>
           <h3><%= link_to h(postcard.name), postcard %></h3>

@@ -2,16 +2,16 @@ module ApplicationHelper
 
   include ActsAsTaggableOn::TagsHelper
   
-  def postcard_abverse_image_tag(postcard, type, options = {})
+  def postcard_abverse_image_url(postcard, type)
     # todo normal way.. without if
     unless abverse = postcard.abverse_image 
       return
     end
 
     if type == :thumbnail
-      image_tag(abverse.image.url(abverse.thumbnail_style), options)
+      abverse.image.url(abverse.thumbnail_style)
     else
-      image_tag(abverse.image.url(abverse.normal_style), options)
+      abverse.image.url(abverse.normal_style)
     end
   end
 

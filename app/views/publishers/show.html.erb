@@ -1,9 +1,7 @@
 <h3 class="postcard-heading"><%=h @publisher.name %></h3>
-<p>
-  <%= @publisher.description %>
-</p>
+<%= content_tag 'p', @publisher.description if @publisher.description %>
 <% if current_user %>
-  <%= link_to t(:v_edit), edit_postcard_path(@publisher), :class => 'important' %>
+  <%= link_to t(:v_edit), edit_publisher_path(@publisher), :class => 'important' %>
   <%= link_to t(:v_delete), @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important' %>
 <% end %>
 
