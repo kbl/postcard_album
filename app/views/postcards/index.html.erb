@@ -36,7 +36,7 @@
     <% @postcards.each do |postcard| %>
       <tr>
         <td>
-          <%= link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox') %>
+          <%= link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important')) %>
         </td>
         <td>
           <h3><%= link_to h(postcard.name), postcard %></h3>

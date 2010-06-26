@@ -1,8 +1,9 @@
 pl:
-  v_postcards_new: 'Dodaj nową widokówkę'
-  v_postcards_edit: 'Edytuj widokówkę'
-  v_postcards_add_image: 'dodaj zdjęcie'
-  v_postcards_map: 'Mapa'
-  v_postcards_show_search: 'Pokaż\ukryj wyszukiwarkę'
-  v_postcards_date_from: 'Data od'
-  v_postcards_date_to: 'Data do'
+  v_postcards_new: Dodaj nową widokówkę
+  v_postcards_edit: Edytuj widokówkę
+  v_postcards_add_image: dodaj zdjęcie
+  v_postcards_map: Mapa
+  v_postcards_show_search: Pokaż\ukryj wyszukiwarkę
+  v_postcards_date_from: Data od
+  v_postcards_full_description: Pełen opis
+  v_postcards_date_to: Data do
