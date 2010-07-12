@@ -7,3 +7,5 @@ log/*.log
 public/system/**
 public/images/postcards/**
 postcards/**
+Capfile
+config/deploy.rb
