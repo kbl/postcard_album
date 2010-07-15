@@ -1,5 +1,7 @@
 class UserSessionsController < ApplicationController
 
+  before_filter :authorize, :include => []
+
   def new
     @user_session = UserSession.new
   end
@@ -23,4 +25,10 @@ class UserSessionsController < ApplicationController
     redirect_to root_path
   end
   
+  protected
+
+  def check_authorization?
+    false
+  end
+
 end

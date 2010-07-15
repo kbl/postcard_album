@@ -33,10 +33,16 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    unless current_user
+    unless current_user or not check_authorization?
       flash[:error] = 'Nu nu nu!'
       redirect_to root_path
     end
+  end
+
+  protected
+
+  def check_authorization?
+    true
   end
 
 end
