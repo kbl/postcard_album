@@ -1,13 +1,13 @@
 class Image < ActiveRecord::Base
 
 
-  SIGNATURE = 'widokowki.pietraszek.pl'
+  SIGNATURE = 'kolekcja.pietraszek.pl'
 
   IMAGE_TYPES = %w[abverse reverse stamp other]
   
   # TODO get rid of 4 styles..
   has_attached_file :image,
-                    :processors => [:resize, :sign, :add_border],
+                    :processors => [:resize, :add_watermark, :add_border],
                     :styles => { 
                         :normal_horizontal => { 
                             :width => 720,
