@@ -10,3 +10,6 @@ pl:
   v_previous: '<< Poprzednia'
   v_was_added_at: 'dodano'
   v_search: 'Wyszukaj'
+  time:
+    formats:
+      default: %d.%m.%Y %H:%M

@@ -40,7 +40,7 @@
         </td>
         <td>
           <h3><%= link_to h(postcard.name), postcard %></h3>
-          <%= t :v_was_added_at %> <%= postcard.created_at %>
+          <%= t :v_was_added_at %> <%= l(postcard.created_at) %>
           <% if current_user %>
             <%= link_to t(:v_edit), edit_postcard_path(postcard), :class => :important %>
             <%= link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important %>
