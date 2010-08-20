@@ -4,7 +4,7 @@
       <tr>
         <td>
           <h3><%= link_to h(publisher.name), publisher %></h3>
-          <%= t :v_was_added_at %> <%= publisher.created_at %>
+          <%= t :v_was_added_at %> <%= l publisher.created_at %>
           <% if current_user %>
             <%= link_to t(:v_edit), edit_publisher_path(publisher), :class => :important %>
             <%= link_to t(:v_delete), publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important %>
