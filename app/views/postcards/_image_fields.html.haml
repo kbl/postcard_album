@@ -1,0 +1,10 @@
+%p.image_fields
+  = f.label :type_of_image, t('activerecord.attributes.postcard.images')
+  - unless editable
+    - link_to f.object.image.url(f.object.normal_style), :class => 'lightbox', :rel => 'shadowbox[postcards]' do
+      = image_tag(f.object.image.url(f.object.thumbnail_style))
+  - else
+    = f.select :type_of_image, Image::IMAGE_TYPES
+    = f.file_field :image
+  = f.hidden_field :_destroy
+  = link_to_function t(:v_delete), 'removeImage(this)'

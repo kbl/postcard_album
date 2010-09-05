@@ -1,0 +1,41 @@
+- content_for :head do
+  = stylesheet_link_tag 'shadowbox'
+  = javascript_include_tag 'shadowbox'
+  :javascript 
+    jQuery(document).ready(function() {
+      Shadowbox.init();
+      jQuery('#show-search').click(function() {
+        jQuery('#search').toggle('slow');
+      });
+    });
+
+%span.show-search= t :v_postcards_show_search
+%fieldset.search
+  - form_tag postcards_path, :method => :get do
+    %p
+      = t :v_postcards_date_from
+      = text_field_tag :date_from, params[:date_from]
+    %p
+      = t :v_postcards_date_to
+      = text_field_tag :date_to, params[:date_to]
+    %p
+      = t('activerecord.attributes.postcard.publisher_id')
+      = select_tag 'publisher_id', options_for_select([nil] + @publishers, :selected => params[:publisher_id].to_i)
+    %p
+      = submit_tag t(:v_search), :class => 'formbutton', :name => nil
+%table
+  %tbody
+    - @postcards.each do |postcard|
+      %tr
+        %td
+          = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important'))
+        %td
+          %h3= link_to h(postcard.name), postcard
+          = t :v_was_added_at
+          = l(postcard.created_at)
+          - if current_user
+            = link_to t(:v_edit), edit_postcard_path(postcard), :class => :important
+            = link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
+    %tr
+      %td.right-align{:colspan => "2"}
+        = will_paginate @postcards, :next_label => t(:v_next), :previous_label => t(:v_previous)
