@@ -1,5 +1,7 @@
 class PostcardSetsController < ApplicationController
 
+  before_filter :set_navigation
+
   def new
     @postcard_set = PostcardSet.new
   end
@@ -14,6 +16,12 @@ class PostcardSetsController < ApplicationController
   end
 
   def delete
+  end
+
+  private
+
+  def set_navigation
+    current_navigation :postcard_sets    
   end
 
 end
