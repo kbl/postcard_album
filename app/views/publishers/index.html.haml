@@ -1,0 +1,17 @@
+%table
+  %tbody
+    - @publishers.each do |publisher|
+      %tr
+        %td
+          %h3
+            = link_to h(publisher.name), publisher
+          = t :v_was_added_at
+          = l publisher.created_at
+          - if current_user
+            = link_to t(:v_edit), edit_publisher_path(publisher), :class => :important
+            = link_to t(:v_delete), publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
+          %p
+            = publisher.description
+    %tr
+      %td.right-align
+        = will_paginate @publishers, :next_label => t(:v_next), :previous_label => t(:v_previous)

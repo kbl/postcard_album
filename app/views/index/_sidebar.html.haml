@@ -1,0 +1,8 @@
+%ul	
+  %li
+    = render :partial => 'index/tag_cloud', :locals => { :tags => @tags }
+  - if current_user
+    %li
+      = render :partial => 'index/actions'
+  %li
+    = render :partial => 'index/login'

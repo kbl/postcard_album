@@ -1,0 +1,14 @@
+%fieldset
+  - form_for(@user_session) do |f|
+    = f.error_messages
+
+    %p
+      = f.label :username, t('authlogic.attributes.user_session.username')
+      = f.text_field :username
+    %p
+      = f.label :password, t('authlogic.attributes.user_session.password')
+      = f.password_field :password
+    %p
+      = f.submit t(:v_index_login_action), :class => 'formbutton'
+
+= link_to t(:v_back), root_path

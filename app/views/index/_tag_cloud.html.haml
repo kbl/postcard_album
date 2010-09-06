@@ -1,0 +1,5 @@
+%h4
+  = t :v_index_tags
+%p
+  - tag_cloud(tags, %w[cloud-tiny cloud-small cloud-normal cloud-big]) do |tag, css_class|
+    = link_to tag.name, { :controller => :tags, :action => :index, :id => tag.name}, :class => css_class

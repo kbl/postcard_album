@@ -6,8 +6,9 @@
   :javascript
     Shadowbox.init();
     $(document).ready(function() { 
-    - unless p.longitude.blank?
-      = draw_google_map p, false
+      #{unless p.longitude.blank?
+        draw_google_map p, false
+      end}
     });
 
 %h3.postcard-heading

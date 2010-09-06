@@ -1,9 +1,0 @@
-<% if current_user %>
-  <h4 class="important"><%= t :v_index_actions %></h4>
-  <p>
-    <ul>
-      <%= content_tag 'li', link_to(t(:v_postcards_new), new_postcard_path) %>
-      <%= content_tag 'li', link_to(t(:v_publishers_new), new_publisher_path) %>
-    </ul>
-  </p>
-<% end %>

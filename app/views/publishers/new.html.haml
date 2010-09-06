@@ -1,0 +1,6 @@
+%h1
+  = t :v_publishers_new
+
+= render :partial => 'form', :locals => { :button_label => t(:v_add) }
+
+= link_to t(:v_back), publishers_path
