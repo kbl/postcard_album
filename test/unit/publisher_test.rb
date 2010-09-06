@@ -20,6 +20,8 @@ class PublisherTest < ActiveSupport::TestCase
 
 end
 
+
+
 # == Schema Information
 #
 # Table name: publishers

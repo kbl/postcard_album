@@ -107,6 +107,8 @@ end
 
 
 
+
+
 # == Schema Information
 #
 # Table name: postcards

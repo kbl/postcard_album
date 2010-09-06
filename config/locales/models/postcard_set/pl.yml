@@ -1,0 +1,6 @@
+pl:
+  activerecord:
+    attributes:
+      postcard_set:
+        name: 'Nazwa'
+        description: 'Opis'

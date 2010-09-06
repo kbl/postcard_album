@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100620202459) do
+ActiveRecord::Schema.define(:version => 20100906110015) do
 
   create_table "images", :force => true do |t|
     t.string   "type_of_image"
@@ -20,6 +20,21 @@ ActiveRecord::Schema.define(:version => 20100620202459) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "image_updated_at"
+  end
+
+  create_table "postcard_set_positions", :force => true do |t|
+    t.integer  "postcard_id"
+    t.integer  "postcard_set_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "postcard_sets", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "postcards", :force => true do |t|

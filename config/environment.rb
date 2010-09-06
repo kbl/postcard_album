@@ -26,6 +26,7 @@ Rails::Initializer.run do |config|
   config.gem 'acts-as-taggable-on'
   config.gem 'simple-navigation'
   config.gem 'authlogic'
+  config.gem 'haml'
   #config.gem 'rmagick'
 
   # Only load the plugins named here, in the order given (default is alphabetical).

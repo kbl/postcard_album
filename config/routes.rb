@@ -1,14 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.login 'login', :controller => :user_sessions, :action => :new
   map.logout 'logout', :controller => :user_sessions, :action => :destroy
   map.contact 'contact', :controller => :contact
   map.links 'links', :controller => :links
+
   map.resources :user_sessions
   map.resources :users
   map.resources :publishers
   map.resources :postcards
+  map.resources :postcard_sets
   map.resources :index
   map.resources :tags
+
   map.connect '/postcards/images/:id/:style.:format', :controller => 'images', :action => 'show'
   map.root :controller => :index, :action => :index
 

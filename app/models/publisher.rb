@@ -15,6 +15,8 @@ class Publisher < ActiveRecord::Base
 
 end
 
+
+
 # == Schema Information
 #
 # Table name: publishers

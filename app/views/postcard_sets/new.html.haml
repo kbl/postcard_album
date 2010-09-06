@@ -1,0 +1,10 @@
+%fieldset
+  - form_for @postcard_set do |f|
+    %p
+      = f.label :name
+      = f.text_field :name
+    %p
+      = f.label :description, t('activerecord.attributes.postcard_set.description')
+      = f.text_area :description
+    %p
+      = f.submit t(:v_add), :class => 'formbutton'
