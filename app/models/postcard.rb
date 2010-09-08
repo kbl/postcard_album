@@ -1,7 +1,8 @@
 class Postcard < ActiveRecord::Base
 
   has_many :images, :dependent => :destroy, :order => 'type_of_image'
-  has_many :postcard_sets, :through => :postcard_set_position
+  has_many :postcard_set_positions
+  has_many :postcard_sets, :through => :postcard_set_positions
   belongs_to :publisher
 
   validates_presence_of :description, 

@@ -1,7 +1,7 @@
 class PostcardSet < ActiveRecord::Base
 
   has_many :postcard_set_positions
-  has_many :postcards, :through => :postcard_set_position
+  has_many :postcards, :through => :postcard_set_positions
 
 end
 
