@@ -17,3 +17,7 @@ end
 Factory.define :publisher do |publisher|
   publisher.sequence(:name) { |n| "publisher name #{n}" }
 end
+
+Factory.define(:newsletter_account) do |account|
+  
+end

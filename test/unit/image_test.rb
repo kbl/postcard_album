@@ -20,10 +20,16 @@ class ImageTest < ActiveSupport::TestCase
     assert image.valid?
   end
 
-  test "should write without file size" do
+  test "shouldnt write without file size" do
     image = Factory.build(:image, :image_file_size => nil)
 
-    assert image.valid?
+    assert image.valid? == false
+  end
+
+  test "image size should be less than 500kb" do
+    image = Factory.build(:image, :image_file_size => 500.kilobytes + 1)
+    
+    assert image.valid? == false
   end
 
   test "image type should contain certain set of symbols" do
