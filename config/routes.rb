@@ -12,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :postcard_sets
   map.resources :index
   map.resources :tags
+  map.resources :newsletter_accounts
 
   map.connect '/postcards/images/:id/:style.:format', :controller => 'images', :action => 'show'
   map.root :controller => :index, :action => :index
