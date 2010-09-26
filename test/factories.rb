@@ -19,5 +19,6 @@ Factory.define :publisher do |publisher|
 end
 
 Factory.define(:newsletter_account) do |account|
-  
+  account.sequence(:email) { |e| "email#{e}@domain.pl" }
 end
+
