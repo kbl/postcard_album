@@ -10,3 +10,7 @@ gem 'simple-navigation'
 gem 'authlogic'
 gem 'haml'
 gem 'rmagick'
+
+group :development, :test do
+  gem 'sqlite3-ruby'
+end
