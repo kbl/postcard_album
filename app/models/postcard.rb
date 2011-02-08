@@ -1,5 +1,7 @@
 class Postcard < ActiveRecord::Base
 
+  acts_as_taggable
+
   has_many :images, :dependent => :destroy, :order => 'type_of_image'
   has_many :postcard_set_positions
   has_many :postcard_sets, :through => :postcard_set_positions
@@ -17,10 +19,8 @@ class Postcard < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, :allow_destroy => true
 
-  named_scope :limited, lambda { |lim| { :limit => lim } }
-  named_scope :horizontal, :conditions => {:is_horizontal => true}
-
-  acts_as_taggable
+  scope :limited, lambda { |lim| { :limit => lim } }
+  scope :horizontal, where(:is_horizontal => true)
   
   def is_horizontal
     return true if self[:is_horizontal].nil?
@@ -79,12 +79,6 @@ class Postcard < ActiveRecord::Base
   end
 
 end
-
-
-
-
-
-
 
 # == Schema Information
 #

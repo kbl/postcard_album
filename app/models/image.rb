@@ -47,8 +47,7 @@ class Image < ActiveRecord::Base
   validates_attachment_presence :image
   validates_attachment_size :image, :less_than => 500.kilobytes
 
-  named_scope :abverse, :conditions => { :type_of_image => 'abverse' }
-
+  scope :abverse, where(:type_of_image => 'abverse')
 
 
   def thumbnail_style

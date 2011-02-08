@@ -1,6 +1,7 @@
+source 'http://rubygems.org'
 source :gemcutter
 
-gem 'rails', '2.3.8'
+gem 'rails', '3.0.3'
 gem 'factory_girl'
 gem 'will_paginate'
 gem 'paperclip'
@@ -12,5 +13,5 @@ gem 'haml'
 gem 'rmagick'
 
 group :development, :test do
-  gem 'sqlite3-ruby'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
 end
