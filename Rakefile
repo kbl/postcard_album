@@ -4,8 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-
-require 'rake/testtask'
-require 'rake/rdoctask'
-
-Postcard::Application.load_tasks
+PostcardAlbum::Application.load_tasks
