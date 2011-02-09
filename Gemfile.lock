@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/odorcicd/authlogic.git
+  revision: a087ad0cba3c165ba22fcf176c28b6f7517931e8
+  branch: rails3
+  specs:
+    authlogic (2.1.3)
+      activesupport
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -31,8 +39,6 @@ GEM
     acts-as-taggable-on (2.0.6)
     annotate (2.4.0)
     arel (2.0.8)
-    authlogic (2.1.6)
-      activesupport
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -88,7 +94,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on
   annotate
-  authlogic
+  authlogic!
   factory_girl
   haml
   paperclip
