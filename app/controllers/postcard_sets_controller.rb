@@ -21,7 +21,8 @@ class PostcardSetsController < ApplicationController
   private
 
   def set_navigation
-    current_navigation :postcard_sets    
+    # TODO Rails3
+    # current_navigation :postcard_sets    
   end
 
 end

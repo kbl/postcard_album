@@ -8,6 +8,7 @@ gem 'annotate'
 gem 'acts-as-taggable-on'
 gem 'simple-navigation'
 gem 'authlogic'
+gem 'rails3-generators'
 gem 'haml'
 gem 'rmagick'
 

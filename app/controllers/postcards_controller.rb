@@ -56,7 +56,8 @@ class PostcardsController < ApplicationController
   private
 
   def set_navigation
-    current_navigation :postcards    
+    # TODO Rails3
+    # current_navigation :postcards    
   end
 
   def seed_publishers

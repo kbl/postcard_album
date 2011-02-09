@@ -1,10 +1,10 @@
 PostcardAlbum::Application.routes.draw do
 
   # TODO Rails3
-  # login 'login', :controller => :user_sessions, :action => :new
-  # logout 'logout', :controller => :user_sessions, :action => :destroy
-  # contact 'contact', :controller => :contact
-  # links 'links', :controller => :links
+  match :login, :controller => :user_sessions, :action => :new
+  match :logout, :controller => :user_sessions, :action => :destroy
+  match :contact, :to => 'contact#show'
+  match :links, :controller => :links
 
   resources :user_sessions
   resources :users
