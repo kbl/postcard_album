@@ -1,6 +1,5 @@
 class Image < ActiveRecord::Base
 
-
   SIGNATURE = 'kolekcja.pietraszek.pl'
 
   IMAGE_TYPES = %w[abverse reverse stamp other]
