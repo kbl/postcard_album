@@ -1,17 +1,21 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.3'
+gem 'rails', '3.1'
 gem 'factory_girl'
 gem 'will_paginate'
 gem 'paperclip'
 gem 'annotate'
 gem 'acts-as-taggable-on'
 gem 'simple-navigation'
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+gem 'authlogic'
 gem 'rails3-generators'
 gem 'haml'
 gem 'rmagick'
 
-group :development, :test do
+group :development do
+  gem 'mysql2'
+end
+
+group :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
 end
