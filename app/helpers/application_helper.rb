@@ -15,12 +15,4 @@ module ApplicationHelper
     end
   end
 
-  def postcard_images_lightbox(images, options)
-    images.each do |i|
-      link_to i.image.url(i.normal_style), options do
-        image_tag i.image.url(i.thumbnail_style)
-      end
-    end
-  end
-
 end
