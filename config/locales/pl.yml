@@ -1,0 +1,10 @@
+pl: 
+  nav_main_page: 'Strona główna'
+  nav_contact: 'Kontakt'
+  nav_postcards: 'Widokówki'
+  nav_links: 'Odnośniki'
+  nav_publishers: 'Wydawcy'
+  nav_postcard_sets: 'Zestawy'
+  time:
+    formats:
+      default: %d.%m.%Y %H:%M

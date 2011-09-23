@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
+
   helper :all
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  # TODO Rails3
-  #filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_locale, :tag_cloud
   before_filter :authorize, :except => [:index, :show]
