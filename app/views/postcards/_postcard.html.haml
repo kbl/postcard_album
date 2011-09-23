@@ -1,6 +1,4 @@
 - content_for :head do
-  = stylesheet_link_tag 'shadowbox'
-  = javascript_include_tag 'shadowbox'
   = javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl'
 
   :javascript
@@ -18,7 +16,7 @@
   %tbody
     %tr
       %td{:style => "width: 20%"}= t 'activerecord.attributes.postcard.description'
-      %td= p.description
+      %td= raw(p.description)
     %tr
       %td= t 'activerecord.attributes.postcard.year'
       %td= h p.year
@@ -33,7 +31,7 @@
       %td= t 'activerecord.attributes.postcard.images'
       %td
         %div
-          - postcard_images_lightbox(p.images, :class => 'lightbox', :rel => 'shadowbox[gallery]')
+          = render :partial => '/postcards/postcard_lightbox', :locals => { :images => p.images }
     - unless p.longitude.blank?
       %tr
         %td{:colspan => "2"}= t :v_postcards_map

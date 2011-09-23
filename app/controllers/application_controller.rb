@@ -1,16 +1,14 @@
 class ApplicationController < ActionController::Base
-
   helper :all
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  filter_parameter_logging :password, :password_confirmation
+  # TODO Rails3
+  #filter_parameter_logging :password, :password_confirmation
 
   before_filter :set_locale, :tag_cloud
   before_filter :authorize, :except => [:index, :show]
 
   helper_method :current_user
-
-
 
   private
 
@@ -21,9 +19,9 @@ class ApplicationController < ActionController::Base
 
   def current_user
     return @current_user if defined?(@current_user)
-    @current_user = current_user_session && current_user_session.record
+    @current_user = current_user_session && current_user_session.user
   end
-  
+
   def set_locale
     I18n.locale = (params[:locale] || 'pl')
   end

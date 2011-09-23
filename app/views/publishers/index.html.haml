@@ -11,7 +11,7 @@
             = link_to t(:v_edit), edit_publisher_path(publisher), :class => :important
             = link_to t(:v_delete), publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
           %p
-            = publisher.description
+            = raw(publisher.description)
     %tr
       %td.right-align
         = will_paginate @publishers, :next_label => t(:v_next), :previous_label => t(:v_previous)

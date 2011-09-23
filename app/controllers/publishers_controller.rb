@@ -51,7 +51,8 @@ class PublishersController < ApplicationController
   private
 
   def set_navigation
-    current_navigation :publishers
+    # TODO Rails3
+    # current_navigation :publishers
   end
 
 end
