@@ -4,11 +4,11 @@
   :javascript 
     $(document).ready(function() {
       Shadowbox.init();
-      = draw_google_map @postcard, true
+      #{draw_google_map @postcard, true}
 
       tinyMCE.init({
         mode: 'textareas',
-        language: '<%= I18n.locale %>'
+        language: '#{I18n.locale}'
       });
     });
 
@@ -33,7 +33,7 @@
     %p
       = f.label :publisher_id, t('activerecord.attributes.postcard.publisher_id')
       = f.select :publisher_id, @publishers, :include_blank => true
-    - f.fields_for :images do |builder|
+    = f.fields_for :images do |builder|
       = render :partial => 'image_fields', :locals => { :f => builder, :editable => editable }
     %p
       = link_to_add_image_fields  f, { :name => t(:v_postcards_add_image), :editable => true }
@@ -42,7 +42,7 @@
       = f.text_field :tag_list
     %p
       = f.label :longitude, t(:v_postcards_map)
-      .map
+      #map
       = f.hidden_field :latitude, :id => 'latitude'
       = f.hidden_field :longitude, :id => 'longitude'
     %p
