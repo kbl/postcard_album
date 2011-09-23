@@ -14,30 +14,30 @@
       #header.container
         #logo
           %h1
-            = link_to t(:v_page_title), root_path
+            = link_to 'Oleśnica', root_path
           %p
-            podtytuł
+            Powiew historii ze starych widokówek
         #menu
           = render_navigation
       #page
         #content
           = yield
-          <div style="clear: both;">&nbsp;</div>
+          .clear
         #sidebar
           = render :partial => 'sidebar'
-        <div style="clear: both;">&nbsp;</div>
+        .clear
     #footer-content
       #footer-bg.container
         #column1
-          <h2>Welcome to my website</h2>
-          <p>In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.</p>
-        #column2
+          %h2
+            Witam na mojej stronie!
           %p
-            &copy; 2010. Design by
-            = link_to 'Marcin Pietraszek', 'http://marcin.pietraszek.pl'
-            &nbsp; | &nbsp; &copy; 2009. Layout by
-            %a{:href => "http://www.freecsstemplates.org/"}
-              Free CSS Templates
+            In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.
+        #column2
+          %h2
+            Witam na mojej stronie!
+          %p
+            In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.
         #column3
           %h2
             Recommended Links
@@ -48,6 +48,10 @@
             <li><a href="#">Urnanet non molestie semper</a></li>
             <li><a href="#">Proin gravida orci porttitor</a></li>
     #footer
-      %p
-        Dupa
+      %p 
+        &copy; 2010. Design by
+        = link_to 'Marcin Pietraszek', 'http://marcin.pietraszek.pl'
+        &nbsp; | &nbsp; &copy; 2009. Layout by
+        %a{:href => "http://www.freecsstemplates.org/"}
+          Free CSS Templates
 

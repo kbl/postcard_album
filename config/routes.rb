@@ -3,7 +3,6 @@ PostcardAlbum::Application.routes.draw do
   # TODO Rails3
   match :login, :controller => :user_sessions, :action => :new
   match :logout, :controller => :user_sessions, :action => :destroy
-  match :contact, :to => 'contact#show'
 
   resources :user_sessions
   resources :users

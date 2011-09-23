@@ -5,10 +5,14 @@ http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
 */
 
+.clear {
+  clear: both;
+}
+
 body {
 	margin: 0;
 	padding: 0;
-	background: url(../images/layout/img01.jpg) repeat-x left top;
+	background: url(../images/layout/img01.jpg) repeat-x top;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 	color: #3A4648;
@@ -61,7 +65,7 @@ a:hover {
 /* Header */
 
 #header {
-	width: 900px;
+	width: 1000px;
 	height: 115px;
 	margin: 0 auto;
 	padding: 0px 50px;
@@ -114,55 +118,16 @@ a:hover {
 /* Splash */
 
 #splash {
-	width: 960px;
+	width: 1000px;
 	height: 300px;
 	margin: 0px auto;
-}
-
-/* Search */
-
-#search {
-	float: right;
-	width: 280px;
-	height: 60px;
-	padding: 20px 0px 0px 0px;
-}
-
-#search form {
-	height: 41px;
-	margin: 0;
-	padding: 10px 0 0 20px;
-}
-
-#search fieldset {
-	margin: 0;
-	padding: 0;
-	border: none;
-}
-
-#search-text {
-	width: 170px;
-	padding: 6px 5px 2px 5px;
-	border: 1px solid #E7EBED;
-	background: #FFFFFF;
-	text-transform: lowercase;
-	font: normal 11px Arial, Helvetica, sans-serif;
-	color: #5D781D;
-}
-
-#search-submit {
-	width: 50px;
-	height: 22px;
-	border: none;
-	background: #B9B9B9;
-	color: #000000;
 }
 
 /* Menu */
 
 #menu {
 	float: right;
-	width: 500px;
+	width: 700px;
 	height: 90px;
 	margin: 0 auto;
 	padding: 0;
