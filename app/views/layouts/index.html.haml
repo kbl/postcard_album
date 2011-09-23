@@ -21,11 +21,8 @@
         #menu
           = render_navigation
       #page
-        #content
+        #content-full
           = yield
-          .clear
-        #sidebar
-          = render :partial => 'sidebar'
         .clear
     #footer-content
       #footer-bg.container

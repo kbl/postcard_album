@@ -1,5 +1,5 @@
-- content_for :slider do
-  %ul.slider
-    - @newest_postcards.each do |p|
-      = content_tag('li', image_tag(postcard_abverse_image_url(p, :normal), :width => 300, :height => 207, :style => 'border: 0px'))
+#slider.nivoSlider
+  - @newest_postcards.each do |p|
+    = image_tag(postcard_abverse_image_url(p, :normal))
+
 = render '/postcards/postcard', :p => @postcard if @postcard
