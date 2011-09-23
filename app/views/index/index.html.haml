@@ -1,7 +1,7 @@
 - content_for :head do
   = javascript_include_tag 'welcome'
 
-#slider.nivoSlider.theme-orman
+#slider.nivoSlider.theme-default
   - @newest_postcards.each do |p|
     = image_tag(postcard_abverse_image_url(p, :normal))
 
