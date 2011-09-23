@@ -65,6 +65,7 @@ GEM
     mime-types (1.16)
     multi_json (1.0.3)
     mysql2 (0.3.7)
+    nested_form (0.1.1)
     paperclip (2.4.1)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -141,6 +142,7 @@ DEPENDENCIES
   haml
   jquery-rails
   mysql2
+  nested_form
   paperclip
   rails (= 3.1.0)
   rails3-generators
