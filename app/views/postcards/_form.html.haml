@@ -13,8 +13,11 @@
     });
 
 %fieldset
-  - form_for(@postcard, :html => { :multipart => true }) do |f|
-    = f.error_messages
+  = form_for(@postcard, :html => { :multipart => true }) do |f|
+    - if @postcard.errors.any? 
+      %ul
+        - @postcard.errors.full_messages.each do |e|
+          %li= e
     %p
       = f.label :name, t('activerecord.attributes.postcard.name')
       = f.text_field :name
