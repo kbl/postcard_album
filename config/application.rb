@@ -48,8 +48,5 @@ module PostcardAlbum
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
-
-    # Different tag around error fields
-    config.action_view.field_error_proc = Proc.new { |html_tag, instance| "<span class=\"field-with-errors\">#{html_tag}</span>" }
   end
 end
