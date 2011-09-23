@@ -16,3 +16,9 @@ pl:
   time:
     formats:
       default: %d.%m.%Y %H:%M
+
+  will_paginate:
+    previous_label: "&#8592; Poprzednia strona"
+    next_label: "Następna strona &#8594;"
+    page_gap: "&hellip;"
+

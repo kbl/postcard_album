@@ -15,7 +15,7 @@ class Postcard < ActiveRecord::Base
   validates_numericality_of :year, :only_integer => true, :greater_than => 1800, :less_than => 2000
   
   cattr_reader :per_page
-  @@per_page = 5
+  @@per_page = 12
 
   accepts_nested_attributes_for :images, :allow_destroy => true
 

@@ -5,16 +5,12 @@ http://www.freecsstemplates.org
 Released for free under a Creative Commons Attribution 2.5 License
 */
 
-.clear {
-  clear: both;
-}
-
 body {
 	margin: 0;
 	padding: 0;
 	background: url(../images/layout/img01.jpg) repeat-x top;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
+	font-size: 14px;
 	color: #3A4648;
 }
 
@@ -153,7 +149,7 @@ a:hover {
 	text-align: center;
 	text-transform: uppercase;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 1.2em;
 	font-weight: bold;
 	color: #FFFFFF;
 	border: none;
@@ -170,7 +166,7 @@ a:hover {
 /* Page */
 
 #page {
-	width: 900px;
+	width: 1000px;
 	margin: 0 auto;
 	padding: 30px 30px;
 }
@@ -213,7 +209,7 @@ a:hover {
 	padding: 0px;
 	text-align: left;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
+	font-size: 1.2;
 	font-weight: bold;
 }
 
@@ -296,7 +292,7 @@ a:hover {
 	display: block;
 	margin-top: -20px;
 	padding: 0;
-	font-size: 11px;
+	font-size: 1em;
 	font-style: italic;
 }
 
@@ -369,7 +365,7 @@ a:hover {
 	padding: 0px 0px 20px 0px;
 	letter-spacing: -1px;
 	text-transform: lowercase;
-	font-size: 26px;
+	font-size: 2em;
 	color: #FFFFFF;
 }
 
@@ -411,7 +407,7 @@ a:hover {
 	margin: 0;
 	padding-top: 30px;
 	line-height: normal;
-	font-size: 10px;
+	font-size: 1em;
 	text-transform: uppercase;
 	text-align: center;
 	color: #92A9B6;
@@ -435,7 +431,7 @@ a:hover {
 	padding: 0px;
 	letter-spacing: -2px;
 	text-transform: lowercase;
-	font-size: 34px;
+	font-size: 2em;
 	color: #345E9B;
 }
 
@@ -452,6 +448,6 @@ a:hover {
 	letter-spacing: -2px;
 	text-align: center;
 	text-transform: lowercase;
-	font-size: 30px;
+	font-size: 2em;
 	color: #FFFFFF;
 }

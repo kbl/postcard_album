@@ -4,14 +4,18 @@
       Shadowbox.init();
     });
 
-- @postcards.each do |postcard|
-  .postcard
-    = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important'))
-    %p
+- @postcards.each_slice(3) do |slice|
+  - slice.each do |postcard|
+    .postcard
       %h3= link_to postcard.name, postcard
-      Dodano #{l(postcard.created_at)}
+      %p
+        = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important'))
+      %p
+        Dodano #{l(postcard.created_at)}
       - if current_user
-        = link_to t(:v_edit), edit_postcard_path(postcard), :class => :important
-        = link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
-#pagination.clear
-  = will_paginate @postcards, :next_label => t(:v_next), :previous_label => t(:v_previous)
+        %p
+          = link_to t(:v_edit), edit_postcard_path(postcard), :class => :important
+          = link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
+  .clear
+#pagination
+  = will_paginate @postcards, link_separator: " &nbsp;  "

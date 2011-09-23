@@ -1,4 +1,19 @@
+.clear {
+  clear: both;
+}
+
 .postcard {
   float: left;
-  padding: 2em;
+  padding: 1em 0;
+  width: 330px;
+  text-align: center;
+}
+
+.postcard h3 {
+  margin-bottom: 0.5em;
+}
+
+#pagination {
+  width: 100%;
+  text-align: center;
 }
