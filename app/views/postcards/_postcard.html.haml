@@ -33,7 +33,7 @@
       %td= t 'activerecord.attributes.postcard.images'
       %td
         %div
-          = render :partial => 'postcard_lightbox', :locals => { :images => p.images }
+          = render :partial => '/postcards/postcard_lightbox', :locals => { :images => p.images }
     - unless p.longitude.blank?
       %tr
         %td{:colspan => "2"}= t :v_postcards_map
