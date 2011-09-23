@@ -4,7 +4,6 @@ class TagsController < ApplicationController
     @postcards = Postcard.tagged_with(params[:id]).paginate(:page => params[:page], :order => 'created_at DESC')
     @publishers = Publisher.find_all_combobox || []
 
-    current_navigation :postcards
     render :template => 'postcards/index'
   end
 
