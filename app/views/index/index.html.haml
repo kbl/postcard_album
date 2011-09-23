@@ -1,5 +1,10 @@
+- content_for :head do
+  = javascript_include_tag params[:controler]
+
 #slider.nivoSlider
   - @newest_postcards.each do |p|
     = image_tag(postcard_abverse_image_url(p, :normal))
 
-= render '/postcards/postcard', :p => @postcard if @postcard
+#htmlcaption.nivo-html-caption
+  <strong>This</strong> is an example of a <em>HTML</em> caption with <a href="#">a link</a>.
+
