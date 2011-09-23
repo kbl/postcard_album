@@ -356,7 +356,7 @@ a:hover {
 
 #footer-bg {
 	overflow: hidden;
-	width: 890px;
+	width: 1000px;
 	padding: 30px 55px 50px 55px;
 }
 
@@ -379,18 +379,18 @@ a:hover {
 
 #column1 {
 	float: left;
-	width: 290px;
+	width: 300px;
 	margin-right: 30px;
 }
 
 #column2 {
 	float: left;
-	width: 280px;
+	width: 300px;
 }
 
 #column3 {
 	float: right;
-	width: 260px;
+	width: 330px;
 }
 
 /* Footer */
