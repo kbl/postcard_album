@@ -180,13 +180,13 @@ a:hover {
 #content {
 	float: left;
 	width: 590px;
-	padding: 50px 0px 0px 0px;
+	padding: 0px;
 }
 
 #content-full {
 	float: left;
 	width: 1000px;
-	padding: 50px 0px 0px 0px;
+	padding: 0px;
 }
 
 .post {
