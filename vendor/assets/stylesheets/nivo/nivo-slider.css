@@ -9,15 +9,22 @@
  * March 2010
  */
  
- 
 /* The Nivo Slider styles */
 .nivoSlider {
 	position:relative;
+    width: 768px;
+    height: 528px;
+    background:url(images/loading.gif) no-repeat 50% 50%;
 }
 .nivoSlider img {
 	position:absolute;
 	top:0px;
 	left:0px;
+    display:none;
+}
+.nivoSlider a {
+    border: 0px;
+    display: block;
 }
 /* If an image is wrapped in a link */
 .nivoSlider a.nivo-imageLink {
