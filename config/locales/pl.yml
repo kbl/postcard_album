@@ -1,10 +1,18 @@
 pl: 
-  nav_main_page: 'Strona główna'
+  v_add: 'Dodaj'
+  v_edit: 'Edytuj'
+  v_delete: 'Usuń'
+  v_show: 'Pokaż'
+  v_delete_confirmation: 'Czy rzeczywiście chcesz usunąć ten element?'
+  v_page_title: 'Widokówki Mirka Pietraszka'
+  v_back: 'Wstecz'
   nav_contact: 'Kontakt'
+  nav_main_page: 'Strona główna'
   nav_postcards: 'Widokówki'
   nav_links: 'Odnośniki'
   nav_publishers: 'Wydawcy'
   nav_postcard_sets: 'Zestawy'
+
   time:
     formats:
       default: %d.%m.%Y %H:%M
