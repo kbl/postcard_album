@@ -1,4 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+!!! Strict
+!!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml"}
   %head
     %meta{'http-equiv' => "Content-Type", :content => "text/html; charset=utf-8"}/
@@ -35,23 +36,18 @@
             In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.
         #column2
           %h2
-            Witam na mojej stronie!
-          %p
-            In posuere eleifend odio quisque semper augue mattis wisi maecenas ligula. Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum. Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.
+            Tagi
+          = render :partial => 'index/tag_cloud', :locals => { :tags => @tags }
         #column3
           %h2
-            Recommended Links
+            Polecane linki
           %ul
-            <li><a href="#">Consectetuer adipiscing elit</a></li>
-            <li><a href="#">Metus aliquam pellentesque</a></li>
-            <li><a href="#">Suspendisse iaculis mauris</a></li>
-            <li><a href="#">Urnanet non molestie semper</a></li>
-            <li><a href="#">Proin gravida orci porttitor</a></li>
+            %li
+              = link_to 'Historia Oleśnicy - Marek Nienaltowski', 'http://olesnica.nienaltowski.net'
     #footer
       %p 
-        &copy; 2010. Design by
+        &copy; 2010-2011. Design by
         = link_to 'Marcin Pietraszek', 'http://marcin.pietraszek.pl'
-        &nbsp; | &nbsp; &copy; 2009. Layout by
-        %a{:href => "http://www.freecsstemplates.org/"}
-          Free CSS Templates
+        | Layout by
+        = link_to 'Free CSS Templates', 'http://www.freecsstemplates.org/'
 
