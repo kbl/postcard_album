@@ -1,8 +1,8 @@
 - if current_user
-%h4.important
-  = t :v_index_actions
-%p
-  %ul
-    = content_tag 'li', link_to(t(:v_postcards_new), new_postcard_path)
-    = content_tag 'li', link_to(t(:v_publishers_new), new_publisher_path)
-    = content_tag 'li', link_to(t(:v_postcard_sets_new), new_postcard_set_path)
+  %h4.important
+    = t :v_index_actions
+  %p
+    %ul
+      = content_tag 'li', link_to(t(:v_postcards_new), new_postcard_path)
+      = content_tag 'li', link_to(t(:v_publishers_new), new_publisher_path)
+      = content_tag 'li', link_to(t(:v_postcard_sets_new), new_postcard_set_path)
