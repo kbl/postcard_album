@@ -6,8 +6,7 @@ class Publisher < ActiveRecord::Base
   validates_length_of :name, :maximum => 255
 
   cattr_reader :per_page
-  @@per_page = 5
-
+  @@per_page = 12
 
   def self.find_all_combobox
     all.collect { |p| [p.name, p.id] }
