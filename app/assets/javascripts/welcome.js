@@ -4,7 +4,6 @@
             effect: 'fade', // Specify sets like: 'fold,fade,sliceDown'
             animSpeed: 500, // Slide transition speed
             pauseTime: 3000, // How long each slide will show
-            startSlide: rand, // Set starting Slide (0 index)
             directionNav: true, // Next & Prev navigation
             directionNavHide: true, // Only show on hover
             controlNav: true, // 1,2,3... navigation
