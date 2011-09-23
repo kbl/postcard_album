@@ -8,6 +8,4 @@
 //= require jquery
 //= require jquery_ujs
 //= require shadowbox
-//= require easySlider1.7
-//= require nested_form
 //= require_tree .
