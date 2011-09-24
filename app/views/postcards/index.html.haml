@@ -11,9 +11,7 @@
       %p
         = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important'))
       .date-added
-        %span.date-added-day= postcard.created_at.day
-        %span.date-added-month=l postcard.created_at, :format => :month
-        %span.date-added-year= postcard.created_at.year
+        = date_added(postcard.created_at)
       - if current_user
         %p
           = link_to t(:v_edit), edit_postcard_path(postcard), :class => :important

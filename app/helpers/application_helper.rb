@@ -15,4 +15,11 @@ module ApplicationHelper
     end
   end
 
+  def date_added(date)
+    buffer = '' << content_tag('span', date.day, class: 'date-aded-day')
+    buffer << content_tag('span', l(date, :format => :month), class: 'date-added-month')
+    buffer << content_tag('span', date.year, class: 'date-added-year')
+    buffer.html_safe
+  end
+
 end

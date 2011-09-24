@@ -6,4 +6,5 @@
   = link_to t(:v_edit), edit_publisher_path(@publisher), :class => 'important'
   = link_to t(:v_delete), @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important'
 
-= link_to t(:v_back), publishers_path
+#bottom-navigation
+  = link_to 'Lista wydawców', publishers_path

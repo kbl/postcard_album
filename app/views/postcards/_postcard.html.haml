@@ -16,9 +16,8 @@
 
 %p
   Widokówka została wydana w #{p.year} roku 
-  = p.year.year
   - if p.publisher
-    przez wydawcę #{p.publisher.name}
+    przez wydawcę #{link_to p.publisher.name, publisher_path(p.publisher)}.
 
 %div
   = render :partial => '/postcards/postcard_lightbox', :locals => { :images => p.images }

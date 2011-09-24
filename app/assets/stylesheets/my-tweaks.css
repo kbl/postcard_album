@@ -50,3 +50,19 @@
   display: inline;
   padding: 0px 1em;
 }
+
+#bottom-navigation {
+  margin-top: 1em;
+}
+
+ol#publishers {
+  list-style-type: none;
+}
+
+ol#publishers li {
+  padding-bottom: 1em;
+}
+
+.date-added-day, .date-added-month, .date-added-year {
+  padding: 0px 0.2em;
+}
