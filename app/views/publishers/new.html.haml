@@ -1,6 +1,6 @@
-%h1
-  = t :v_publishers_new
+%h1 Dodaj wydawcę
 
 = render :partial => 'form', :locals => { :button_label => t(:v_add) }
 
-= link_to t(:v_back), publishers_path
+#bottom-navigation
+  = link_to 'Lista wydawców', publishers_path

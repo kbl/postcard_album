@@ -8,18 +8,16 @@
       });
     });
 
-%fieldset
-  = form_for(@publisher) do |f|
-    - if @publisher.errors.any? 
-      %ul
-        - @publisher.errors.full_messages.each do |e|
-          %li= e
+= form_for(@publisher) do |f|
+  - if @publisher.errors.any? 
+    %ul
+      - @publisher.errors.full_messages.each do |e|
+        %li= e
 
-    %p
-      = f.label :name, t('activerecord.attributes.publisher.name')
-      = f.text_field :name
-    %p
-      = f.label :description, t('activerecord.attributes.publisher.description')
-      = f.text_area :description
-    %p
-      = f.submit button_label, :class => 'formbutton'
+  .field
+    = f.label :name, t('activerecord.attributes.publisher.name')
+    = f.text_field :name, class: 'form-full-width'
+  .field
+    = f.label :description, t('activerecord.attributes.publisher.description')
+    = f.text_area :description, class: 'form-full-width'
+  = f.submit button_label, class: 'button'
