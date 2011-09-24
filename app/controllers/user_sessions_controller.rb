@@ -11,7 +11,7 @@ class UserSessionsController < ApplicationController
 
     if @user_session.save
       flash[:notice] = t :successfully_login
-      redirect_to root_path
+      redirect_to new_postcard_path
     else
       render :action => 'new'
     end
