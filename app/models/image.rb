@@ -42,9 +42,9 @@ class Image < ActiveRecord::Base
 
   validates_presence_of :image_file_name
   validates_associated :postcard
-  validates_inclusion_of :type_of_image, :in => Image::IMAGE_TYPES
+  validates_inclusion_of :type_of_image, in: Image::IMAGE_TYPES
   validates_attachment_presence :image
-  validates_attachment_size :image, :less_than => 500.kilobytes
+  validates_attachment_size :image, less_than: 500.kilobytes
 
   scope :abverse, where(:type_of_image => 'abverse')
 

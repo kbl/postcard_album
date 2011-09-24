@@ -24,7 +24,7 @@ group :assets do
 end
 
 group :test do
-  gem 'factory_girl'
+  gem 'factory_girl_rails'
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'sqlite3-ruby', :require => 'sqlite3'

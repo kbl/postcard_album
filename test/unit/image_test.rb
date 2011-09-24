@@ -20,12 +20,6 @@ class ImageTest < ActiveSupport::TestCase
     assert image.valid?
   end
 
-  test "shouldnt write without file size" do
-    image = Factory.build(:image, :image_file_size => nil)
-
-    assert image.valid? == false
-  end
-
   test "image size should be less than 500kb" do
     image = Factory.build(:image, :image_file_size => 500.kilobytes + 1)
     
@@ -37,7 +31,7 @@ class ImageTest < ActiveSupport::TestCase
     assert Image::IMAGE_TYPES & valid_image_types == valid_image_types
   end
 
-  test "shouldn save with wrong image type" do
+  test "shouldnt save with wrong image type" do
     image = Factory.build(:image, :type_of_image => :wrong_image_type)
 
     assert !image.valid?
