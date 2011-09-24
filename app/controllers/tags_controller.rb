@@ -7,7 +7,9 @@ class TagsController < ApplicationController
 
       render template: 'postcards/index'
     else
-      render json: @tags
+      r = Regexp.new(Regexp.escape(params[:term]), Regexp::IGNORECASE)
+      json = @tags.select {|t| t.name =~ r}.map{ |t| {id: t.name, label: t.name, value: t.name}}
+      render json: json
     end
   end
 
