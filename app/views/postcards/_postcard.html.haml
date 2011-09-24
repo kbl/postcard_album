@@ -2,8 +2,8 @@
   = javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl'
 
   :javascript
-    Shadowbox.init();
     $(document).ready(function() { 
+      Shadowbox.init();
       #{unless p.longitude.blank?
         draw_google_map p, false
       end}
@@ -16,6 +16,7 @@
 
 %p
   Widokówka została wydana w #{p.year} roku 
+  = p.year.year
   - if p.publisher
     przez wydawcę #{p.publisher.name}
 
