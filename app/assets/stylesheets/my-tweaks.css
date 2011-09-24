@@ -106,4 +106,19 @@ ul#errors li {
   color: red;
 }
 
+.cloud-tiny {
+  font-size: 0.7em;
+}
+
+.cloud-small {
+  font-size: 1em;
+}
+
+.cloud-normal {
+  font-size: 1.3em;
+}
+
+.cloud-big {
+  font-size: 1.6em;
+}
 
