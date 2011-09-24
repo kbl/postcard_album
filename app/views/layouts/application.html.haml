@@ -10,6 +10,8 @@
     = javascript_include_tag 'application'
     = yield :head
   %body
+    #admin-area
+      = render partial: 'layouts/admin_area'
     #wrapper
       #header.container
         #logo

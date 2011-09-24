@@ -30,3 +30,23 @@
   margin: 2em;
   border: 1px solid black;
 }
+
+#admin-area {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 10px;
+}
+
+#admin-area a {
+  color: gray;
+}
+
+#admin-area ul {
+  list-style-type: none;
+}
+
+#admin-area ul li {
+  display: inline;
+  padding: 0px 1em;
+}

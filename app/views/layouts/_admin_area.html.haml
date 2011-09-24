@@ -1,0 +1,9 @@
+- if current_user
+  %ul
+    = content_tag 'li', link_to('Dodaj widokówkę', new_postcard_path)
+    = content_tag 'li', link_to('Dodaj wydawcę', new_publisher_path)
+    = content_tag 'li', link_to('Edytuj ustawienia konta', edit_user_path(:current))
+    = content_tag 'li', link_to('Wyloguj', logout_path)
+- else
+  %ul
+    = content_tag 'li', link_to('Zaloguj', login_path)

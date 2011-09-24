@@ -1,7 +1,0 @@
-%h4
-  = t :v_index_login
-- if current_user
-  = link_to t(:v_index_edit_profile), edit_user_path(:current)
-  = link_to t(:v_index_logout_action), logout_path
-- else
-  = link_to t(:v_index_login_action), login_path
