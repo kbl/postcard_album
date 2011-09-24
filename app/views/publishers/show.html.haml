@@ -1,10 +1,21 @@
+- content_for :head do
+  :javascript
+    jQuery(document).ready(function() {
+      Shadowbox.init();
+    });
+
 %h3.postcard-heading
   = h @publisher.name
 
 = content_tag 'p', raw(@publisher.description) if @publisher.description
-- if current_user
-  = link_to t(:v_edit), edit_publisher_path(@publisher), :class => 'important'
-  = link_to t(:v_delete), @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important'
+
+- if @publisher.postcards.any?
+  %h4 Widokówki
+  - @publisher.postcards.each do |postcard|
+    = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail)), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox[gallery];title=' + link_to('Pełen opis', postcard_path(postcard), :class => 'important'))
 
 #bottom-navigation
+  - if current_user
+    = link_to 'Edytuj wydawcę', edit_publisher_path(@publisher), :class => 'important'
+    = link_to 'Usuń wydawcę', @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important'
   = link_to 'Lista wydawców', publishers_path
