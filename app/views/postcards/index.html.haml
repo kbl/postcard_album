@@ -1,5 +1,5 @@
 - content_for :head do
-  :javascript 
+  :javascript
     jQuery(document).ready(function() {
       Shadowbox.init();
     });
@@ -12,7 +12,7 @@
         = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important'))
       .date-added
         %span.date-added-day= postcard.created_at.day
-        %span.date-added-month= postcard.created_at.month
+        %span.date-added-month=l postcard.created_at, :format => :month
         %span.date-added-year= postcard.created_at.year
       - if current_user
         %p
