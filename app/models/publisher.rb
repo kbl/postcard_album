@@ -9,7 +9,7 @@ class Publisher < ActiveRecord::Base
   @@per_page = 12
 
   def self.find_all_combobox
-    all.collect { |p| [p.name, p.id] }
+    all.sort{|a, b| a.name <=> b.name }.map { |p| [p.name, p.id] }
   end
 
 end
