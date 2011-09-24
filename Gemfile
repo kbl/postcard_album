@@ -13,7 +13,7 @@ gem 'authlogic'
 gem 'rails3-generators'
 gem 'haml'
 gem 'rmagick'
-gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
+gem 'polish'
 
 # Gems used only for assets and not required
 # in production environments by default.
