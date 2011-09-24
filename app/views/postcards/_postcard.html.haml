@@ -25,5 +25,5 @@
   #map
 - if current_user
   %p
-    = link_to t(:v_edit), edit_postcard_path(@postcard)
-    = link_to t(:v_delete), @postcard, :method => :delete, :confirm => t(:v_delete_confirmation)
+    = link_to t(:v_edit), edit_postcard_path(@postcard), class: 'important'
+    = link_to t(:v_delete), @postcard, method: :delete, confirm: t(:v_delete_confirmation), class: 'important'

@@ -9,7 +9,7 @@
     .postcard
       %h3= link_to postcard.name, postcard
       %p
-        = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to(t(:v_postcards_full_description), postcard_path(postcard), :class => 'important'))
+        = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail), :class => 'image'), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox;title=' + link_to('Pełen opis', postcard_path(postcard), :class => 'important'))
       .date-added
         = date_added(postcard.created_at)
       - if current_user
