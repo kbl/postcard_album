@@ -3,13 +3,10 @@
     %ul
       - @user_session.errors.full_messages.each do |e|
         = e
-  %p
+  .field
     = f.label :username, t('authlogic.attributes.user_session.username')
     = f.text_field :username
-  %p
+  .field
     = f.label :password, t('authlogic.attributes.user_session.password')
     = f.password_field :password
-  %p
-    = f.submit 'Zaloguj'
-
-= link_to t(:v_back), root_path
+  = f.submit 'Zaloguj', class: 'button'

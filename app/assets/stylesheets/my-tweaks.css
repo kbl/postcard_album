@@ -77,7 +77,7 @@ label {
   display: block;
   float: left;
   font-weight: bold;
-  margin-right: 1em;
+  margin-right: 15px;
   text-align: right;
   width: 180px;
 }
@@ -88,5 +88,9 @@ label {
 
 .field {
   padding: 1em 0;
+}
+
+input.button {
+  margin-left: 195px 
 }
 
