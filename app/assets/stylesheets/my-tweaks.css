@@ -66,3 +66,27 @@ ol#publishers li {
 .date-added-day, .date-added-month, .date-added-year {
   padding: 0px 0.2em;
 }
+
+form {
+  width: 1000px;
+}
+
+label {
+  font-family: Arial, Verdana;
+  text-shadow: 2px 2px 2px #ccc;
+  display: block;
+  float: left;
+  font-weight: bold;
+  margin-right: 1em;
+  text-align: right;
+  width: 180px;
+}
+
+.form-full-width {
+  width: 735px;
+}
+
+.field {
+  padding: 1em 0;
+}
+

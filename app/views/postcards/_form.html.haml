@@ -12,38 +12,36 @@
       });
     });
 
-%fieldset
-  = form_for(@postcard, :html => { :multipart => true }) do |f|
-    - if @postcard.errors.any? 
-      %ul
-        - @postcard.errors.full_messages.each do |e|
-          %li= e
-    %p
-      = f.label :name, t('activerecord.attributes.postcard.name')
-      = f.text_field :name
-    %p
-      = f.label :description, t('activerecord.attributes.postcard.description')
-      = f.text_area :description, :cols => 64, :rows => 20
-    %p
-      = f.label :is_horizontal, t('activerecord.attributes.postcard.is_horizontal')
-      = f.check_box :is_horizontal
-    %p
-      = f.label :year, t('activerecord.attributes.postcard.year')
-      = f.text_field :year
-    %p
-      = f.label :publisher_id, t('activerecord.attributes.postcard.publisher_id')
-      = f.select :publisher_id, @publishers, :include_blank => true
+= form_for(@postcard, :html => { :multipart => true }) do |f|
+  - if @postcard.errors.any? 
+    %ul
+      - @postcard.errors.full_messages.each do |e|
+        %li= e
+  .field
+    = f.label :name, t('activerecord.attributes.postcard.name')
+    = f.text_field :name, class: 'form-full-width'
+  .field
+    = f.label :description, t('activerecord.attributes.postcard.description')
+    = f.text_area :description, rows: 20, class: 'form-full-width'
+  .field
+    = f.label :is_horizontal, t('activerecord.attributes.postcard.is_horizontal')
+    = f.check_box :is_horizontal
+  .field
+    = f.label :year, t('activerecord.attributes.postcard.year')
+    = f.text_field :year, class: 'form-full-width'
+  .field
+    = f.label :publisher_id, t('activerecord.attributes.postcard.publisher_id')
+    = f.select :publisher_id, @publishers, include_blank: true, class: 'form-full-width'
+  .field
     = f.fields_for :images do |builder|
-      = render :partial => 'image_fields', :locals => { :f => builder, :editable => editable }
-    %p
-      = link_to_add_image_fields  f, { :name => t(:v_postcards_add_image), :editable => true }
-    %p
-      = f.label :tag_list, t('activerecord.attributes.postcard.tags')
-      = f.text_field :tag_list
-    %p
-      = f.label :longitude, t(:v_postcards_map)
-      #map
-      = f.hidden_field :latitude, :id => 'latitude'
-      = f.hidden_field :longitude, :id => 'longitude'
-    %p
-      = f.submit button_label, :class => 'formbutton'
+      = render :partial => 'image_fields', locals: { f: builder, editable: editable }
+    = link_to_add_image_fields  f, {name: 'Dodaj kolejne zdjęcie', editable: true }
+  .field
+    = f.label :tag_list, t('activerecord.attributes.postcard.tags')
+    = f.text_field :tag_list, class: 'form-full-width'
+  .field
+    = f.label :longitude, 'Miejsce na mapie'
+    #map
+    = f.hidden_field :latitude, :id => 'latitude'
+    = f.hidden_field :longitude, :id => 'longitude'
+  = f.submit button_label, :class => 'formbutton'

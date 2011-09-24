@@ -1,6 +1,7 @@
-%h1= t :v_postcards_edit
+%h1 Edytuj widokówkę
 
 = render :partial => 'form', :locals => { :button_label => t(:v_edit), :editable => false }
 
-= link_to t(:v_show), @postcard |
-= link_to t(:v_back), postcards_path
+#bottom-navigation
+  = link_to 'Pokaż edytowaną widokówkę', @postcard |
+  = link_to 'Lista widokówek', postcards_path

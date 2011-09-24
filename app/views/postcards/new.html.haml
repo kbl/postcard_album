@@ -1,4 +1,6 @@
-%h2= t :v_postcards_new
+%h2 Dodaj widokówkę
 
 = render :partial => 'form', :locals => { :button_label => t(:v_add), :editable => true }
-= link_to t(:v_back), postcards_path
+
+#bottom-navigation
+  = link_to 'Lista widokówek', postcards_path
