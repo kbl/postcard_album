@@ -1,0 +1,6 @@
+- image_link = link_to('Pełen opis', postcard_path(postcard))
+- gallery_name ||= ''
+
+%a{ href: postcard_abverse_image_url(postcard, :normal), rel: "shadowbox[#{gallery_name}];title=#{image_link}" }
+  = image_tag(postcard_abverse_image_url(postcard, :thumbnail))
+

@@ -12,7 +12,7 @@
 - if @publisher.postcards.any?
   %h4 Widokówki
   - @publisher.postcards.each do |postcard|
-    = link_to(image_tag(postcard_abverse_image_url(postcard, :thumbnail)), postcard_abverse_image_url(postcard, :normal), :rel => 'shadowbox[gallery];title=' + link_to('Pełen opis', postcard_path(postcard), :class => 'important'))
+    = render partial: '/gallery_shadowbox', locals: { postcard: postcard, gallery_name: 'common' }
 
 #bottom-navigation
   - if current_user
