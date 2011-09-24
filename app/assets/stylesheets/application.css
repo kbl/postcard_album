@@ -6,5 +6,7 @@
  *= require shadowbox
  *= require nivo/default
  *= require nivo/nivo-slider
+ *= require nivo/nivo-slider
+ *= require jquery.tagsinput
  *= require_tree . 
 */

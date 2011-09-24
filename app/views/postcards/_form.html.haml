@@ -10,6 +10,12 @@
         mode: 'textareas',
         language: '#{I18n.locale}'
       });
+
+      $('#postcard_tag_list').tagsInput({
+        defaultText: 'dodaj tagi',
+        width: '735px',
+        height: '30px'
+      });
     });
 
 = form_for(@postcard, :html => { :multipart => true }) do |f|
