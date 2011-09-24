@@ -1,8 +1,5 @@
 = form_for(@user_session) do |f|
-  - if @user_session.errors.any?
-    %ul
-      - @user_session.errors.full_messages.each do |e|
-        = e
+  = render partial: '/error_messages', locals: { e: @user_session.errors }
   .field
     = f.label :username, t('authlogic.attributes.user_session.username')
     = f.text_field :username

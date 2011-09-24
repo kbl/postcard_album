@@ -94,3 +94,16 @@ input.button {
   margin-left: 195px 
 }
 
+ul#errors {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul#errors li {
+  margin-left: 195px;
+  font-weight: bold;
+  color: red;
+}
+
+

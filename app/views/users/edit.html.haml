@@ -1,17 +1,15 @@
-%fieldset
-  - form_for(@user) do |f|
-    = f.error_messages
+= form_for(@user) do |f|
 
-    %p
-      = f.label :username, t('activerecord.attributes.user.username')
-      = f.text_field :username
-    %p
-      = f.label :password, t('activerecord.attributes.user.password')
-      = f.password_field :password
-    %p
-      = f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation')
-      = f.password_field :password_confirmation
-    %p
-      = f.submit t(:v_edit), :class => 'formbutton'
+  .field
+    = f.label :username, t('activerecord.attributes.user.username')
+    = f.text_field :username
+  .field
+    = f.label :password, t('activerecord.attributes.user.password')
+    = f.password_field :password
+  .field
+    = f.label :password_confirmation, t('activerecord.attributes.user.password_confirmation')
+    = f.password_field :password_confirmation
+  = f.submit t(:v_edit), :class => 'button'
 
-= link_to t(:v_back), root_path
+#bottom-navigation
+  = link_to t(:v_back), root_path

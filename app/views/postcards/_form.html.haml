@@ -13,10 +13,7 @@
     });
 
 = form_for(@postcard, :html => { :multipart => true }) do |f|
-  - if @postcard.errors.any? 
-    %ul
-      - @postcard.errors.full_messages.each do |e|
-        %li= e
+  = render partial: '/error_messages', locals: { e: @postcard.errors }
   .field
     = f.label :name, t('activerecord.attributes.postcard.name')
     = f.text_field :name, class: 'form-full-width'

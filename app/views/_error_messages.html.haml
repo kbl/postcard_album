@@ -1,0 +1,4 @@
+- if e.any? 
+  %ul#errors
+    - e.full_messages.each do |e|
+      %li= e
