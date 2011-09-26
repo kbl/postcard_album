@@ -7,13 +7,13 @@ class Postcard < ActiveRecord::Base
   has_many :postcard_sets, :through => :postcard_set_positions
   belongs_to :publisher
 
-  validates_presence_of :description, 
+  validates_presence_of :description,
                         :name,
                         :year
   validates_inclusion_of :is_horizontal, :in => [true, false]
   validates_size_of :name, :maximum => 255
   validates_numericality_of :year, :only_integer => true, :greater_than => 1800, :less_than => 2000
-  
+
   cattr_reader :per_page
   @@per_page = 12
 
@@ -21,7 +21,9 @@ class Postcard < ActiveRecord::Base
 
   scope :limited, lambda { |lim| { :limit => lim } }
   scope :horizontal, where(:is_horizontal => true)
-  
+
+  include ::NormalizedUrls
+
   def is_horizontal
     return true if self[:is_horizontal].nil?
     self[:is_horizontal]
@@ -52,7 +54,7 @@ class Postcard < ActiveRecord::Base
   end
 
   def self.date_to_condition(params)
-    ['year <= ?', params[:date_to]] unless params[:date_to].blank? 
+    ['year <= ?', params[:date_to]] unless params[:date_to].blank?
   end
 
   def self.publisher_id_condition(params)
@@ -64,11 +66,11 @@ class Postcard < ActiveRecord::Base
   end
 
   def self.condition_options(params)
-    condition_parts(params).inject([]) { |result, element| result << element.last }  
+    condition_parts(params).inject([]) { |result, element| result << element.last }
   end
 
   def self.condition_clauses(params)
-    condition_parts(params).inject([]) { |result, element| result << element.first }  
+    condition_parts(params).inject([]) { |result, element| result << element.first }
   end
 
 
