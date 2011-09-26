@@ -36,7 +36,7 @@ class Image < ActiveRecord::Base
                         }
                     },
                     :path => ':rails_root/../postcard_images/:id/:style.:extension',
-                    :url => '/postcards/images/:id/:style.:extension'
+                    :url => '/widokowki/zdjecia/:id/:style.:extension'
 
   belongs_to :postcard
 
