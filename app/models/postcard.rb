@@ -21,6 +21,7 @@ class Postcard < ActiveRecord::Base
 
   scope :limited, lambda { |lim| { :limit => lim } }
   scope :horizontal, where(:is_horizontal => true)
+  scope :most_interesting, horizontal.where(:showable_on_main => true).order("created_at")
 
   include ::NormalizedUrls
 

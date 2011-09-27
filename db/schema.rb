@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100620202459) do
+ActiveRecord::Schema.define(:version => 20110927110251) do
 
   create_table "images", :force => true do |t|
     t.string   "type_of_image"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20100620202459) do
     t.string   "longitude"
     t.integer  "year"
     t.integer  "publisher_id"
+    t.boolean  "showable_on_main"
   end
 
   create_table "publishers", :force => true do |t|

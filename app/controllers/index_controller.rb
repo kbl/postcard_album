@@ -1,8 +1,7 @@
 class IndexController < ApplicationController
 
   def index
-    @postcard = Postcard.find(:last)
-    @newest_postcards = Postcard.horizontal.limited(5)
+    @newest_postcards = Postcard.most_interesting.limited(10)
   end
 
 end

@@ -31,6 +31,9 @@
     = f.label :is_horizontal, t('activerecord.attributes.postcard.is_horizontal')
     = f.check_box :is_horizontal
   .field
+    = f.label :showable_on_main, t('activerecord.attributes.postcard.showable_on_main')
+    = f.check_box :showable_on_main
+  .field
     = f.label :year, t('activerecord.attributes.postcard.year')
     = f.text_field :year, class: 'form-full-width'
   .field

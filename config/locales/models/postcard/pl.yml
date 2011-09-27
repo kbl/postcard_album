@@ -8,6 +8,7 @@ pl:
         name: 'Nazwa'
         description: 'Opis'
         is_horizontal: 'Czy pozioma?'
+        showable_on_main: 'Czy pokazywana na głównej?'
         publisher_id: 'Wydawca'
         tags: 'Tagi'
         images: 'Zdjęcia widokówki'
