@@ -14,6 +14,7 @@ gem 'rails3-generators'
 gem 'haml'
 gem 'rmagick'
 gem 'polish'
+gem 'capistrano'
 
 # Gems used only for assets and not required
 # in production environments by default.

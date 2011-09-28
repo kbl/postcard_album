@@ -7,5 +7,3 @@ log/*.log
 tmp/**/*
 public/system/**
 postcards/**
-Capfile
-config/deploy.rb
