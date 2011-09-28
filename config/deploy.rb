@@ -17,6 +17,15 @@ role :web, "#{user}.megiteam.pl"
 role :db,  "sql.#{user}.megiteam.pl", no_release: true, primary: true
 
 namespace :deploy do
+
+  desc 'overriden restart special for megiteam'
+  task :restart do
+    run <<-CMD
+      restart-app widokowki_ror3
+    CMD
+  end
+
+  desc 'copying essential files for production env'
   task :update_configuration, except: {no_relase: true} do
     run <<-CMD
       cp -vf #{db_config_location} #{release_path}/config/database.yml
@@ -24,6 +33,6 @@ namespace :deploy do
     CMD
   end
 
-  after 'deploy:setup', 'deploy:update_configuration'
+  after 'deploy:update', 'deploy:update_configuration'
 end
 
