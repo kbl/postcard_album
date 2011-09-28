@@ -1,1 +1,1 @@
-rvm r192@postcard
+rvm use r192@postcard
