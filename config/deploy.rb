@@ -14,22 +14,20 @@ set :scm, :git
 
 role :app, "#{user}.megiteam.pl"
 role :web, "#{user}.megiteam.pl"
-role :db,  "sql.#{user}.megiteam.pl", no_release: true, primary: true
+role :db,  "sql.#{user}.megiteam.pl", primary: true
 
 namespace :deploy do
 
   desc 'overriden restart special for megiteam'
   task :restart do
-    run <<-CMD
-      restart-app widokowki_ror3
-    CMD
+    run 'restart-app widokowki_ror3'
   end
 
   desc 'copying essential files for production env'
   task :update_configuration, except: {no_relase: true} do
     run <<-CMD
-      cp -vf #{db_config_location} #{release_path}/config/database.yml
-      cp -vf #{environment_settings_location} #{release_path}/.environment
+      cp -vf #{db_config_location} #{release_path}/config/ &&
+      cp -vf #{environment_settings_location} #{release_path}/
     CMD
   end
 
