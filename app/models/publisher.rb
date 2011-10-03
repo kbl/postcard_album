@@ -14,6 +14,10 @@ class Publisher < ActiveRecord::Base
     all.sort{|a, b| a.name <=> b.name }.map { |p| [p.name, p.id] }
   end
 
+  def self.search(params)
+    Publisher.order('name ASC').page(params[:page])
+  end
+
 end
 
 

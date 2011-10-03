@@ -3,7 +3,7 @@ class PublishersController < ApplicationController
   before_filter :set_navigation
 
   def index
-    @publishers = Publisher.paginate(:page => params[:page], :order => 'name DESC')
+    @publishers = Publisher.search(params)
   end
 
   def show
