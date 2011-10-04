@@ -18,9 +18,10 @@ class AddWatermark < Paperclip::Processor
     end
 
     text = Magick::Draw.new
+    pointsize = @options[:signature_pointsize]
     text.annotate(watermark, 0, 0, 0, 0, @options[:signature]) do
       self.gravity = Magick::CenterGravity
-      self.pointsize = 50
+      self.pointsize = pointsize
       self.fill = "white"
       self.stroke = "none"
     end

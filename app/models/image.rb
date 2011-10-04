@@ -3,36 +3,42 @@ class Image < ActiveRecord::Base
   SIGNATURE = 'kolekcja.pietraszek.pl'
 
   IMAGE_TYPES = %w[abverse reverse stamp other]
-  
+
   # TODO get rid of 4 styles..
   has_attached_file :image,
                     :processors => [:resize, :add_watermark, :add_border],
-                    :styles => { 
-                        :normal_horizontal => { 
+                    :styles => {
+                        :normal_horizontal => {
                             :width => 720,
                             :height => 480,
                             :border_inner => 4,
                             :border_outer => 20,
-                            :signature => SIGNATURE
-                        }, 
-                        :normal_vertical => { 
+                            :signature => SIGNATURE,
+                            :signature_pointsize => 50
+                        },
+                        :normal_vertical => {
                             :width => 480,
                             :height => 720,
                             :border_inner => 4,
                             :border_outer => 20,
-                            :signature => SIGNATURE
-                        }, 
+                            :signature => SIGNATURE,
+                            :signature_pointsize => 50
+                        },
                         :thumbnail_horizontal => {
                             :width => 270,
                             :height => 180,
                             :border_inner => 1,
-                            :border_outer => 5
+                            :border_outer => 5,
+                            :signature => SIGNATURE,
+                            :signature_pointsize => 20
                         },
                         :thumbnail_vertical => {
                             :width => 180,
                             :height => 270,
                             :border_inner => 1,
-                            :border_outer => 5
+                            :border_outer => 5,
+                            :signature => SIGNATURE,
+                            :signature_pointsize => 20
                         }
                     },
                     :path => ':rails_root/../postcard_images/:id/:style.:extension',
@@ -52,12 +58,12 @@ class Image < ActiveRecord::Base
   def thumbnail_style
     style :thumbnail
   end
-  
+
   def normal_style
     style :normal
   end
 
-  
+
   private
 
   def style(type)
