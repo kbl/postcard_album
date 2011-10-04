@@ -44,7 +44,11 @@ class Postcard < ActiveRecord::Base
   end
 
   def self.search(params)
-    Postcard.order('created_at DESC').paginate(page: params[:page])
+    relation = Postcard.order('created_at DESC')
+    if params[:tag]
+      relation = relation.tagged_with(params[:tag])
+    end
+    relation.paginate(page: params[:page])
   end
 
 end
