@@ -5,6 +5,7 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :index, content_tag(:span, t(:nav_main_page)), root_path
     primary.item :postcards, content_tag(:span, t(:nav_postcards)), postcards_path
     primary.item :publishers, content_tag(:span, t(:nav_publishers)), publishers_path
+    primary.item :contact, content_tag(:span, 'Kontakt'), contact_path
   end
   
 end

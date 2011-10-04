@@ -2,6 +2,7 @@ PostcardAlbum::Application.routes.draw do
 
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
+  match 'kontakt' => 'contact#index', as: :contact
 
   match '/publishers/:id' => redirect('/wydawcy/%{id}')
   match '/postcards/:id' => redirect('/widokowki/%{id}')
