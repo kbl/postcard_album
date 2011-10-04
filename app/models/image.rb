@@ -23,14 +23,14 @@ class Image < ActiveRecord::Base
                             :signature => SIGNATURE
                         }, 
                         :thumbnail_horizontal => {
-                            :width => 90,
-                            :height => 60,
+                            :width => 270,
+                            :height => 180,
                             :border_inner => 1,
                             :border_outer => 5
                         },
                         :thumbnail_vertical => {
-                            :width => 60,
-                            :height => 90,
+                            :width => 180,
+                            :height => 270,
                             :border_inner => 1,
                             :border_outer => 5
                         }
