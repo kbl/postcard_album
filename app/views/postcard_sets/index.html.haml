@@ -1,6 +1,6 @@
 - @postcard_sets.each do |set|
   - set.postcards.each do |postcard|
-    = render partial: '/gallery_shadowbox', locals: { postcard: postcard }
+    = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard }
   = link_to 'Pokaż zestaw', set
   - if current_user
     %p

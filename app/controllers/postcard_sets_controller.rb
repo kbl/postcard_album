@@ -22,6 +22,32 @@ class PostcardSetsController < ApplicationController
     end
   end
 
+  def edit
+    @postcard_set = PostcardSet.find(params[:id])
+  end
+
+  def update
+    @postcard_set = Postcard.find(params[:id])
+
+    if @postcard_set.update_attributes(params[:postcard_set])
+      flash[:notice] = t :postcard_set_was_updated
+      redirect_to(@postcard_set)
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @postcard_set = PostcardSet.find(params[:id])
+    @postcard_set.destroy
+
+    redirect_to(postcard_sets_url)
+  end
+
+  def show
+    @postcard_set = PostcardSet.find(params[:id])
+  end
+
   # ajax requests
 
   def add_to_set
@@ -45,9 +71,7 @@ class PostcardSetsController < ApplicationController
       postcard = Postcard.find(postcard_id)
       element = @postcard_set.postcard_set_elements.build(order_number: i)
       element.postcard = postcard
-      p element
     end
-    p @postcard_set
     session[POSTCARD_SET_IDS_KEY].clear
   end
 

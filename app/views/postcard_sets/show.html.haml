@@ -1,0 +1,5 @@
+= @postcard_set.description.html_safe
+= @postcard_set.show_abverse
+
+- @postcard_set.postcards.each do |postcard|
+  = render partial: '/gallery_shadowbox', locals: { abverse: false, postcard: postcard }

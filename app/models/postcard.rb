@@ -41,7 +41,11 @@ class Postcard < ActiveRecord::Base
   end
 
   def abverse_image
-    Image.find_by_postcard_id_and_type_of_image(id, Image::IMAGE_TYPES[0])
+    find_image(Image::IMAGE_TYPES[0])
+  end
+
+  def reverse_image
+    find_image(Image::IMAGE_TYPES[1])
   end
 
   def self.search(params)
@@ -50,6 +54,12 @@ class Postcard < ActiveRecord::Base
       relation = relation.tagged_with(params[:tag])
     end
     relation.paginate(page: params[:page])
+  end
+
+  private
+
+  def find_image(image_type)
+    Image.where({ postcard_id: id, type_of_image: image_type }).first
   end
 
 end
