@@ -1,0 +1,2 @@
+class PostcardSetsController < ApplicationController
+end
