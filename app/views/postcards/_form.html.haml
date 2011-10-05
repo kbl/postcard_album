@@ -1,22 +1,11 @@
 - content_for :head do
-  = javascript_include_tag 'tiny_mce/tiny_mce'
   = javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl'
   :javascript 
     $(document).ready(function() {
       Shadowbox.init();
       #{draw_google_map @postcard, true}
-
-      tinyMCE.init({
-        mode: 'textareas',
-        language: '#{I18n.locale}'
-      });
-
-      $('#postcard_tag_list').tagsInput({
-        autocomplete_url: '#{tags_path}.json',
-        defaultText: 'dodaj tagi',
-        width: '735px',
-        height: '30px'
-      });
+      initTinyMCE('#{I18n.locale}');
+      initTags();
     });
 
 = form_for(@postcard, :html => { :multipart => true }) do |f|

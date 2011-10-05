@@ -8,8 +8,4 @@
 //= require jquery-ui.min
 //= require jquery_ujs
 //= require analytics
-//= require nivo/jquery.nivo.slider.pack
 //= require shadowbox
-//= require maps-api
-//= require nested-form
-//= require jquery.tagsinput.min
