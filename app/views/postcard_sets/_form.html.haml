@@ -1,0 +1,20 @@
+- content_for :head do
+  :javascript 
+    $(document).ready(function() {
+      Shadowbox.init();
+      initTinyMCE('#{I18n.locale}');
+    });
+
+= form_for(@postcard_set, :html => { :multipart => true }) do |f|
+  = render partial: '/error_messages', locals: { e: @postcard_set.errors }
+  .field
+    = f.label :description, t('activerecord.attributes.postcard.description')
+    = f.text_area :description, rows: 20, class: 'form-full-width'
+  .field
+    = f.fields_for :postcard_set_elements do |builder|
+      = builder.hidden_field :postcard_id
+      = builder.hidden_field :order_number
+      = render partial: '/gallery_shadowbox', locals: { postcard: builder.object.postcard }
+
+    = f.label :postcard_set_elements, 'Widokówki'
+  = f.submit button_label, :class => 'button'

@@ -2,26 +2,27 @@ class Postcard < ActiveRecord::Base
 
   acts_as_taggable
 
-  has_many :images, :dependent => :destroy, :order => 'type_of_image'
-  has_many :postcard_set_positions
-  has_many :postcard_sets, :through => :postcard_set_positions
+  has_many :images, dependent: :destroy, order: 'type_of_image'
+  has_many :postcard_set_elements
+  has_many :postcard_sets, through: :postcard_set_elements
+
   belongs_to :publisher
 
   validates_presence_of :description,
                         :name,
                         :year
-  validates_inclusion_of :is_horizontal, :in => [true, false]
-  validates_size_of :name, :maximum => 255
-  validates_numericality_of :year, :only_integer => true, :greater_than => 1800, :less_than => 2000
+  validates_inclusion_of :is_horizontal, in: [true, false]
+  validates_size_of :name, maximum: 255
+  validates_numericality_of :year, only_integer: true, greater_than: 1800, less_than: 2000
 
   cattr_reader :per_page
   @@per_page = 12
 
-  accepts_nested_attributes_for :images, :allow_destroy => true
+  accepts_nested_attributes_for :images, allow_destroy: true
 
-  scope :limited, lambda { |lim| { :limit => lim } }
-  scope :horizontal, where(:is_horizontal => true)
-  scope :most_interesting, horizontal.where(:showable_on_main => true).order("created_at")
+  scope :limited, lambda { |lim| { limit: lim } }
+  scope :horizontal, where(is_horizontal: true)
+  scope :most_interesting, horizontal.where(showable_on_main: true).order("created_at")
 
   include ::NormalizedUrls
 
