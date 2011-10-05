@@ -14,7 +14,8 @@ set :scm, :git
 
 role :app, "#{user}.megiteam.pl"
 role :web, "#{user}.megiteam.pl"
-role :db,  "sql.#{user}.megiteam.pl", primary: true
+role :db,  "#{user}.megiteam.pl", primary: true
+role :db,  "sql.#{user}.megiteam.pl", no_release: true
 
 namespace :deploy do
 
