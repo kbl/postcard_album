@@ -8,4 +8,11 @@ class PostcardSet < ActiveRecord::Base
 
   accepts_nested_attributes_for :postcard_set_elements, allow_destroy: true
 
+  cattr_reader :per_page
+  @@per_page = 4
+
+  def self.search(params)
+    PostcardSet.order('id DESC').paginate(page: params[:page])
+  end
+
 end

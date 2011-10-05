@@ -2,6 +2,10 @@ class PostcardSetsController < ApplicationController
 
   POSTCARD_SET_IDS_KEY = :postcard_set_ids
 
+  def index
+    @postcard_sets = PostcardSet.search(params)
+  end
+
   def new
     @postcard_set = PostcardSet.new
     init_elements_from_session

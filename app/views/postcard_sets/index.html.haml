@@ -1,0 +1,7 @@
+- @postcard_sets.each do |set|
+  - set.postcards.each do |postcard|
+    = render partial: '/gallery_shadowbox', locals: { postcard: postcard }
+  = link_to 'Pokaż zestaw', set
+
+#pagination
+  = will_paginate @postcard_sets, link_separator: ' &nbsp; '
