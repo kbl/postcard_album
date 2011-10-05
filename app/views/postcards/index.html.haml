@@ -2,11 +2,14 @@
   :javascript
     $(document).ready(function() {
       Shadowbox.init();
-      $('input.postcard-set-checkbox').click(function() {
-        console.log($(this).val());
-        console.log(!!$(this).attr('checked'));
-      });
     });
+  - if current_user
+    :javascript
+      $(document).ready(function() {
+        populateChecboxesInSet('#{current_set_path}');
+        attachPostcardSetsRelatedEvent('#{add_to_set_path}');
+      });
+  
 
 - @postcards.each_slice(3) do |slice|
   - slice.each do |postcard|
