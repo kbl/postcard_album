@@ -1,0 +1,45 @@
+// index
+.postcard-set h3 {
+  height: 1.5em;
+}
+.postcard-set {
+  padding: 0.5em 0;
+}
+.postcard-set .images {
+  text-align: center;
+}
+.postcard-set .images img {
+  padding: 1em;
+}
+
+// edit new
+.postcard-set-images a {
+  display: block;
+  width: 100px;
+}
+.field .postcard-set-images {
+  margin-left: 195px;
+}
+.postcard-set-images img {
+  width: 100px;
+}
+
+// show
+.postcard-set-image {
+}
+.postcard-set-image {
+  float: left;
+  width: 300px;
+  text-align: center;
+  padding: 1em 0;
+}
+.postcard-set-image-description {
+  padding: 1em 0;
+}
+.postcard-set-image-description p {
+  padding: 0;
+  margin: 0;
+}
+p.small {
+  font-size: 0.8em;
+}

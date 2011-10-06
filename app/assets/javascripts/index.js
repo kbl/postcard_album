@@ -1,3 +1,5 @@
+//= require nivo/jquery.nivo.slider.pack
+
 (function (){
     $(document).ready(function() {
         $('#slider').nivoSlider({

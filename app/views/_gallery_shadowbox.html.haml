@@ -1,6 +1,12 @@
 - image_link = link_to('Pełen opis', postcard_path(postcard))
 - gallery_name ||= ''
+- abverse = abverse.nil? ? true : abverse
+- title = "Widokówka - #{postcard.name}"
 
-%a{ href: postcard_abverse_image_url(postcard, :normal), rel: "shadowbox[#{gallery_name}];title=#{image_link}" }
-  = image_tag(postcard_abverse_image_url(postcard, :thumbnail))
+- if abverse
+  %a{ href: postcard_abverse_image_url(postcard, :normal), rel: "shadowbox[#{gallery_name}];title=#{image_link}" }
+    = image_tag postcard_abverse_image_url(postcard, :thumbnail), {title: title, alt: title }
+- else
+  %a{ href: postcard_reverse_image_url(postcard, :normal), rel: "shadowbox[#{gallery_name}];title=#{image_link}" }
+    = image_tag postcard_reverse_image_url(postcard, :thumbnail), {title: title, alt: title } 
 

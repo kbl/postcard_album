@@ -1,3 +1,7 @@
+img {
+  vertical-align: middle;
+}
+
 .clear {
   clear: both;
 }
@@ -47,12 +51,16 @@
   color: gray;
 }
 
-#admin-area ul {
+ul, ol {
   list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+ul.inline li, ol.inline li {
+  display: inline;
 }
 
 #admin-area ul li {
-  display: inline;
   padding: 0px 1em;
 }
 
@@ -60,14 +68,13 @@
   margin-top: 1em;
 }
 
-ol#publishers {
-  list-style-type: none;
-}
-
 ol#publishers li {
   padding-bottom: 1em;
 }
 
+.date-added {
+  padding: 1em;
+}
 .date-added-day, .date-added-month, .date-added-year {
   padding: 0px 0.2em;
 }
@@ -100,15 +107,13 @@ input.button {
 }
 
 ul#errors {
-  list-style-type: none;
   padding: 0px;
   margin: 0px;
-}
-
-ul#errors li {
-  margin-left: 195px;
-  font-weight: bold;
-  color: red;
+  li {
+    margin-left: 195px;
+    font-weight: bold;
+    color: red;
+  }
 }
 
 .cloud-tiny {
@@ -128,6 +133,9 @@ ul#errors li {
 }
 
 .important {
+  font-family: Verdana, Tahoma, sans-serif;
   font-weight: bold;
   text-decoration: underline;
+  color: black;
 }
+
