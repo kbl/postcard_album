@@ -11,20 +11,19 @@
     = f.label :description, t('activerecord.attributes.postcard.description')
     = f.text_area :description, rows: 20, class: 'form-full-width'
   .field
-    = f.label :show_abverse, 'Pokazywać awers czy rewers?'
-    %div{style: 'margin-left: 180px'}                                                                                                      
-      %div
+    = f.label :show_abverse, 'Awers czy rewers?'
+    %ul#images
+      %li
         = f.radio_button :show_abverse, true
-        = f.fields_for :postcard_set_elements do |builder|
-          = render partial: '/gallery_shadowbox', locals: { postcard: builder.object.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
-      %div
+        - @postcard_set.postcard_set_elements.each do |element|
+          = render partial: '/gallery_shadowbox', locals: { postcard: element.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
+      %li
         = f.radio_button :show_abverse, false
-        = f.fields_for :postcard_set_elements do |builder|
-          = render partial: '/gallery_shadowbox', locals: { abverse: false, postcard: builder.object.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
-  .field
+        - @postcard_set.postcard_set_elements.each do |element|
+          = render partial: '/gallery_shadowbox', locals: { abverse: false, postcard: element.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
+  .field.clear
     = f.fields_for :postcard_set_elements do |builder|
+      = builder.hidden_field :id
       = builder.hidden_field :postcard_id
       = builder.hidden_field :order_number
-
-    = f.label :postcard_set_elements, 'Widokówki'
   = f.submit button_label, :class => 'button'

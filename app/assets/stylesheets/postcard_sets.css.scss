@@ -2,3 +2,14 @@
   width: 100px;
   vertical-align: middle;
 }
+
+ul#images {
+  display: block;
+  float: left;
+  clear: right;
+  padding: 0;
+  margin: 0;
+  li {
+    padding-bottom: 1em;
+  }
+}

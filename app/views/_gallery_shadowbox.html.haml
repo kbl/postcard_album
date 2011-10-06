@@ -1,7 +1,7 @@
 - image_link = link_to('Pełen opis', postcard_path(postcard))
 - gallery_name ||= ''
 - image_parameters ||= {}
-- abverse ||= true
+- abverse = abverse.nil? ? true : abverse
 
 - if abverse
   %a{ href: postcard_abverse_image_url(postcard, :normal), rel: "shadowbox[#{gallery_name}];title=#{image_link}" }
