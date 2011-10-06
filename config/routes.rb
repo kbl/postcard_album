@@ -17,6 +17,7 @@ PostcardAlbum::Application.routes.draw do
   resources :postcards, path: 'widokowki'
   resources :postcard_sets, path: 'zestawy'
   resources :tags, path: 'tagi'
+  resources :newsletter
 
   match '/postcards/images/:id/:style.:format' => redirect('/widokowki/zdjecia/%{id}/%{style}.%{format}')
   match '/widokowki/zdjecia/:id/:style.:format' => 'images#show'

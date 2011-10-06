@@ -1,0 +1,9 @@
+= form_for :newsletter, url: newsletter_path do |f|
+  .field
+    = f.label :name, 'Imię'
+    = f.text_field :name
+  .field
+    = f.label :name, 'Adres email'
+    = f.text_field :email
+  = f.submit 'Dodaj mnie do list subskrybentów', :class => 'button'
+
