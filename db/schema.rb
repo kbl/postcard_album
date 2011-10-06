@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111005095130) do
+ActiveRecord::Schema.define(:version => 20111006090949) do
 
   create_table "images", :force => true do |t|
     t.string   "type_of_image"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20111005095130) do
     t.boolean  "show_abverse"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
   end
 
   create_table "postcards", :force => true do |t|

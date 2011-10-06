@@ -8,10 +8,13 @@
 = form_for(@postcard_set, :html => { :multipart => true }) do |f|
   = render partial: '/error_messages', locals: { e: @postcard_set.errors }
   .field
-    = f.label :description, t('activerecord.attributes.postcard.description')
+    = f.label :title, t('activerecord.attributes.postcard_set.title')
+    = f.text_field :title, rows: 20, class: 'form-full-width'
+  .field
+    = f.label :description, t('activerecord.attributes.postcard_set.description')
     = f.text_area :description, rows: 20, class: 'form-full-width'
   .field
-    = f.label :show_abverse, 'Awers czy rewers?'
+    = f.label :show_abverse, "#{t('activerecord.attributes.postcard_set.show_abverse')}?"
     .postcard-set-images
       = f.radio_button :show_abverse, true
       - @postcard_set.postcard_set_elements.each do |element|

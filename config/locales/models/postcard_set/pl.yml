@@ -2,6 +2,6 @@ pl:
   activerecord:
     attributes:
       postcard_set:
-        name: 'Nazwa'
+        title: 'Tytuł'
         description: 'Opis'
-        postcards: 'Widokówki'
+        show_abverse: 'Awers czy rewers'
