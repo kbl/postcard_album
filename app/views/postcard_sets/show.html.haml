@@ -1,14 +1,23 @@
+%h3
+  = @postcard_set.title
+
 = @postcard_set.description.html_safe
 
-%ol#postcard-set
-  - @postcard_set.postcards.each_with_index do |postcard, i|
-    %li
-      = render partial: '/gallery_shadowbox', locals: { abverse: @postcard_set.show_abverse, postcard: postcard }
-      %span.postcard-set-image-description
-        %div
-          #{i + 1}
-          = link_to postcard.name, postcard
-        %div
-          = date_added(postcard.created_at)
-        %div
-          = postcard.year
+- @postcard_set.postcards.each_with_index do |postcard, i|
+  %div
+    = render partial: '/gallery_shadowbox', locals: { abverse: @postcard_set.show_abverse, postcard: postcard }
+    %span.postcard-set-image-description
+      %div
+        #{i + 1}
+        = link_to postcard.name, postcard
+      %div
+        = date_added(postcard.created_at)
+      %div
+        = postcard.year
+
+- if current_user
+  %p
+    = link_to t(:v_edit), edit_postcard_set_path(@postcard_set), class: 'important'
+    = link_to t(:v_delete), @postcard_set, method: :delete, confirm: t(:v_delete_confirmation), class: 'important'
+#bottom-navigation
+  = link_to 'Lista zestawów widokówek', postcard_sets_path

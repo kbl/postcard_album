@@ -6,7 +6,7 @@
 
 - @postcard_sets.each do |set|
   .postcard-set
-    %h3= link_to 'Tytuł', set
+    %h3= link_to set.title, set
     %span.date-added
       = date_added(set.created_at)
     - if current_user
