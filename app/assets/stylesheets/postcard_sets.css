@@ -13,3 +13,14 @@
 }
 
 // edit new
+.postcard-set-images a {
+  display: block;
+  width: 100px;
+}
+
+.field .postcard-set-images {
+  margin-left: 195px;
+}
+.postcard-set-images img {
+  width: 100px;
+}

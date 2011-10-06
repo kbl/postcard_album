@@ -1,5 +1,5 @@
 - content_for :head do
-  :javascript 
+  :javascript
     $(document).ready(function() {
       Shadowbox.init();
       initTinyMCE('#{I18n.locale}');
@@ -12,15 +12,14 @@
     = f.text_area :description, rows: 20, class: 'form-full-width'
   .field
     = f.label :show_abverse, 'Awers czy rewers?'
-    %ul#images
-      %li
-        = f.radio_button :show_abverse, true
-        - @postcard_set.postcard_set_elements.each do |element|
-          = render partial: '/gallery_shadowbox', locals: { postcard: element.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
-      %li
-        = f.radio_button :show_abverse, false
-        - @postcard_set.postcard_set_elements.each do |element|
-          = render partial: '/gallery_shadowbox', locals: { abverse: false, postcard: element.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
+    .postcard-set-images
+      = f.radio_button :show_abverse, true
+      - @postcard_set.postcard_set_elements.each do |element|
+        = render partial: '/gallery_shadowbox', locals: { postcard: element.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
+    .postcard-set-images
+      = f.radio_button :show_abverse, false
+      - @postcard_set.postcard_set_elements.each do |element|
+        = render partial: '/gallery_shadowbox', locals: { abverse: false, postcard: element.postcard, gallery_name: 'postcards', image_parameters: { class: 'small-thumbnail' } }
   .field.clear
     = f.fields_for :postcard_set_elements do |builder|
       = builder.hidden_field :id
