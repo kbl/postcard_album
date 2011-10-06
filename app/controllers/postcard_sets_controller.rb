@@ -27,7 +27,7 @@ class PostcardSetsController < ApplicationController
   end
 
   def update
-    @postcard_set = Postcard.find(params[:id])
+    @postcard_set = PostcardSet.find(params[:id])
 
     if @postcard_set.update_attributes(params[:postcard_set])
       flash[:notice] = t :postcard_set_was_updated
