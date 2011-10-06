@@ -1,11 +1,19 @@
-- @postcard_sets.each do |set|
-  - set.postcards.each do |postcard|
-    = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard }
-  = link_to 'Pokaż zestaw', set
-  - if current_user
-    %p
-      = link_to t(:v_edit), edit_postcard_set_path(set), class: :important
-      = link_to t(:v_delete), set, method: :delete, confirm: t(:v_delete_confirmation), class: :important
+%ol
+  - @postcard_sets.each do |set|
+    %li
+      .images
+        %h3
+          = link_to 'Tytuł', set
+        - if current_user
+          %p
+            = link_to t(:v_edit), edit_postcard_set_path(set), class: :important
+            = link_to t(:v_delete), set, method: :delete, confirm: t(:v_delete_confirmation), class: :important
+        %p
+          %ol.inline
+            - set.postcards.each do |postcard|
+              %li
+                = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard }
+          = date_added(set.created_at)
 
 #pagination
   = will_paginate @postcard_sets, link_separator: ' &nbsp; '

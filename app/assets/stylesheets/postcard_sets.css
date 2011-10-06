@@ -1,0 +1,11 @@
+.small-thumbnail {
+  width: 100px;
+  vertical-align: middle;
+}
+
+.postcard-set-image, .postcard-set-image-description {
+  float: left;
+}
+ol.postcard-set li {
+  clear: both;
+}

@@ -53,10 +53,14 @@ img {
 
 ul, ol {
   list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+ul.inline li, ol.inline li {
+  display: inline;
 }
 
 #admin-area ul li {
-  display: inline;
   padding: 0px 1em;
 }
 
@@ -126,6 +130,9 @@ ul#errors {
 }
 
 .important {
+  font-family: Verdana, Tahoma, sans-serif;
   font-weight: bold;
   text-decoration: underline;
+  color: black;
 }
+
