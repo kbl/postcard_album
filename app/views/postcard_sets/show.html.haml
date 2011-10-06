@@ -4,17 +4,20 @@
 = @postcard_set.description.html_safe
 
 - @postcard_set.postcards.each_with_index do |postcard, i|
-  %div
-    = render partial: '/gallery_shadowbox', locals: { abverse: @postcard_set.show_abverse, postcard: postcard }
-    %span.postcard-set-image-description
-      %div
+  .postcard-set-wrapper
+    .postcard-set-image
+      = render partial: '/gallery_shadowbox', locals: { abverse: @postcard_set.show_abverse, postcard: postcard }
+    .postcard-set-image-description
+      %p
         #{i + 1}
         = link_to postcard.name, postcard
-      %div
-        = date_added(postcard.created_at)
-      %div
+      %p
+        Widokówka z roku
         = postcard.year
-
+      %p.small
+        Dodano
+        = date_added(postcard.created_at)
+  .clear
 - if current_user
   %p
     = link_to t(:v_edit), edit_postcard_set_path(@postcard_set), class: 'important'
