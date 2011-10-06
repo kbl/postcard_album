@@ -3,8 +3,7 @@
     $(document).ready(function() {
       Shadowbox.init();
     });
-  - if current_user
-    :javascript
+    - if current_user
       $(document).ready(function() {
         populateChecboxesInSet('#{current_set_path}');
         attachPostcardSetsRelatedEvent('#{add_to_set_path}');
@@ -15,6 +14,8 @@
   - slice.each do |postcard|
     .postcard
       %h3= link_to postcard.name, postcard
+      %span.date-added
+        = date_added(postcard.created_at)
       - if current_user
         %p
           = link_to t(:v_edit), edit_postcard_path(postcard), :class => :important
@@ -22,8 +23,7 @@
           = check_box_tag "postcard-set-checkbox-#{postcard.id}", postcard.id, false, class: "postcard-set-checkbox"
       %p
         = render partial: '/gallery_shadowbox', locals: { postcard: postcard }
-        .date-added
-          = date_added(postcard.created_at)
   .clear
+  %hr
 #pagination
   = will_paginate @postcards, link_separator: ' &nbsp; '

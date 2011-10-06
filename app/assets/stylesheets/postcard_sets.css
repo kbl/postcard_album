@@ -3,9 +3,15 @@
   vertical-align: middle;
 }
 
-.postcard-set-image, .postcard-set-image-description {
-  float: left;
+// index
+ol#postcard-sets li {
 }
-ol.postcard-set li {
-  clear: both;
+li.accordion {
+  width: 150px; 
+  display: block; 
+  float: left;
+} 
+
+// show
+.postcard-set-image, .postcard-set-image-description {
 }

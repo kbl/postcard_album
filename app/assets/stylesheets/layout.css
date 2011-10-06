@@ -159,9 +159,6 @@ a:hover {
 	color: #FFFFFF;
 }
 
-#menu .current_page_item a {
-}
-
 /* Page */
 
 #page {
@@ -172,173 +169,11 @@ a:hover {
 
 /* Content */
 
-#content {
-	float: left;
-	width: 590px;
-	padding: 0px;
-}
-
 #content-full {
 	float: left;
 	width: 1000px;
 	padding: 0px;
     font-size: 1.2em;
-}
-
-.post {
-	overflow: hidden;
-	margin-bottom: 40px;
-	border-bottom: 1px solid #E7EBED;
-}
-
-.post .title {
-	height: 41px;
-	padding: 7px 0px 0px 0px;
-	letter-spacing: -1px;
-}
-
-.post .title a {
-	border: none;
-	text-transform: lowercase;
-	color: #3A4648;
-}
-
-.post .meta {
-	margin-bottom: 30px;
-	padding: 0px;
-	text-align: left;
-	font-size: 1.2;
-	font-weight: bold;
-}
-
-.post .meta .date {
-	float: left;
-}
-
-.post .meta .posted {
-	float: right;
-}
-
-.post .meta a {
-}
-
-.post .entry {
-	padding: 0px 0px 20px 0px;
-	padding-bottom: 20px;
-	text-align: justify;
-}
-
-.links {
-	padding-top: 20px;
-	margin-bottom: 30px;
-}
-
-.more {
-	display: block;
-	float: left;
-	width: 88px;
-	height: 25px;
-	padding: 2px 0px 0px 0px;
-	margin-right: 10px;
-	background: url(images/img08.jpg) no-repeat left top;
-	text-align: center;
-}
-
-.comments {
-	display: block;
-	float: left;
-	width: 88px;
-	height: 25px;
-	padding: 2px 0px 0px 0px;
-	background: url(images/img08.jpg) no-repeat left top;
-	text-align: center;
-}
-
-/* Sidebar */
-
-#sidebar {
-	float: right;
-	width: 280px;
-	margin: 0px;
-	padding: 30px 0px 0px 0px;
-}
-
-#sidebar ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-
-#sidebar li {
-	margin: 0;
-	padding: 0;
-}
-
-#sidebar li ul {
-	margin: 0px 0px;
-	padding-bottom: 30px;
-}
-
-#sidebar li li {
-	line-height: 35px;
-	border-bottom: 1px solid #E7EBED;
-	margin: 0px 30px;
-	border-left: none;
-}
-
-#sidebar li li span {
-	display: block;
-	margin-top: -20px;
-	padding: 0;
-	font-size: 1em;
-	font-style: italic;
-}
-
-#sidebar li li a {
-	padding: 0px 0px 0px 15px;
-}
-
-#sidebar h2 {
-	height: 38px;
-	padding-left: 30px;
-	letter-spacing: -.5px;
-	font-size: 1.8em;
-	color: #3A4648;
-}
-
-#sidebar p {
-	margin: 0 0px;
-	padding: 0px 30px 20px 30px;
-	text-align: justify;
-}
-
-#sidebar a {
-	border: none;
-}
-
-#sidebar a:hover {
-	text-decoration: underline;
-}
-
-/* Calendar */
-
-#calendar {
-}
-
-#calendar_wrap {
-	padding: 20px;
-}
-
-#calendar table {
-	width: 100%;
-}
-
-#calendar tbody td {
-	text-align: center;
-}
-
-#calendar #next {
-	text-align: right;
 }
 
 /* Three Column Footer Content */

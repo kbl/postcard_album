@@ -1,19 +1,25 @@
-%ol
+- content_for :head do
+  :javascript
+    $(document).ready(function() {
+      Shadowbox.init();
+    });
+
+%ol#postcard-sets
   - @postcard_sets.each do |set|
     %li
-      .images
+      .images.clear
         %h3
           = link_to 'Tytuł', set
+        %span
+          = date_added(set.created_at)
         - if current_user
           %p
             = link_to t(:v_edit), edit_postcard_set_path(set), class: :important
             = link_to t(:v_delete), set, method: :delete, confirm: t(:v_delete_confirmation), class: :important
-        %p
-          %ol.inline
-            - set.postcards.each do |postcard|
-              %li
-                = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard }
-          = date_added(set.created_at)
+        %ol.inline
+          - set.postcards.each do |postcard|
+            %li.accordion
+              = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard, gallery_name: "gallery-#{set.id}" }
 
 #pagination
   = will_paginate @postcard_sets, link_separator: ' &nbsp; '

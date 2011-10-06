@@ -1,10 +1,14 @@
 = @postcard_set.description.html_safe
 
-%ol.postcard-set
-  - @postcard_set.postcards.each do |postcard|
+%ol#postcard-set
+  - @postcard_set.postcards.each_with_index do |postcard, i|
     %li
-      %div.postcard-set-image
-        = render partial: '/gallery_shadowbox', locals: { abverse: @postcard_set.show_abverse, postcard: postcard }
-      %div.postcard-set-image-description
-        = postcard.name
-        = date_added(postcard.created_at)
+      = render partial: '/gallery_shadowbox', locals: { abverse: @postcard_set.show_abverse, postcard: postcard }
+      %span.postcard-set-image-description
+        %div
+          #{i + 1}
+          = link_to postcard.name, postcard
+        %div
+          = date_added(postcard.created_at)
+        %div
+          = postcard.year
