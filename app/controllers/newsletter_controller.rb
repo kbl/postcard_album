@@ -1,5 +1,4 @@
 class NewsletterController < ApplicationController
-  
 
   def index
   end
@@ -9,7 +8,7 @@ class NewsletterController < ApplicationController
   
   def create
     @mailchimp = Hominid::API.new(API_KEY)
-    p params
+    @account = NewsletterAccount.new(params[:account])
     #@mailchimp.listSubscribe('be0cc86ae2', )
   end
 
