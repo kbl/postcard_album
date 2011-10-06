@@ -1,13 +1,15 @@
-.accordion {
-  width: 180px; 
-  display: block; 
-  float: left;
-  padding-bottom: 1.5em;
-} 
-
+// index
 .postcard-set h3 {
   height: 1.5em;
 }
 .postcard-set {
   padding: 0.5em 0;
 }
+.postcard-set .images {
+  text-align: center;
+}
+.postcard-set .images img {
+  padding: 1em;
+}
+
+// edit new
