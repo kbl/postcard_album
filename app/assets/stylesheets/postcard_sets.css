@@ -1,17 +1,13 @@
-.small-thumbnail {
-  width: 100px;
-  vertical-align: middle;
-}
-
-// index
-ol#postcard-sets li {
-}
-li.accordion {
-  width: 150px; 
+.accordion {
+  width: 180px; 
   display: block; 
   float: left;
+  padding-bottom: 1.5em;
 } 
 
-// show
-.postcard-set-image, .postcard-set-image-description {
+.postcard-set h3 {
+  height: 1.5em;
+}
+.postcard-set {
+  padding: 0.5em 0;
 }

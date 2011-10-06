@@ -4,22 +4,21 @@
       Shadowbox.init();
     });
 
-%ol#postcard-sets
-  - @postcard_sets.each do |set|
-    %li
-      .images.clear
-        %h3
-          = link_to 'Tytuł', set
-        %span
-          = date_added(set.created_at)
-        - if current_user
-          %p
-            = link_to t(:v_edit), edit_postcard_set_path(set), class: :important
-            = link_to t(:v_delete), set, method: :delete, confirm: t(:v_delete_confirmation), class: :important
-        %ol.inline
-          - set.postcards.each do |postcard|
-            %li.accordion
-              = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard, gallery_name: "gallery-#{set.id}" }
+- @postcard_sets.each do |set|
+  .postcard-set
+    %h3= link_to 'Tytuł', set
+    %span.date-added
+      = date_added(set.created_at)
+    - if current_user
+      %p
+        = link_to t(:v_edit), edit_postcard_set_path(set), class: :important
+        = link_to t(:v_delete), set, method: :delete, confirm: t(:v_delete_confirmation), class: :important
+    %p
+      - set.postcards.each do |postcard|
+        .accordion
+          = render partial: '/gallery_shadowbox', locals: { abverse: set.show_abverse, postcard: postcard, gallery_name: "gallery-#{set.id}" }
+  .clear
+  %hr
 
 #pagination
   = will_paginate @postcard_sets, link_separator: ' &nbsp; '
