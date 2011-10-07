@@ -8,7 +8,11 @@ class Publisher < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 12
 
-  include ::NormalizedUrls
+  include PostcardAlbum::NormalizedUrls
+
+  def to_param
+    "#{id}-#{to_permalink(name)}"
+  end
 
   def self.find_all_combobox
     all.sort{|a, b| a.name <=> b.name }.map { |p| [p.name, p.id] }
