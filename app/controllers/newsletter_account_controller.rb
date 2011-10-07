@@ -1,17 +1,17 @@
-class NewsletterAccountController < ApplicationController
+class NewsletterAccountController < MailchimpController
 
   before_filter :authorize, :only => []
 
   def new
     @account = NewsletterAccount.new
   end
-  
+
   def create
     @account = NewsletterAccount.new(params[:account])
     if @account.valid?
       begin
-        @mailchimp = Hominid::API.new(API_KEY)
-        @mailchimp.listSubscribe('be0cc86ae2', @account.email, {'FNAME' => @account.name})
+        @mailchimp = Hominid::API.new(PostcardAlbum::MAILCHIMP_API_KEY)
+        @mailchimp.listSubscribe(MAILCHIMP_LIST_ID, @account.email, {'FNAME' => @account.name})
         flash[:notice] = t 'newsletter.success'
 
         redirect_to root_path
