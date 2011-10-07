@@ -3,7 +3,6 @@ PostcardAlbum::Application.routes.draw do
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   match 'kontakt' => 'contact#index', as: :contact
-  match 'newsletter/zapisz' => 'newsletter#subscribe', as: :newsletter
 
   match 'zestawy/dodaj_do_zestawu' => 'postcard_sets#add_to_set', as: :add_to_set
   match 'zestawy/aktualny_zestaw' => 'postcard_sets#current_set', as: :current_set
@@ -18,6 +17,7 @@ PostcardAlbum::Application.routes.draw do
   resources :postcards, path: 'widokowki'
   resources :postcard_sets, path: 'zestawy'
   resources :tags, path: 'tagi'
+  resources :newsletter_account, path: 'newsletter'
 
   match '/postcards/images/:id/:style.:format' => redirect('/widokowki/zdjecia/%{id}/%{style}.%{format}')
   match '/widokowki/zdjecia/:id/:style.:format' => 'images#show'

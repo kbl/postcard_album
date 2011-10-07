@@ -1,6 +1,6 @@
 = form_tag '/newsletter' do
   - unless @account.errors.empty?
-    %ul#errors
+    %ul.notification.error
       %li Proszę uzupełnić wszystkie pola!
 
   .field
