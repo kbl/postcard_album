@@ -15,7 +15,8 @@ class NewsletterAccountController < ApplicationController
         flash[:notice] = t 'newsletter.success'
 
         redirect_to root_path
-      rescue
+      rescue Hominid::APIError => e
+        logger.error e
         flash[:error] = t 'newsletter.error'
         redirect_to root_path
       end
