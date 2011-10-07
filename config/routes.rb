@@ -11,13 +11,16 @@ PostcardAlbum::Application.routes.draw do
   match '/postcards/:id' => redirect('/widokowki/%{id}')
   match '/tags/:id' => redirect('/tagi/%{id}')
 
-  resources :users, path: 'uzytkownicy'
   resources :user_sessions
-  resources :publishers, path: 'wydawcy'
-  resources :postcards, path: 'widokowki'
-  resources :postcard_sets, path: 'zestawy'
   resources :tags, path: 'tagi'
-  resources :newsletter_account, path: 'newsletter'
+  resources :newsletter_account, path: 'newsletter', path_names: { new: 'zapisz' }
+
+  scope path_names: { new: 'dodaj', edit: 'edytuj' } do
+    resources :users, path: 'uzytkownicy'
+    resources :publishers, path: 'wydawcy'
+    resources :postcards, path: 'widokowki'
+    resources :postcard_sets, path: 'zestawy'
+  end
 
   match '/postcards/images/:id/:style.:format' => redirect('/widokowki/zdjecia/%{id}/%{style}.%{format}')
   match '/widokowki/zdjecia/:id/:style.:format' => 'images#show'
