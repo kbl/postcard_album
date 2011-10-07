@@ -1,0 +1,9 @@
+= form_tag '/powiadomienia' do
+  .field
+    = label_tag :title, 'Tytuł'
+    = text_field_tag 'message[title]', @message.title, class: 'form-full-width'
+  .field
+    = label_tag :body, 'Treść wiadomości'
+    = text_area_tag 'message[body]', @message.body, class: 'form-full-width', rows: 10
+  = submit_tag 'Wyślij wiadomość', :class => 'button'
+

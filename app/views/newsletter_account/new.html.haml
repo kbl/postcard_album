@@ -1,0 +1,13 @@
+= form_tag '/newsletter' do
+  - unless @account.errors.empty?
+    %ul.notification.error
+      %li Proszę uzupełnić wszystkie pola!
+
+  .field
+    = label_tag :name, 'Imię'
+    = text_field_tag 'account[name]', @account.name
+  .field
+    = label_tag :name, 'Adres email'
+    = email_field_tag 'account[email]', @account.email
+  = submit_tag 'Dodaj mnie do list subskrybentów', :class => 'button'
+

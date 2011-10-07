@@ -12,6 +12,12 @@ class PostcardSet < ActiveRecord::Base
   cattr_reader :per_page
   @@per_page = 4
 
+  include PostcardAlbum::NormalizedUrls
+
+  def to_param
+    "#{id}-#{to_permalink(title)}"
+  end
+
   def self.search(params)
     PostcardSet.order('id DESC').paginate(page: params[:page])
   end

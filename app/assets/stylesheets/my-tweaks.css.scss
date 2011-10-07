@@ -11,14 +11,12 @@ img {
   padding: 1em 0;
   width: 330px;
   text-align: center;
-}
-
-.postcard a {
-  vertical-align: middle;
-}
-
-.postcard h3 {
-  margin-bottom: 0.5em;
+  a {
+    vertical-align: middle;
+  }
+  h3 {
+    margin-bottom: 0.5em;
+  }
 }
 
 #pagination {
@@ -45,10 +43,12 @@ img {
   top: 0px;
   right: 0px;
   padding: 10px;
-}
-
-#admin-area a {
-  color: gray;
+  a {
+    color: gray;
+  }
+  ul li {
+    padding: 0px 1em;
+  }
 }
 
 ul, ol {
@@ -58,10 +58,6 @@ ul, ol {
 }
 ul.inline li, ol.inline li {
   display: inline;
-}
-
-#admin-area ul li {
-  padding: 0px 1em;
 }
 
 #bottom-navigation {
@@ -106,16 +102,6 @@ input.button {
   margin-left: 195px 
 }
 
-ul#errors {
-  padding: 0px;
-  margin: 0px;
-  li {
-    margin-left: 195px;
-    font-weight: bold;
-    color: red;
-  }
-}
-
 .cloud-tiny {
   font-size: 0.7em;
 }
@@ -137,5 +123,25 @@ ul#errors {
   font-weight: bold;
   text-decoration: underline;
   color: black;
+}
+
+.hidden {
+  display: none;
+}
+.notification {
+  text-align: center;
+  padding: 1em;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.notice {
+  background-color: #DFF2BF;
+  color: #4F8A10;
+  border: 1px solid #4F8A10;
+}
+.error {
+  background-color: #FFBABA;
+  color: #D8000C;
+  border: 1px solid #D8000C;
 }
 

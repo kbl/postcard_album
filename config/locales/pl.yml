@@ -13,6 +13,10 @@ pl:
   nav_publishers: 'Wydawcy'
   nav_postcard_sets: 'Zestawy'
 
+  newsletter:
+    error: 'Wystąpił błąd! Jeśli błąd będzie się powtarzał proszę skontakuj się ze mną pod adresem mirek.pietraszek@gmail.com'
+    success: 'Twój adres został dodany do listy subskrybentów! Na podany adres został wysłany mail z linkiem aktywującym, dopiero po aktywacji konta będziesz informowany o nowościach na stronie.'
+
   time:
     formats:
       default: %d.%m.%Y %H:%M

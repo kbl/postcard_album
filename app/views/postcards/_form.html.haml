@@ -5,7 +5,7 @@
       Shadowbox.init();
       #{draw_google_map @postcard, true}
       initTinyMCE('#{I18n.locale}');
-      initTags();
+      initTags('#{tags_path}.json');
     });
 
 = form_for(@postcard, :html => { :multipart => true }) do |f|

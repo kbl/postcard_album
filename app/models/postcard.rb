@@ -24,7 +24,11 @@ class Postcard < ActiveRecord::Base
   scope :horizontal, where(is_horizontal: true)
   scope :most_interesting, horizontal.where(showable_on_main: true).order("created_at")
 
-  include ::NormalizedUrls
+  include PostcardAlbum::NormalizedUrls
+
+  def to_param
+    "#{id}-#{to_permalink(name)}"
+  end
 
   def is_horizontal
     return true if self[:is_horizontal].nil?
