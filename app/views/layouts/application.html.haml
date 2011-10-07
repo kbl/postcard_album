@@ -9,6 +9,11 @@
     = stylesheet_link_tag 'application', params[:controller]
     = javascript_include_tag 'application', params[:controller]
     = yield :head
+    - unless flash.empty?
+      :javascript
+        $(document).ready(function() {
+          $('#message-box').slideDown('slow').delay(5000).slideUp('slow');    
+        });
   %body
     #admin-area
       = render partial: 'layouts/admin_area'
@@ -23,6 +28,9 @@
           = render_navigation
       #page
         #content-full
+          - flash.each do |severity, messages|
+            %div{id: 'message-box', class: "notification #{severity} hidden"}
+              = messages
           = yield
         .clear
     #footer-content
