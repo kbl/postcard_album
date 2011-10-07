@@ -13,6 +13,10 @@ pl:
   nav_publishers: 'Wydawcy'
   nav_postcard_sets: 'Zestawy'
 
+  newsletter:
+    error: 'Wystąpił błąd!'
+    success: 'Twój adres został dodany do listy subskrybentów!'
+
   time:
     formats:
       default: %d.%m.%Y %H:%M

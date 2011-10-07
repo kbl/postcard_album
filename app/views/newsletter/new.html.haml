@@ -1,9 +1,13 @@
-= form_for :newsletter, url: newsletter_path do |f|
+= form_tag '/newsletter' do
+  - unless @account.errors.empty?
+    %ul#errors
+      %li Proszę uzupełnić wszystkie pola!
+
   .field
-    = f.label :name, 'Imię'
-    = f.text_field :name
+    = label_tag :name, 'Imię'
+    = text_field_tag 'account[name]', @account.name
   .field
-    = f.label :name, 'Adres email'
-    = f.text_field :email
-  = f.submit 'Dodaj mnie do list subskrybentów', :class => 'button'
+    = label_tag :name, 'Adres email'
+    = email_field_tag 'account[email]', @account.email
+  = submit_tag 'Dodaj mnie do list subskrybentów', :class => 'button'
 
