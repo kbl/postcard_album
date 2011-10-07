@@ -1,5 +1,6 @@
 - if current_user
   %ul.inline
+    = content_tag 'li', link_to('Wyślij newsletter', new_newsletter_message_path)
     = content_tag 'li', link_to('Dodaj zestaw widokówek', new_postcard_set_path)
     = content_tag 'li', link_to('Dodaj widokówkę', new_postcard_path)
     = content_tag 'li', link_to('Dodaj wydawcę', new_publisher_path)

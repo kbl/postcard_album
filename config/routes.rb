@@ -1,5 +1,9 @@
 PostcardAlbum::Application.routes.draw do
 
+  get "newsletter_message/new"
+
+  get "newsletter_message/create"
+
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   match 'kontakt' => 'contact#index', as: :contact
@@ -20,6 +24,7 @@ PostcardAlbum::Application.routes.draw do
     resources :publishers, path: 'wydawcy'
     resources :postcards, path: 'widokowki'
     resources :postcard_sets, path: 'zestawy'
+    resources :newsletter_message, path: 'powiadomienia'
   end
 
   match '/postcards/images/:id/:style.:format' => redirect('/widokowki/zdjecia/%{id}/%{style}.%{format}')
