@@ -10,7 +10,7 @@ class NewsletterAccountController < MailchimpController
     @account = NewsletterAccount.new(params[:account])
     if @account.valid?
       begin
-        @mailchimp = Hominid::API.new(PostcardAlbum::MAILCHIMP_API_KEY)
+        @mailchimp = Hominid::API.new(MAILCHIMP_API_KEY)
         @mailchimp.listSubscribe(MAILCHIMP_LIST_ID, @account.email, {'FNAME' => @account.name})
         flash[:notice] = t 'newsletter.success'
 
