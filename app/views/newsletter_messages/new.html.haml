@@ -2,6 +2,7 @@
   :javascript
     $(document).ready(function() {
       initTinyMCE('#{I18n.locale}');
+      toggleSubscribersList();
     });
 
 = form_tag '/powiadomienia' do
@@ -13,3 +14,10 @@
     = text_area_tag 'message[body]', @message.body, class: 'form-full-width', rows: 10
   = submit_tag 'Wyślij wiadomość', :class => 'button'
 
+.newsletter-summary
+  #{@emails.count} subskrybentów
+  = link_to 'Pokaź/ukryj', '#', id: 'show-hide-subscribers'
+  #subscribers.hidden
+    %ul
+      - @emails.each do |email|
+        %li= email

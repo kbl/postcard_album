@@ -2,6 +2,10 @@ class NewsletterMessagesController < MailchimpController
 
   def new
     @message = NewsletterMessage.new
+
+    @mailchimp = Hominid::API.new(MAILCHIMP_API_KEY)
+    listInfo = @mailchimp.listMembers(MAILCHIMP_LIST_ID)
+    @emails = listInfo['data'].map { |e| e['email'] }
   end
 
   def create
