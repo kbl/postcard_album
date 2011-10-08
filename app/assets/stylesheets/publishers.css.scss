@@ -1,0 +1,15 @@
+.images {
+  text-align: center;
+  .image {
+    width: 33%;
+    text-align: center;
+    float: left;
+    img {
+      padding: 1em;
+    }
+    a {
+      display: block;
+      padding-bottom: 1em;
+    }
+  }
+}

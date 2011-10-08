@@ -10,11 +10,13 @@
 = content_tag 'p', raw(@publisher.description) if @publisher.description
 
 - if @publisher.postcards.any?
-  %h4 Widokówki
-  - @publisher.postcards.each do |postcard|
-    = render partial: '/gallery_shadowbox', locals: { postcard: postcard, gallery_name: 'common' }
+  .images
+    - @publisher.postcards.each do |postcard|
+      .image
+        = render partial: '/gallery_shadowbox', locals: { postcard: postcard, gallery_name: 'common' }
+        = link_to postcard.name, postcard
 
-#bottom-navigation
+#bottom-navigation.clear
   - if current_user
     = link_to 'Edytuj wydawcę', edit_publisher_path(@publisher), :class => 'important'
     = link_to 'Usuń wydawcę', @publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => 'important'
