@@ -1,4 +1,6 @@
 pl:
+  postcard_set_was_created: 'Zestaw został utworzony'
+  postcard_set_was_updated: 'Zestaw został zaktualizowany'
   activerecord:
     attributes:
       postcard_set:
