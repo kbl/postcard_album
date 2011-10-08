@@ -1,4 +1,4 @@
-class NewsletterMessageController < MailchimpController
+class NewsletterMessagesController < MailchimpController
 
   def new
     @message = NewsletterMessage.new

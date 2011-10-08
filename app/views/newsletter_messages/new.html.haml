@@ -1,3 +1,9 @@
+- content_for :head do
+  :javascript
+    $(document).ready(function() {
+      initTinyMCE('#{I18n.locale}');
+    });
+
 = form_tag '/powiadomienia' do
   .field
     = label_tag :title, 'Tytuł'
