@@ -21,8 +21,17 @@
 
 %div
   = render :partial => '/postcards/postcard_lightbox', :locals => { :images => p.images }
+
+- unless p.postcard_sets.empty?
+  %h3 Zestawy
+  %ul.postcard-sets
+    - p.postcard_sets.each do |set|
+      %li
+        = link_to set.title, set
+    
 - unless p.longitude.blank?
   #map
+
 - if current_user
   %p
     = link_to t(:v_edit), edit_postcard_path(@postcard), class: 'important'
