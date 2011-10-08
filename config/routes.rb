@@ -1,9 +1,5 @@
 PostcardAlbum::Application.routes.draw do
 
-  get "newsletter_message/new"
-
-  get "newsletter_message/create"
-
   match 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   match 'kontakt' => 'contact#index', as: :contact
@@ -17,7 +13,7 @@ PostcardAlbum::Application.routes.draw do
 
   resources :user_sessions
   resources :tags, path: 'tagi'
-  resources :newsletter_account, path: 'newsletter', path_names: { new: 'zapisz' }
+  resources :newsletter_accounts, path: 'newsletter', path_names: { new: 'zapisz' }
 
   scope path_names: { new: 'dodaj', edit: 'edytuj' } do
     resources :users, path: 'uzytkownicy'

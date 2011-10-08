@@ -1,4 +1,4 @@
-class NewsletterAccountController < MailchimpController
+class NewsletterAccountsController < MailchimpController
 
   before_filter :authorize, :only => []
 
