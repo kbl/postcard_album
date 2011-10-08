@@ -20,12 +20,13 @@
 
 // edit new
 .postcard-set-images {
-  a {
-    display: block;
-    width: 100px;
+  input {
+    float: left;
   }
   img {
     width: 100px;
+    height: 100px;
+    padding: 0.5em;
   }
 }
 
