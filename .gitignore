@@ -8,3 +8,4 @@ tmp/**/*
 public/system/**
 postcards/**
 .sass-cache
+public/assets/
