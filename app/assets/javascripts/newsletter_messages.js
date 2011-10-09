@@ -1,4 +1,4 @@
-//= require tiny_mce
+//= require tinymce-jquery
 //= require ./utils/tiny_mce_utils
 
 function toggleSubscribersList() {
