@@ -1,3 +1,6 @@
+%p
+  Jeśli chcesz otrzymywać informacje o aktualizacji strony możesz zapisać się do newslettera. Jeśli nie będziesz zadowolony z przesyłanych maili w każdym momencie możesz #{link_to 'zrezygnować z subskrypcji', 'http://pietraszek.us2.list-manage.com/unsubscribe?u=2d9bd6811a6878a9f22d8ecda&id=be0cc86ae2'}.
+
 = form_tag '/newsletter' do
   - unless @account.errors.empty?
     %ul.notification.error
