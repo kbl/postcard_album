@@ -57,7 +57,7 @@ class PostcardSetsController < ApplicationController
     else
       postcard_set_ids.delete(params[:postcard_id].to_i)
     end
-    render nothing: true
+    render json: postcard_set_ids.size
   end
 
   def current_set
