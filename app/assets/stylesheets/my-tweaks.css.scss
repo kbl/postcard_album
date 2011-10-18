@@ -145,3 +145,19 @@ input.button {
   border: 1px solid #D8000C;
 }
 
+#newsletter-link {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  a {
+    background: url('/images/newsletter.gif');
+    display: block;
+    width: 40px;
+    height: 150px;
+    &:hover {
+      background-position: -40px;
+    }
+  }
+}
+
+

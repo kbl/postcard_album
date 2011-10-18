@@ -15,6 +15,8 @@
           $('#message-box').slideDown('slow').delay(8000).slideUp('slow');
         });
   %body
+    #newsletter-link
+      = link_to '', new_newsletter_account_path
     #admin-area
       = render partial: 'layouts/admin_area'
     #wrapper
