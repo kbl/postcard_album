@@ -1,38 +1,11 @@
-- content_for :head do
-  = javascript_include_tag 'http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAkgCxzvIpiJvYgOSyqIcUrBTWWMYKP7J82jUjllpaxquYJgrbrBQ5wBmh8LFqk2w_zzmkps4hMATjdw&hl=pl'
-
-  :javascript
-    $(document).ready(function() { 
-      Shadowbox.init();
-      #{unless p.longitude.blank?
-        draw_google_map p, false
-      end}
-    });
-
-%h3.postcard-heading
-  = p.name
-
-= p.description.html_safe
-
-%p
-  Widokówka została wydana w #{p.year} roku 
-  - if p.publisher
-    przez wydawcę #{link_to p.publisher.name, publisher_path(p.publisher)}.
-
-%div
-  = render :partial => '/postcards/postcard_lightbox', :locals => { :images => p.images }
-
-- unless p.postcard_sets.empty?
-  %h3 Zestawy
-  %ul.postcard-sets
-    - p.postcard_sets.each do |set|
-      %li
-        = link_to set.title, set
-    
-- unless p.longitude.blank?
-  #map
-
-- if current_user
+.postcard
+  %h3= link_to postcard.name, postcard
+  %span.date-added
+    = date_added(postcard.created_at)
+  - if current_user
+    %p
+      = link_to t(:v_edit), edit_postcard_path(postcard), :class => :important
+      = link_to t(:v_delete), postcard, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
+      = check_box_tag "postcard-set-checkbox-#{postcard.id}", postcard.id, false, class: "postcard-set-checkbox"
   %p
-    = link_to t(:v_edit), edit_postcard_path(@postcard), class: 'important'
-    = link_to t(:v_delete), @postcard, method: :delete, confirm: t(:v_delete_confirmation), class: 'important'
+    = render partial: '/gallery_shadowbox', locals: { postcard: postcard }

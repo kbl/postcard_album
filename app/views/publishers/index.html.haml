@@ -1,13 +1,7 @@
-%h3 Lista wydawców
+.pagination
+  = will_paginate @publishers, link_separator: ' &nbsp; '
+  %hr
 %ol#publishers
-  - @publishers.each do |publisher|
-    %li
-      = link_to h(publisher.name), publisher
-      .date-added
-        = date_added(publisher.created_at)
-      - if current_user
-        %p
-          = link_to t(:v_edit), edit_publisher_path(publisher), :class => :important
-          = link_to t(:v_delete), publisher, :method => :delete, :confirm => t(:v_delete_confirmation), :class => :important
-#pagination
+  = render @publishers
+.pagination
   = will_paginate @publishers, link_separator: ' &nbsp; '

@@ -1,0 +1,13 @@
+.postcard-set
+  %h3= link_to postcard_set.title, postcard_set
+  %span.date-added
+    = date_added(postcard_set.created_at)
+  - if current_user
+    %p
+      = link_to t(:v_edit), edit_postcard_set_path(postcard_set), class: :important
+      = link_to t(:v_delete), postcard_set, method: :delete, confirm: t(:v_delete_confirmation), class: :important
+  .images
+    - postcard_set.postcards.each do |postcard|
+      = render partial: '/gallery_shadowbox', locals: { abverse: postcard_set.show_abverse, postcard: postcard, gallery_name: "gallery-#{postcard_set.id}" }
+.clear
+%hr
