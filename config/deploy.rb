@@ -18,10 +18,9 @@ role :db,  "#{user}.megiteam.pl", primary: true
 role :db,  "sql.#{user}.megiteam.pl", no_release: true
 
 namespace :deploy do
-
-  desc 'overriden restart special for megiteam'
+  desc 'overriden version of restart task for megiteam'
   task :restart do
-    run 'restart-app widokowki_ror3'
+    run 'appctl restart widokowki_ror3'
   end
 
   desc 'copying essential files for production env'
