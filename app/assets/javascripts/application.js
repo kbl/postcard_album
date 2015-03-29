@@ -8,4 +8,3 @@
 //= require jquery-ui.min
 //= require jquery_ujs
 //= require shadowbox
-//= require analytics
