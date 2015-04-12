@@ -1,6 +1,7 @@
 function initTinyMCE(lang) {
   tinyMCE.init({
     mode: 'textareas',
-    language: lang
+    language: lang,
+    theme: 'simple'
   });
 }
