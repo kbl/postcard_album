@@ -1,6 +1,6 @@
 class NewsletterAccountsController < MailchimpController
 
-  before_filter :authorize, :only => []
+  before_action :authorize, :only => []
 
   def new
     @account = NewsletterAccount.new

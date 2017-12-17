@@ -19,9 +19,9 @@ pl:
 
   time:
     formats:
-      default: %d.%m.%Y %H:%M
-      abbr_month: %b
-      month: %B
+      default: '%d.%m.%Y %H:%M'
+      abbr_month: '%b'
+      month: '%B'
 
   will_paginate:
     previous_label: '&#8592; Poprzednia strona'

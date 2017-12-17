@@ -2,7 +2,7 @@ class Postcard < ActiveRecord::Base
 
   acts_as_taggable
 
-  has_many :images, dependent: :destroy, order: 'type_of_image'
+  has_many :images, -> { order 'type_of_image' }, dependent: :destroy
   has_many :postcard_set_elements
   has_many :postcard_sets, through: :postcard_set_elements
 
@@ -20,9 +20,9 @@ class Postcard < ActiveRecord::Base
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  scope :limited, lambda { |lim| { limit: lim } }
-  scope :horizontal, where(is_horizontal: true)
-  scope :most_interesting, horizontal.where(showable_on_main: true).order("created_at")
+  scope :limited, -> (lim) { limit(lim) }
+  scope :horizontal, -> { where(is_horizontal: true) }
+  scope :most_interesting, -> { horizontal.where(showable_on_main: true).order("created_at") }
 
   include PostcardAlbum::NormalizedUrls
 

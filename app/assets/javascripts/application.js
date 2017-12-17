@@ -5,6 +5,6 @@
 // the compiled file.
 //
 //= require jquery.min
-//= require jquery-ui.min
+//= require jquery-ui
 //= require jquery_ujs
 //= require shadowbox

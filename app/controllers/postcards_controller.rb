@@ -1,7 +1,7 @@
 class PostcardsController < ApplicationController
 
-  before_filter :set_navigation
-  before_filter :seed_publishers, :only => [:new, :edit]
+  before_action :set_navigation
+  before_action :seed_publishers, :only => [:new, :edit]
 
   def index
     @postcards = Postcard.search(params)

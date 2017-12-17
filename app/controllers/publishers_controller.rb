@@ -1,6 +1,6 @@
 class PublishersController < ApplicationController
 
-  before_filter :set_navigation
+  before_action :set_navigation
 
   def index
     @publishers = Publisher.search(params)

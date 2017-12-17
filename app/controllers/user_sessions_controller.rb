@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
 
-  before_filter :authorize, :include => []
+  before_action :authorize, :include => []
 
   def new
     @user_session = UserSession.new

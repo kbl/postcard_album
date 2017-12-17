@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
   helper :all
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
-  before_filter :set_locale, :tag_cloud
-  before_filter :authorize, :except => [:index, :show]
+  before_action :set_locale, :tag_cloud
+  before_action :authorize, :except => [:index, :show]
 
   helper_method :current_user
 
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    I18n.locale = (params[:locale] || 'pl')
+    I18n.locale = params[:locale] || 'pl'
   end
 
   def tag_cloud
