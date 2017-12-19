@@ -5,7 +5,7 @@ module PostcardsHelper
     fields = f.fields_for(:images, image, :child_index => "new_image") do |builder|
       render :partial => 'image_fields', :locals => { :f => builder, :editable => options[:editable] }
     end
-    link_to_function(options[:name], "addImageFields(this, \"#{escape_javascript(fields)}\")")
+    link_to options[:name], '#', onclick: "addImageFields(this, \"#{escape_javascript(fields)}\")"
   end
   
   def draw_google_map(postcard, map_clicable)
